@@ -1,0 +1,120 @@
+!!!
+
+CO TRZEBA ZROBIC:
+
+- Sformalizowac problem
+- podac jego specyfikacje
+- dobrac odpowiednie struktury danych oraz algorytmy
+- opisac teoretyczne rozwiazanie (przeanalizowac optymalnosc, zlozonosc czasowa/pamieciowa)
+- dowolny jezyk programowania
+- przeprowadzic testy
+
+!!!
+
+
+======= ZADANIE 1 ============
+
+- swiat dwuwymiarowu (x,y)
+- losowo rozmieszczone punkty orientacyjne
+- nieskonczony swiat
+- zyja tylko w obszarze w ktorym sa punkty orientacyjne 
+- obszar ten nazywa sie "Kraina"
+- nieskonczenie wiele pumktow orientacyjnych
+- w naszym swiecie jest wielki prostokat zwany stroną
+- na stronie jest mnostwo liter
+- litery rozpoznaja sie po dzwiekach
+- zamieniono "boli" na "poli"
+- aby chronic pienka melodie zapisana na "Stronie" chca zbudowac plot naookolo krainy wykorzystujac punkty orientacyjne
+- Plot buduje sie z odcinkow dlugosci 1 (Mozna je ciąc)
+- Odcinki beda nosic tragarze.
+- sa dwa rodzaje tragarzy 
+-- ci z rekoma z tylu
+-- ci z rekoma z przodu
+
+- do przeniesienia odcinka potrzebny jest jeden z rekoma z przodu i drugi z rekoma z tylu 
+- nie wszyscy tragarze chca ze soba wspolpracowac
+- odcinki sa produkowane w fabryce i nastepnie siecia drug do punktow odbioru
+
+
+PROBLEM: Ustalic w jaki sposob sa transporotwane odcinki z fabryki do miejsca budowy plotu.
+
+[WEJSCIE/WYJSCIE]
+wejscie: punkty, polaczenia punktow, punkt fabryki, punkt budowy plotu, ilosc i typ tragarzy (przeplyw sieci / mozliwosc poprowadzenia materialow przez droge ???)
+wyjscie: maksymalna siec przeplywu aby przeniesc materialy, potem otoczka wypukla ktora przedstawiac bedzie plot (zapisac do zadania 3)
+[]
+
+W skrocie:
+Tworzymy siec z dostepnych punktow i tragarzy, okreslamy maksymalny przeplyw potem otoczke wypukla i ja zapisujemy
+
+================== KONIEC ===============================
+
+
+
+
+============ ZADANIE 2 =============
+
+-Heretyk chce zapisac melodie
+-informatyk ma maszyne ktora moze zapisac tylko 0 oraz 1
+- informatyk juz probowal
+- chcial kodowac liter za pomoca 0 i 1 dlugosci 5 np. a- 00000, b- 00001
+- brakuje miejsca na cala melodie
+- brakuje malo miejsca 
+- mozna to zoptymalizowac
+- przy tym trzeba zamienic "poli" na "boli"
+- tego informatyk nie wie jak zrobic
+
+
+PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce. Znalezc rozwiazanie problemu ewentualnej zmiant innych fragmentow melodii, ktory niepolkoi informatyka
+
+[WEJSCIE/WYJSCIE]
+
+wejscie: tekst
+wyjscie: zamienione slowo oraz nowy zapis melodii
+
+[]
+
+W skrocie: 
+?
+
+================= KONIEC ============================
+
+
+
+============== ZADANIE 3 ===============
+
+- dla bezpieczenstwa raz dziennie dookola plotu ma przejsc straznik
+- punkty pierwszy trasy jest jednoczesnie punktem koncowym dla straznika
+- straznikiem moze zostac kazdy plaszczak ktory ma odpowiednia ilosc energii (ilosc energii jest losowa)
+- plaszczak po wykonaniu pracy straznika musi tydzien odpoczac
+- codziennie wybieraja tego o najwiekszej energii
+- straznik musi zatrzymac sie by rozejrzec sie
+- nie traci energii gdy punkt w ktorym sie rozglada jest ciemniejszy od tego co byl
+- w przeciwnym razie cala energie traci
+- jak straci energie to musi odpoczac (pusluchac melodii) by odzyskac energie
+- musimy ustalic dla kazdego straznika takie punkty atrzymania sie by najmniej sie meczyl
+
+PROBLEM: Ustalic jak najszybciej grafik pracy straznikow i jak najmniejsza liczbe odsluchan melodii dla kazdego stranika
+
+[WEJSCIE/WYJSCIE]
+
+wejscie: graf z zadania 1 jako plot ktory utworzylismy (graf z cyklem), straznicy z losowa iloscia energii, jasnosc kazdego punktu (badz losowa)
+wyjscie: grafik z najmniejsza iloscia odsluchan dla kazdego straznika
+
+[]
+
+w skrocie:
+biezemy straznika z najwieksza iloscia energii, i ustalamy miejsca w ktorych musi odpoczac.
+
+
+=============== KONIEC ===========================
+
+!!!
+
+ROZWIAZANIE POWINNO SKLADAC SIE Z:
+- dokumentacji
+- plikow programow
+- opisu poprawnosci rozwiazania
+- raportow przeprowadzonych testow
+
+
+!!!
