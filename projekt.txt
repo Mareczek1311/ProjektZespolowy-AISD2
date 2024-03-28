@@ -46,6 +46,10 @@ wyjscie: maksymalna siec przeplywu aby przeniesc materialy, potem otoczka wypukl
 W skrocie:
 Tworzymy siec z dostepnych punktow i tragarzy, okreslamy maksymalny przeplyw potem otoczke wypukla i ja zapisujemy
 
+UWAGI:
+
+- (Interpretacja tragarzy) jesli chodzi o tragarzy, to dla kadego polaczenia puntkow losowani sa tragarze (typy danych trzeba jeszcze okreslic) i trzeba napisac algorytm ktory bedzie ich laczyl ze soba tych wylosowanych tragarzy i to bedzie przeplyw tego polaczenia
+
 ================== KONIEC ===============================
 
 
