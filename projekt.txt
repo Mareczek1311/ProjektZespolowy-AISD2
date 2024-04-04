@@ -68,7 +68,8 @@ UWAGI:
 - tego informatyk nie wie jak zrobic
 
 
-PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce. Znalezc rozwiazanie problemu ewentualnej zmiant innych fragmentow melodii, ktory niepolkoi informatyka
+PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce.
+Znalezc rozwiazanie problemu ewentualnej zmiany innych fragmentow melodii, ktory niepokoi informatyka
 
 [WEJSCIE/WYJSCIE]
 
