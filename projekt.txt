@@ -72,13 +72,13 @@ PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "
 
 [WEJSCIE/WYJSCIE]
 
-wejscie: tekst
+wejscie: melodia jako ciag znakow
 wyjscie: zamienione slowo oraz nowy zapis melodii
 
 []
 
 W skrocie: 
-?:)
+uzyjemy algorytmu levenshteina do okreslenia odleglosci edycyjnej i zamiana tekstu za pomocą niego. Po edytowaniu tekstu uzyjemy kodowania huffmana do kompresji bezstratnej 
 
 ================= KONIEC ============================
 
