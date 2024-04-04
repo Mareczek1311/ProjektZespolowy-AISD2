@@ -64,7 +64,8 @@ Tworzymy siec z dostepnych punktow i tragarzy, okreslamy maksymalny przeplyw pot
 - tego informatyk nie wie jak zrobic
 
 
-PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce. Znalezc rozwiazanie problemu ewentualnej zmiant innych fragmentow melodii, ktory niepolkoi informatyka
+PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce.
+Znalezc rozwiazanie problemu ewentualnej zmiany innych fragmentow melodii, ktory niepokoi informatyka
 
 [WEJSCIE/WYJSCIE]
 
@@ -74,7 +75,7 @@ wyjscie: zamienione slowo oraz nowy zapis melodii
 []
 
 W skrocie: 
-?:)
+
 
 ================= KONIEC ============================
 
