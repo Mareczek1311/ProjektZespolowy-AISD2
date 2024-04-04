@@ -45,6 +45,7 @@ wyjscie: maksymalna siec przeplywu aby przeniesc materialy, potem otoczka wypukl
 
 W skrocie:
 Tworzymy siec z dostepnych punktow i tragarzy, okreslamy maksymalny przeplyw potem otoczke wypukla i ja zapisujemy
+używamy do tego (chyba) algorytmu Forda-Fulkersona oraz algorytmu Jarvisa LUB Grahama (otoczka wypukła)
 
 UWAGI:
 
