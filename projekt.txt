@@ -26,7 +26,7 @@ CO TRZEBA ZROBIC:
 - zamieniono "boli" na "poli"
 - aby chronic pienka melodie zapisana na "Stronie" chca zbudowac plot naookolo krainy wykorzystujac punkty orientacyjne
 - Plot buduje sie z odcinkow dlugosci 1 (Mozna je ciąc)
-- Odcinki beda nosic tragarze.
+- Odcinki beda nosic tragarze. (odcinki są długosci 1, mozna je ciac)
 - sa dwa rodzaje tragarzy 
 -- ci z rekoma z tylu
 -- ci z rekoma z przodu
@@ -65,7 +65,7 @@ UWAGI:
 - brakuje miejsca na cala melodie
 - brakuje malo miejsca 
 - mozna to zoptymalizowac
-- przy tym trzeba zamienic "poli" na "boli"
+- przy tym trzeba zamienic "poli" na "boli" (algorytm Huffmana, kompresja zeby zmniejszyc ilosc miejsca potrzebna do przechowywania tekstu)
 - tego informatyk nie wie jak zrobic
 
 
