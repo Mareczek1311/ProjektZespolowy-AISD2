@@ -36,7 +36,7 @@ CO TRZEBA ZROBIC:
 - odcinki sa produkowane w fabryce i nastepnie siecia drug do punktow odbioru
 
 
-PROBLEM: Ustalic w jaki sposob sa transporotwane odcinki z fabryki do miejsca budowy plotu.
+PRO8L3M: Ustalic w jaki sposob sa transporotwane odcinki z fabryki do miejsca budowy plotu.
 
 [WEJSCIE/WYJSCIE]
 wejscie: punkty, polaczenia punktow, punkt fabryki, punkt budowy plotu, ilosc i typ tragarzy (przeplyw sieci / mozliwosc poprowadzenia materialow przez droge ???)
@@ -69,7 +69,7 @@ UWAGI:
 - tego informatyk nie wie jak zrobic
 
 
-PROBLEM: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce.
+PRO8L3M: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce.
 Znalezc rozwiazanie problemu ewentualnej zmiany innych fragmentow melodii, ktory niepokoi informatyka
 
 [WEJSCIE/WYJSCIE]
@@ -99,7 +99,7 @@ uzyjemy algorytmu levenshteina do okreslenia odleglosci edycyjnej i zamiana teks
 - jak straci energie to musi odpoczac (pusluchac melodii) by odzyskac energie
 - musimy ustalic dla kazdego straznika takie punkty atrzymania sie by najmniej sie meczyl
 
-PROBLEM: Ustalic jak najszybciej grafik pracy straznikow i jak najmniejsza liczbe odsluchan melodii dla kazdego stranika
+PRO8L3M: Ustalic jak najszybciej grafik pracy straznikow i jak najmniejsza liczbe odsluchan melodii dla kazdego stranika
 
 [WEJSCIE/WYJSCIE]
 
