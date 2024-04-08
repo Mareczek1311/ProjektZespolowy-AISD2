@@ -102,7 +102,7 @@ PROBLEM: Ustalic jak najszybciej grafik pracy straznikow i jak najmniejsza liczb
 
 [WEJSCIE/WYJSCIE]
 
-wejscie: graf z zadania 1 jako plot ktory utworzylismy (graf z cyklem), straznicy z losowa iloscia energii, jasnosc kazdego punktu (badz losowa)
+wejscie: tablica zlozona z n elementow. Poszczególny element tablicy określa poziom jasności punktu. Druga tablica złożona ze strażników.
 wyjscie: grafik z najmniejsza iloscia odsluchan dla kazdego straznika
 
 []
