@@ -1,3 +1,6 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
 punkty = [
     [1, 2],
     [3, 4],
@@ -54,9 +57,28 @@ def graham(punkty):
         while det(stack[-2], stack[-1], punkty[i]) < 0:
             stack.pop()
         stack.append(punkty[i])
-
     stack.append(min)
-    print(stack)     
+    stack_tuples = [tuple(point) for point in stack]
+    print(stack_tuples)
+    return stack_tuples
 
-graham(punkty)
+res = graham(punkty)
 
+G = nx.DiGraph()
+
+G.add_nodes_from([tuple(point) for point in punkty])
+
+G.add_edges_from([(res[i], res[i+1]) for i in range(len(res)-1)])
+
+pos = {node: node for node in G.nodes()}
+
+nx.draw(G, pos, with_labels=True, node_size=700, node_color="lightblue", font_size=10, font_weight="bold")
+
+plt.axhline(y=0, color='k', linestyle='-', linewidth=1)
+plt.axvline(x=0, color='k', linestyle='-', linewidth=1)
+
+plt.xlabel('Oś X')
+plt.ylabel('Oś Y')
+plt.title('Graf w układzie współrzędnych OX i OY')
+plt.grid(True)
+plt.show()
