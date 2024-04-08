@@ -106,59 +106,14 @@ punkty = [
     (7, 7)
 ]
 
-
-
-#n = 5 # num of nodes
-#s = n - 2
-#t = n - 1
-
 n = len(punkty) # num of nodes
 s = punkty[1]
 t = punkty[-1]
-#create graph class solver with n nodes like that solver(n, s, t)
-
 solver = NetworkSolver(n, s, t)
 
 solver.addEdge(s, punkty[0], 1)
 
 solver.addEdge(punkty[0], t, 1)
-
-#edges from the source
-"""
-solver.addEdge(s, 0, 1)
-solver.addEdge(s, 1, 1)
-solver.addEdge(s, 2, 1)
-solver.addEdge(s, 3, 1)
-solver.addEdge(s, 4, 1)
-solver.addEdge(s, 5, 1)
-
-#middle edges
-
-solver.addEdge(0, 7, 1)
-solver.addEdge(0, 8, 1)
-solver.addEdge(1, 6, 1)
-solver.addEdge(1, 8, 1)
-solver.addEdge(2, 6, 1)
-solver.addEdge(3, 7, 1)
-solver.addEdge(3, 9, 1)
-solver.addEdge(3, 10, 1)
-solver.addEdge(4, 7, 1)
-solver.addEdge(4, 8, 1)
-
-
-solver.addEdge(5, 7, 1)
-solver.addEdge(5, 10, 1)
-
-
-#edges to the sink
-
-solver.addEdge(6, t, 1)
-solver.addEdge(7, t, 1)
-solver.addEdge(8, t, 1)
-solver.addEdge(9, t, 1)
-solver.addEdge(10, t, 1)
-"""
-#get maxFlow from solver
 
 print(solver.getMaxFlow())
 
