@@ -2,18 +2,18 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 punkty = [
-    [1, 2],
-    [3, 4],
-    [4, 3],
-    [5, 4],
-    [4, 5],
-    [2, 6],
-    [1, 4],
-    [2, 4],
-    [5, 5]
+    (1, 2),
+    (3, 4),
+    (4, 3),
+    (5, 4),
+    (4, 5),
+    (2, 6),
+    (1, 4),
+    (2, 4),
+    (3, 3),
+    (5, 5),
+    (6, 6),
 ]
-
-
 
 def findMin(punkty):
     min = punkty[0]
@@ -58,15 +58,14 @@ def graham(punkty):
             stack.pop()
         stack.append(punkty[i])
     stack.append(min)
-    stack_tuples = [tuple(point) for point in stack]
-    print(stack_tuples)
-    return stack_tuples
+    print(stack)
+    return stack
 
 res = graham(punkty)
 
 G = nx.DiGraph()
 
-G.add_nodes_from([tuple(point) for point in punkty])
+G.add_nodes_from([point for point in punkty])
 
 G.add_edges_from([(res[i], res[i+1]) for i in range(len(res)-1)])
 
