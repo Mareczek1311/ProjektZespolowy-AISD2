@@ -31,7 +31,7 @@ dane = [
     (5,1)
 ]
 
-class Gragam:
+class Graham:
     def __init__(self, punkty) -> None:
         self.calculated = False
         self.punkty = punkty
@@ -121,9 +121,9 @@ class Gragam:
 
 
 #Przykladowe urzycie
+if __name__ == '__main__':
+    g = Graham(dane)
 
-g = Gragam(dane)
+    print(g.getOtoczka())
 
-print(g.getOtoczka())
-
-g.draw()
+    g.draw()
