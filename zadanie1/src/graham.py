@@ -2,34 +2,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from functools import cmp_to_key
 
-###powinny byc z pliku ladowane i powinien robic to inny program !DO POPRAWIENIA!
-"""
-dane = [
-    (1, 2),
-    (3, 4),
-    (4, 3),
-    (5, 4),
-    (4, 5),
-    (2, 6),
-    (1, 4),
-    (2, 4),
-    (3, 3),
-    (5, 5),
-    (6, 6),
-]
-"""
-
-dane = [
-    (-4, -5),
-    (-3, -2),
-    (5,3),
-    (7,5),
-    (4,-1),
-    (2,-3),
-    (6,5),
-    (-5,-4),
-    (5,1)
-]
 
 class Graham:
     def __init__(self, punkty) -> None:
@@ -122,8 +94,34 @@ class Graham:
 
 #Przykladowe urzycie
 if __name__ == '__main__':
+    dane = [
+        (1, 2),
+        (3, 4),
+        (4, 3),
+        (5, 4),
+        (4, 5),
+        (2, 6),
+        (1, 4),
+        (2, 4),
+        (3, 3),
+        (5, 5),
+        (6, 6),
+    ]
+    """
+    dane = [
+        (-4, -5),
+        (-3, -2),
+        (5,3),
+        (7,5),
+        (4,-1),
+        (2,-3),
+        (6,5),
+        (-5,-4),
+        (5,1)
+    ]
+    """
+
+
     g = Graham(dane)
-
     print(g.getOtoczka())
-
     g.draw()
