@@ -39,3 +39,25 @@ def build_huffman_tree(word):
     root = priority_queue[0]   
 
     return root
+
+def huffman_coding(tree, prefix = "", code = dict):
+
+    if tree is not None:
+        if tree.character is not None:
+            code[tree.character] = prefix
+        huffman_coding(tree.left, prefix + "0", code)
+        huffman_coding(tree.right, prefix + "1", code)
+
+    return code
+
+def huffman(word):
+    root = build_huffman_tree(word)
+    code = huffman_coding(root)
+    encoded_word = ""
+    for c in word:
+        encoded_word += code[c]
+    
+    return encoded_word, code
+    
+    
+
