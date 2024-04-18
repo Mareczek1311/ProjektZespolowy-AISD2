@@ -1,4 +1,4 @@
-import heapq as HuffmanTree
+import heapq as heap
 
 class Node:
     def __init__(self, character = None, frequency = None):
@@ -22,6 +22,18 @@ def build_huffman_tree(word):
 
     for c, freq in frequency.items():
         priority_queue.append(Node(c, freq))
-
-    HuffmanTree.heapify(priority_queue)
+    
+    heap.heapify(priority_queue)
         
+    while len(priority_queue) > 1:
+        right = heap.heappop(priority_queue)
+        left = heap.heappop(priority_queue)
+
+        newNode = Node(frequency = None)
+        newNode.frequency = left.frequency + right.frequency
+        newNode.right = right
+        newNode.left = left
+
+        heap.heappush(priority_queue, newNode)
+
+    return priority_queue[0]
