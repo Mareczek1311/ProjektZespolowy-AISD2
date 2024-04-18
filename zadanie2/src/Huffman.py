@@ -40,7 +40,7 @@ def build_huffman_tree(word):
 
     return root
 
-def huffman_coding(tree, prefix = "", codes = dict):
+def huffman_coding(tree, prefix = "", codes = {}):
 
     if tree is not None:
         if tree.character is not None:
@@ -62,7 +62,7 @@ def huffman(word):
 def dehuffman(encoded_word, codes):
     original_word = ""
     code = ""
-    rev_codes = dict
+    rev_codes = {}
 
     for c, code in codes.items():
         rev_codes[code] = c
@@ -73,8 +73,12 @@ def dehuffman(encoded_word, codes):
         if code in rev_codes:
             original_word += rev_codes[code]
             code = ""
-
+        
     return original_word
 
-
+word = "AABCBAD"
+encoded_word, codes = huffman(word)
+print(encoded_word)
+original_word = dehuffman(encoded_word, codes)
+print(original_word)
     
