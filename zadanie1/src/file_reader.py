@@ -34,13 +34,15 @@ class File_reader:
         currLine = 0
         startX = 0
         startY = 0
+        endX = 0
+        endY = 0
 
         with open(self.filename, 'r') as file_in:
             for line in file_in:
                 line = line.rstrip()
 
                 if currLine == 0:
-                    n, m, startX, startY = line.split()
+                    n, m, startX, startY, endX, endY = line.split()
                     numOfVertices = int(n)
                     numOfEdges = int(m)
                     currLine += 1
@@ -65,12 +67,13 @@ class File_reader:
                 data["adjList"][pointA].append((pointB, int(flow)))
 
         data["start"] = (int(startX), int(startY))
+        data["end"] = (int(endX), int(endY))
 
         return data
 
 
 def main():
-    fr = File_reader('../data/przyklad2.txt')
+    fr = File_reader('../data/przyklad3.txt')
     data = fr.read()
     print(data)
 
