@@ -36,4 +36,6 @@ def build_huffman_tree(word):
 
         heap.heappush(priority_queue, newNode)
 
-    return priority_queue[0]
+    root = priority_queue[0]   
+
+    return root
