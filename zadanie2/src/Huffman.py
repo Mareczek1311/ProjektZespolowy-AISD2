@@ -17,14 +17,14 @@ def build_huffman_tree(word):
             frequency[c] += 1
         elif c not in frequency:
             frequency[c] = 1
-
+    #print(frequency)
     priority_queue = []
 
     for c, freq in frequency.items():
         priority_queue.append(Node(c, freq))
-    
+
     heap.heapify(priority_queue)
-        
+
     while len(priority_queue) > 1:
         right = heap.heappop(priority_queue)
         left = heap.heappop(priority_queue)
@@ -61,22 +61,22 @@ def huffman(word):
 
 def dehuffman(encoded_word, codes):
     original_word = ""
-    code = ""
+    current_code = ""
     rev_codes = {}
 
     for c, code in codes.items():
         rev_codes[code] = c
 
     for bit in encoded_word:
-        code += bit
+        current_code += bit
         
-        if code in rev_codes:
-            original_word += rev_codes[code]
-            code = ""
-        
+        if current_code in rev_codes:
+            original_word += rev_codes[current_code]
+            current_code = ""
+
     return original_word
 
-word = "AABCBAD"
+word = "DOLO_TO_FAJNY_KOLEGA"
 encoded_word, codes = huffman(word)
 print(encoded_word)
 original_word = dehuffman(encoded_word, codes)
