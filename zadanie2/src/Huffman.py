@@ -40,24 +40,41 @@ def build_huffman_tree(word):
 
     return root
 
-def huffman_coding(tree, prefix = "", code = dict):
+def huffman_coding(tree, prefix = "", codes = dict):
 
     if tree is not None:
         if tree.character is not None:
-            code[tree.character] = prefix
-        huffman_coding(tree.left, prefix + "0", code)
-        huffman_coding(tree.right, prefix + "1", code)
+            codes[tree.character] = prefix
+        huffman_coding(tree.left, prefix + "0", codes)
+        huffman_coding(tree.right, prefix + "1", codes)
 
-    return code
+    return codes
 
 def huffman(word):
     root = build_huffman_tree(word)
-    code = huffman_coding(root)
+    codes = huffman_coding(root)
     encoded_word = ""
     for c in word:
-        encoded_word += code[c]
+        encoded_word += codes[c]
     
-    return encoded_word, code
-    
-    
+    return encoded_word, codes
 
+def dehuffman(encoded_word, codes):
+    original_word = ""
+    code = ""
+    rev_codes = dict
+
+    for c, code in codes.items():
+        rev_codes[code] = c
+
+    for bit in encoded_word:
+        code += bit
+        
+        if code in rev_codes:
+            original_word += rev_codes[code]
+            code = ""
+
+    return original_word
+
+
+    
