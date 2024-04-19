@@ -26,7 +26,10 @@ class File_reader:
     def __init__(self, filename):
         self.filename = filename
 
-    def read(self):
+    def readKluby(self):
+        pass
+
+    def readPoints(self):
         if not self.filename:
             return []
         
