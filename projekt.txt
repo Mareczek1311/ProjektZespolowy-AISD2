@@ -69,13 +69,13 @@ UWAGI:
 - tego informatyk nie wie jak zrobic
 
 
-PRO8L3M: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz probujac oszczedzic wykorzystane miejsce.
+PRO8L3M: Zapisac melodie w maszynie informatyka zmieniajac wczesniej "poli" na "boli" oraz poprawić inne możliwe błędy.
 Znalezc rozwiazanie problemu ewentualnej zmiany innych fragmentow melodii, ktory niepokoi informatyka
 
 [WEJSCIE/WYJSCIE]
 
 wejscie: melodia jako ciag znakow
-wyjscie: zamienione slowo oraz nowy zapis melodii
+wyjscie: zamienione slowo/slowa oraz nowy zapis melodii
 
 []
 
