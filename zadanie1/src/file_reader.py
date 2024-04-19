@@ -46,6 +46,8 @@ class File_reader:
                 line = line.rstrip()
                 id1, id2 = line.split()
                 kluby[int(id1)].dodajDobraRelacje(int(id2))
+        
+        return kluby
      
     def readPoints(self, filename):
         if not filename:
