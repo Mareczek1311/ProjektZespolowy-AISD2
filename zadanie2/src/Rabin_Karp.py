@@ -1,37 +1,51 @@
-def Rabin_karp(pattern, text):
-    n = len(text)
-    m = len(pattern)
-    bns = 256   # bns == base of number system
-    pm = 101    # pm == prime number
+class Rabin_Karp:
+    def __init__(self, text):
+        self.text = text
+        self.indexes = {}
 
-    hash_pattern = 0
-    hash_text = 0
+    def find_pattern(self, pattern):
+        n = len(self.text)
+        m = len(pattern)
+        bns = 256   # bns == base of number system
+        pm = 101    # pm == prime number
 
-    h = pow(bns, m - 1) % pm
+        hash_pattern = 0
+        hash_text = 0
 
-    for i in range(m):
-        hash_pattern = (bns * hash_pattern + ord(pattern[i])) % pm
-        hash_text = (bns * hash_text + ord(text[i])) % pm
+        h = pow(bns, m - 1) % pm
 
-    for i in range(n - m + 1):
-        if hash_text == hash_pattern:
-            idx = 0
-            for j in range(m):
-                if text[i + j] == pattern[j]:
-                    idx += 1
-                else:
-                    break
-            if idx == m:
-                print("B)")
+        for i in range(m):
+            hash_pattern = (bns * hash_pattern + ord(pattern[i])) % pm
+            hash_text = (bns * hash_text + ord(self.text[i])) % pm
+
+        for i in range(n - m + 1):
+            if hash_text == hash_pattern:
+                idx = 0
+                for j in range(m):
+                    if self.text[i + j] == pattern[j]:
+                        idx += 1
+                    else:
+                        break
+                if idx == m:
+                    if pattern not in self.indexes:
+                        self.indexes[pattern] = []
+                    self.indexes[pattern].append(i)
+                    
+            if i < n - m:
+                hash_text = (bns * (hash_text - ord(self.text[i]) * h) + 
+                            ord(self.text[i + m])) % pm
                 
-        if i < n - m:
-            hash_text = (bns * (hash_text - ord(text[i]) * h) + 
-                         ord(text[i + m])) % pm
-            
-            if hash_text < 0:
-                hash_text += hash_text + pm
+                if hash_text < 0:
+                    hash_text += hash_text + pm
 
-text = "dolo to ziomal"
-patt = "o"
+#przyklad uzycia
 
-Rabin_karp(patt, text)
+text = "dolo to fajny kolega"
+
+RK = Rabin_Karp(text)
+
+pattern = "fajny"
+
+RK.find_pattern(pattern)
+
+print(RK.indexes)
