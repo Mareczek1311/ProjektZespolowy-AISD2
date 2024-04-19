@@ -22,16 +22,24 @@
 2 4 1 4 1
 """
 
+from Klub import Klub
+
 class File_reader:
-    def __init__(self, filename):
-        self.filename = filename
-
-    def readKluby(self):
-        pass
-
-    def readPoints(self):
-        if not self.filename:
-            return []
+    def readKluby(self, filename):
+        if not filename:
+            return {}
+        
+        kluby = {}
+        with open(filename, 'r') as file_in:
+            for line in file_in:
+                line = line.rstrip()
+                id, nazwa = line.split()
+                kluby[int(id)] = Klub(nazwa)
+        return kluby
+            
+    def readPoints(self, filename):
+        if not filename:
+            return {}
         
         data = {"adjList": {}, "start": None}
         currLine = 0
@@ -40,7 +48,7 @@ class File_reader:
         endX = 0
         endY = 0
 
-        with open(self.filename, 'r') as file_in:
+        with open(filename, 'r') as file_in:
             for line in file_in:
                 line = line.rstrip()
 
