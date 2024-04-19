@@ -13,8 +13,6 @@ class Plaszczak:
     # punkt_zatrzymania - miejsca w ktorych musi sie zatrzymac podczas trasy
     # aktualny_punkt - obecne miejsce tego barana
 
-
-    #dokonczyc
     def wygeneruj_trase_straznika(punkt_orientacyjny, straznik, maks_punkt_zatrzymania):
         trasa = []
         punkt_startowy = punkt_orientacyjny[0]
@@ -25,6 +23,7 @@ class Plaszczak:
             trasa.append(aktualny_punkt)
             punkty_zatrzymania += 1
 
+        # nie wiem narazie co tu dalej, trzeba jakies warunki dac zeby punkty wybierac
 
 
 plaszczak = Plaszczak(1, 10)
