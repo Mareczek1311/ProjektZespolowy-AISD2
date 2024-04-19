@@ -36,7 +36,17 @@ class File_reader:
                 id, nazwa = line.split()
                 kluby[int(id)] = Klub(nazwa)
         return kluby
-            
+
+    def readKlubyRelacje(self, filename, kluby):
+        if not filename:
+            return {}
+        
+        with open(filename, 'r') as file_in:
+            for line in file_in:
+                line = line.rstrip()
+                id1, id2 = line.split()
+                kluby[int(id1)].dodajDobraRelacje(int(id2))
+     
     def readPoints(self, filename):
         if not filename:
             return {}
@@ -88,5 +98,19 @@ def main():
     data = fr.read()
     print(data)
 
+def testKluby():
+    fr = File_reader()
+    kluby = fr.readKluby('../data/kluby.txt')
+    fr.readKlubyRelacje('../data/kluby_relacje.txt', kluby)
+
+    for key, value in kluby.items():
+        print(value.nazwaKlubu)
+        print("Dobre relacje:")
+        for rel in value.dobreRelacje:
+            print(kluby[rel].nazwaKlubu, end=' ')
+        print()
+        print("=========")
 if __name__ == '__main__':
-    main()
+    #main()
+
+    testKluby()

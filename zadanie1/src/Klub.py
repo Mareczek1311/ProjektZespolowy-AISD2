@@ -8,7 +8,7 @@ class Klub:
         return f"{self.id} {self.nazwaKlubu}"
     
     def dodajDobraRelacje(self, klub):
-        self.dobreRelacje.append(klub)
+        self.dobreRelacje.add(klub)
     
     #def dodajKose(self, klub):
     #   self.kosa.append(klub)
