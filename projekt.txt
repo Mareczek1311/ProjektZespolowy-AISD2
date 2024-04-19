@@ -80,7 +80,8 @@ wyjscie: zamienione slowo oraz nowy zapis melodii
 []
 
 W skrocie: 
-uzyjemy algorytmu levenshteina do okreslenia odleglosci edycyjnej i zamiana tekstu za pomocą niego. Po edytowaniu tekstu uzyjemy kodowania huffmana do kompresji bezstratnej 
+uzyjemy algorytmu Rabina-Karpa albo Aho-Corasick'a do znalezienia błednego słowa w tekście. 
+Po edytowaniu tekstu uzyjemy kodowania huffmana do kompresji bezstratnej tekstu. 
 
 ================= KONIEC ============================
 
