@@ -40,11 +40,10 @@ class Rabin_Karp:
 
 #przyklad uzycia
 
-text = "dolo to fajny kolega"
-
+text = "tekst"
 RK = Rabin_Karp(text)
 
-pattern = "fajny"
+pattern = "t"
 
 RK.find_pattern(pattern)
 
