@@ -22,13 +22,36 @@
 2 4 1 4 1
 """
 
-class File_reader:
-    def __init__(self, filename):
-        self.filename = filename
+from Klub import Klub
 
-    def read(self):
-        if not self.filename:
-            return []
+class File_reader:
+    def readKluby(self, filename):
+        if not filename:
+            return {}
+        
+        kluby = {}
+        with open(filename, 'r') as file_in:
+            for line in file_in:
+                line = line.rstrip()
+                id, nazwa = line.split()
+                kluby[int(id)] = Klub(nazwa)
+        return kluby
+
+    def readKlubyRelacje(self, filename, kluby):
+        if not filename:
+            return {}
+        
+        with open(filename, 'r') as file_in:
+            for line in file_in:
+                line = line.rstrip()
+                id1, id2 = line.split()
+                kluby[int(id1)].dodajDobraRelacje(int(id2))
+        
+        return kluby
+     
+    def readPoints(self, filename):
+        if not filename:
+            return {}
         
         data = {"adjList": {}, "start": None}
         currLine = 0
@@ -37,7 +60,7 @@ class File_reader:
         endX = 0
         endY = 0
 
-        with open(self.filename, 'r') as file_in:
+        with open(filename, 'r') as file_in:
             for line in file_in:
                 line = line.rstrip()
 
@@ -77,5 +100,19 @@ def main():
     data = fr.read()
     print(data)
 
+def testKluby():
+    fr = File_reader()
+    kluby = fr.readKluby('../data/kluby.txt')
+    fr.readKlubyRelacje('../data/kluby_relacje.txt', kluby)
+
+    for key, value in kluby.items():
+        print(value.nazwaKlubu)
+        print("Dobre relacje:")
+        for rel in value.dobreRelacje:
+            print(kluby[rel].nazwaKlubu, end=' ')
+        print()
+        print("=========")
 if __name__ == '__main__':
-    main()
+    #main()
+
+    testKluby()
