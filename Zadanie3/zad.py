@@ -12,8 +12,8 @@ class Plaszczak:
     # punkt_startowy - od ktorego zaczyna sie straznik
     # punkt_zatrzymania - miejsca w ktorych musi sie zatrzymac podczas trasy
     # aktualny_punkt - obecne miejsce tego barana
-
-    def wygeneruj_trase_straznika(punkt_orientacyjny, straznik, maks_punkt_zatrzymania):
+    
+    def wygeneruj_trase_straznika(self, punkt_orientacyjny, maks_punkt_zatrzymania):
         trasa = []
         punkt_startowy = punkt_orientacyjny[0]
         aktualny_punkt = punkt_startowy
@@ -31,14 +31,25 @@ class Plaszczak:
                 aktualny_punkt = nastepny_punkt
                 punkty_zatrzymania = 0
             else:
-                aktualny_punkt = "xd"
-                straznik.energia += 1
+                aktualny_punkt = punkt_orientacyjny[0]
+                self.energia += 1
 
+            if aktualny_punkt == punkt_startowy:
+                break
 
-        # nie wiem narazie co tu dalej, trzeba jakies warunki dac zeby punkty wybierac
+        self.trasa = trasa
 
+liczba_punktow = 10
+jasnosci = [random.randint(1, 100) for _ in range(liczba_punktow)]
+liczba_plaszczakow = 5
+plaszczaki = [Plaszczak(i + 1, random.randint(1, 10)) for i in range(liczba_plaszczakow)]
+maks_punkty_zatrzymania = 3
 
-plaszczak = Plaszczak(1, 10)
-jasnosci = [1, 2, 3, 4, 5]
-plaszczak.wygeneruj_plot(5, jasnosci)
-print(plaszczak.trasa)
+for plaszczak in plaszczaki:
+    plaszczak.wygeneruj_trase_straznika(jasnosci, maks_punkty_zatrzymania)
+    print(f"Straznik {plaszczak.numer}: Trasa: {plaszczak.trasa}, Energia: {plaszczak.energia}")
+
+#plaszczak = Plaszczak(1, 10)
+#jasnosci = [1, 2, 3, 4, 5]
+#plaszczak.wygeneruj_plot(5, jasnosci)
+#print(plaszczak.trasa)
