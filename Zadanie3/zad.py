@@ -23,6 +23,18 @@ class Plaszczak:
             trasa.append(aktualny_punkt)
             punkty_zatrzymania += 1
 
+            indeks = punkt_orientacyjny.index(aktualny_punkt)
+            nastepny_indeks = (indeks + 1) % len(punkt_orientacyjny)
+            nastepny_punkt = punkt_orientacyjny[nastepny_indeks]
+
+            if nastepny_punkt > aktualny_punkt or punkty_zatrzymania > maks_punkt_zatrzymania:
+                aktualny_punkt = nastepny_punkt
+                punkty_zatrzymania = 0
+            else:
+                aktualny_punkt = "xd"
+                straznik.energia += 1
+
+
         # nie wiem narazie co tu dalej, trzeba jakies warunki dac zeby punkty wybierac
 
 
