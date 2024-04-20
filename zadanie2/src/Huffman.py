@@ -87,16 +87,16 @@ class Huffman:
         return original_text
 
 ### przykład użycia 
-text = "DOLO_TO_FAJNY_KOLEGA"
-h = Huffman(text)
-h.huffman()
-print(h.encoded_text) ##zwraca skompresowany tekst
+# text = "DOLO_TO_FAJNY_KOLEGA"
+# h = Huffman(text)
+#h.huffman()
+# print(h.encoded_text) ##zwraca skompresowany tekst
 
 ### możemy tak też sprawdzić czy zamiana skompresowanego tekstu 
 ### z powrotem na originalny wyraz będzie prawidłowa
 ### tzn. text == original text
  
-original_text= h.dehuffman()
-print(original_text)
+# original_text= h.dehuffman()
+#print(original_text)
 
     

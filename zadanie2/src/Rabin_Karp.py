@@ -40,11 +40,11 @@ class Rabin_Karp:
 
 #przyklad uzycia
 
-text = "tekst"
-RK = Rabin_Karp(text)
+# text = "tekst"
+# RK = Rabin_Karp(text)
 
-pattern = "t"
+# pattern = "t"
 
-RK.find_pattern(pattern)
+# RK.find_pattern(pattern)
 
-print(RK.indexes)
+# print(RK.indexes)
