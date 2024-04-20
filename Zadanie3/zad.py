@@ -12,7 +12,7 @@ class Plaszczak:
     # punkt_startowy - od ktorego zaczyna sie straznik
     # punkt_zatrzymania - miejsca w ktorych musi sie zatrzymac podczas trasy
     # aktualny_punkt - obecne miejsce tego barana
-    
+
     def wygeneruj_trase_straznika(self, punkt_orientacyjny, maks_punkt_zatrzymania):
         trasa = []
         punkt_startowy = punkt_orientacyjny[0]
@@ -23,14 +23,17 @@ class Plaszczak:
             trasa.append(aktualny_punkt)
             punkty_zatrzymania += 1
 
+            #wybiera punkt orientacyjny z ruchem wskazowek zegara
             indeks = punkt_orientacyjny.index(aktualny_punkt)
             nastepny_indeks = (indeks + 1) % len(punkt_orientacyjny)
             nastepny_punkt = punkt_orientacyjny[nastepny_indeks]
 
+            # sprawdzenie czy straznik zachowuje energie
             if nastepny_punkt > aktualny_punkt or punkty_zatrzymania > maks_punkt_zatrzymania:
                 aktualny_punkt = nastepny_punkt
                 punkty_zatrzymania = 0
             else:
+                # straznik musi odpoczac
                 aktualny_punkt = punkt_orientacyjny[0]
                 self.energia += 1
 
