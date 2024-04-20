@@ -3,28 +3,26 @@ import matplotlib.pyplot as plt
 
 def draw_tragarze(tragarze, kluby):
     G = nx.Graph()
-    print()
-    
-    tragarze_z_rekoma_z_przodu = []
-    tragarze_z_rekoma_z_tylu = []
     
     for t in tragarze:
-        print(t)
-        if t.rece_z_przodu:
-            G.add_node(t.id, pos=(1, t.indexY))
-            tragarze_z_rekoma_z_przodu.append(t)
+        if t.start_lub_end != None:
+            G.add_node(t.id, pos=(t.start_lub_end, 2.5))
+        elif t.rece_z_przodu:
+            G.add_node(t.id, pos=(2, t.indexY))
         else:
-            G.add_node(t.id, pos=(5, t.indexY))
-            tragarze_z_rekoma_z_tylu.append(t)
+            G.add_node(t.id, pos=(6, t.indexY))
 
-    for t1 in tragarze_z_rekoma_z_przodu:
-        for t2 in tragarze_z_rekoma_z_tylu:
-            if t1.id_ulubionego_klubu == t2.id_ulubionego_klubu or kluby[t1.id_ulubionego_klubu].sprawdzRelacje(t2.id_ulubionego_klubu):
-                G.add_edge(t1.id, t2.id)
-    
+    for t in tragarze:
+        for tragarz in tragarze[t]:
+            G.add_edge(t.id, tragarz[0].id, weight=tragarz[1])
+
+    edge_labels = { (t1, t2): w['weight'] for t1, t2, w in G.edges(data=True)}
+
+
     pos = nx.get_node_attributes(G, 'pos')
     print(pos)
     nx.draw(G, pos, with_labels=True, node_size=500, node_color="lightblue", font_size=10, font_weight="bold")
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 
     plt.axhline(y=0, color='k', linestyle='-', linewidth=1)
     plt.axvline(x=0, color='k', linestyle='-', linewidth=1)
