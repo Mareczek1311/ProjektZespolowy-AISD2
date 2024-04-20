@@ -20,10 +20,9 @@ class File_reader:
             for i in range(self.words):
                 data = file.readline().strip()
                 wrongWord, correctWord = data.split()
-                self.wordsToReplace[wrongWord] = []
-                self.wordsToReplace[wrongWord].append(correctWord)
+                self.wordsToReplace[wrongWord] = correctWord
 
 #przyklad uzycia
 
-# f = File_reader('../tests/test1.txt')
-# f.readText()
+#f = File_reader('../tests/test1.txt')
+#f.readText()
