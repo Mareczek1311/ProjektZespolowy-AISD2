@@ -18,6 +18,8 @@ class Main:
                 for i in indexes:
                     self.repair(i, self.fr.wordsToReplace[word])
 
+            self.rk.indexes.clear()
+
         print("\nNaprawiony tekst: \n")
         print(self.fr.text)
 
@@ -40,6 +42,6 @@ class Main:
 
 #przyklad uzycia
 
-# m = Main('../tests/test1.txt')
-# m.run()
+m = Main('tests/test3.txt')
+m.run()
 

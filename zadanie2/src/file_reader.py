@@ -22,6 +22,8 @@ class File_reader:
                 wrongWord, correctWord = data.split()
                 self.wordsToReplace[wrongWord] = correctWord
 
+
+
 #przyklad uzycia
 
 #f = File_reader('../tests/test1.txt')
