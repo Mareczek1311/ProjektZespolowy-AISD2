@@ -21,6 +21,7 @@
 3 4 3 3 1
 2 4 1 4 1
 """
+#wszystkie punkty powinny byc klasa oddzielna poniewaz gdy zmienie x i y to zmieni sie wszedzie
 
 from Klub import Klub
 
