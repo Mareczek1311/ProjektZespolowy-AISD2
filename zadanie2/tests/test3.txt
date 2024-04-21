@@ -1,0 +1,13 @@
+6 6
+Darek
+Dariusz
+Jakuw
+Cacper
+Zusia
+Samochud
+Darek Marek
+Dariusz Mariusz
+Jakuw Jakub
+Cacper Kacper
+Zusia Zuzia
+Samochud Samochod

@@ -1,3 +1,8 @@
-1 1
-lodo lodo lodo lodo
-lodo dolo
+5 2
+polimordizm
+abapoliaba
+polo poli
+abapoliabapoliaba
+abapolipoliaba
+poli boli
+dizm fizm
