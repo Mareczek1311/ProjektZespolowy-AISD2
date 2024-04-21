@@ -77,9 +77,9 @@ class Main:
         solver.config(tragarzStart, tragarzEnd, tragarze)
         print(solver.getMaxFlow())
         print("Graph:")
-        solver.getGraph()
+        graf = solver.getGraph()
 
-        draw_tragarze(tragarze, kluby)
+        draw_tragarze(tragarze, kluby, graf)
 
 
     def run(self):

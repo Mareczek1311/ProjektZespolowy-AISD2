@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def draw_tragarze(tragarze, kluby):
+def draw_tragarze(tragarze, kluby, siec):
     G = nx.Graph()
     
     for t in tragarze:
@@ -12,9 +12,9 @@ def draw_tragarze(tragarze, kluby):
         else:
             G.add_node(t.id, pos=(6, t.indexY))
 
-    for t in tragarze:
-        for tragarz in tragarze[t]:
-            G.add_edge(t.id, tragarz[0].id, weight=tragarz[1])
+    for t in siec:
+        for tragarz in siec[t]:
+            G.add_edge(t.id, tragarz.to.id, weight=tragarz.capacity)
 
     edge_labels = { (t1, t2): w['weight'] for t1, t2, w in G.edges(data=True)}
 

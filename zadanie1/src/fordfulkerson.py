@@ -55,7 +55,9 @@ class FordFulkerson:
         for node in self.graph:
             print(node)
             for edge in self.graph[node]:
-                print("  ->", edge.to, " Capacity: ", edge.capacity, " Flow: ", edge.flow)     
+                print("  ->", edge.to, " Capacity: ", edge.capacity, " Flow: ", edge.flow) 
+
+        return self.graph    
 
     def getMaxFlow(self):
         self.execute()
