@@ -8,7 +8,7 @@
   - poprawiona opowieść-melodia jest kompresowana na ciąg znaków 0-1 za pomocą algorytmu Huffmana
   - przy użyciu zaimplementowanej funkcji dehuffman() możliwy jest powrót do normalnego tekstu
     
-## Dane wejśćiowe (plik .txt)
+## Dane wejściowe (plik .txt)
 
 - w pierwszej linijce pliku tekstowego są zawarte dwie liczby
   - pierwsza liczba to ilość linii w których zapisana jest opowieść-melodia
