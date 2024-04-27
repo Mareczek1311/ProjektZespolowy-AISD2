@@ -28,10 +28,38 @@ class Plot:
 
     def patrol(self, plaszczaki, dni):
         for dzien in range(dni):
+            print()
             print(f"Dzień: {dzien + 1}")
+            print()
             straznik = self.znajdz_straznika(plaszczaki)
-            print(f"Plaszczak z maks energia: {straznik.numer}")
+            if straznik:
+                print(f"Plaszczak z maks energia: {straznik.numer}")
+            else:
+                print("Brak plaszczaków do patrolowania.")
+                break
 
+            punkt_start = 1
+            for index, (punkt, jasnosc) in enumerate(self.trasa):
+                if index == len(self.trasa) - 1:
+                    # Jeśli to ostatni punkt, strażnik wraca do punktu startowego
+                    if straznik:
+                        print(f"Plaszczak {straznik.numer} wrócił do punktu {punkt_start}.")
+                    break
+
+                if index < len(self.trasa) - 1:
+                    nastepna_jasnosc = self.trasa[index + 1][1]
+                    if jasnosc < nastepna_jasnosc:
+                        print("Plaszczak musi odpoczac ==== Melodia")
+                        plaszczaki.remove(straznik)
+                        straznik = self.znajdz_straznika(plaszczaki)
+                        if not straznik:
+                            print("Brak plaszczaków do patrolowania.")
+                            break
+                    if straznik:
+                        print(f"Plaszczak {straznik.numer} patroluje punkt: {punkt}")
+                    punkt_start = punkt
+
+        print()
 
     def znajdz_straznika(self, plaszczaki):
         max_energia = 0
