@@ -34,30 +34,32 @@ class Plot:
             straznik = self.znajdz_straznika(plaszczaki)
             if straznik:
                 print(f"Plaszczak z maks energia: {straznik.numer}")
+                print()
             else:
                 print("Brak plaszczaków do patrolowania.")
                 break
-
-            punkt_start = 1
+            ostatni_punkt = self.trasa[-1][0]  # Pobranie numeru ostatniego punktu
             for index, (punkt, jasnosc) in enumerate(self.trasa):
-                if index == len(self.trasa) - 1:
-                    # Jeśli to ostatni punkt, strażnik wraca do punktu startowego
-                    if straznik:
-                        print(f"Plaszczak {straznik.numer} wrócił do punktu {punkt_start}.")
-                    break
-
                 if index < len(self.trasa) - 1:
                     nastepna_jasnosc = self.trasa[index + 1][1]
                     if jasnosc < nastepna_jasnosc:
-                        print("Plaszczak musi odpoczac ==== Melodia")
+                        print()
+                        print(f"Plaszczak {straznik.numer} patroluje punkt: {punkt} Jasnosc - {jasnosc}")
+                        print(f"Plaszczak {straznik.numer} musi odpoczac ==== Melodia ==== Punkt - {punkt}, Jasnosc - {jasnosc}")
+                        print()
                         plaszczaki.remove(straznik)
                         straznik = self.znajdz_straznika(plaszczaki)
                         if not straznik:
                             print("Brak plaszczaków do patrolowania.")
                             break
                     if straznik:
-                        print(f"Plaszczak {straznik.numer} patroluje punkt: {punkt}")
+                        print(f"Plaszczak {straznik.numer} patroluje punkt: {punkt} Jasnosc - {jasnosc}")
                     punkt_start = punkt
+
+            # Po zakończeniu pętli wyświetlamy informację o powrocie do rzeczywistego ostatniego punktu trasy
+            if straznik:
+                print(f"Plaszczak {straznik.numer} wrócił do punktu {ostatni_punkt} Jasnosc - {jasnosc}")
+                print("Koniec patrolu")
 
         print()
 
@@ -73,7 +75,7 @@ class Plot:
         return plaszczak_z_max_energia
 
 
-plaszczaki = [
+plaszczaki1 = [
     Plaszczak(1, 5),
     Plaszczak(2, 8),
     Plaszczak(3, 3),
@@ -83,8 +85,34 @@ plaszczaki = [
     Plaszczak(7, 2)
 ]
 
-jasnosci_punktow = [3, 5, 2, 8, 1, 6, 4, 9, 7, 2]
+# Test 1 - zabraknie plaszczakow do patrolowania poniewaz nastepne punkty maja zbyt duze jasnosci niz poprzednie
+jasnosci_punktow1 = [10, 9, 8, 9, 5, 4, 3, 2, 1, 0]
 plot1 = Plot()
-plot1.wygeneruj_plot(10, jasnosci_punktow)
+plot1.wygeneruj_plot(10, jasnosci_punktow1)
 
-plot1.patrol(plaszczaki, 7)
+plot1.patrol(plaszczaki1, 7)
+
+# Test 2 - nie zabraknie plaszczakow do patrolowania
+print()
+print()
+print("====== TEST 2 ======")
+
+plaszczaki2 = [
+    Plaszczak(1, 5),
+    Plaszczak(2, 8),
+    Plaszczak(3, 3),
+    Plaszczak(4, 10),
+    Plaszczak(5, 7),
+    Plaszczak(6, 3),
+    Plaszczak(7, 2),
+    Plaszczak(8, 2),
+    Plaszczak(9, 2)
+]
+
+jasnosci_punktow2 = [8, 9, 8, 7]
+plot2 = Plot()
+plot2.wygeneruj_plot(4, jasnosci_punktow2)
+
+plot2.patrol(plaszczaki2, 7)
+
+
