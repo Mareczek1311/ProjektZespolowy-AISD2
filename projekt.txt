@@ -111,6 +111,9 @@ wyjscie: grafik z najmniejsza iloscia odsluchan dla kazdego straznika
 
 w skrocie:
 biezemy straznika z najwieksza iloscia energii, i ustalamy miejsca w ktorych musi odpoczac.
+- jesli nastepne punkty maja mniejsza jasnosc od obecnego to przechodzimy do punktu o najwiekszej jasnosci
+- jesli nastepne punkty maja wieksza jasnosc od obecnego to przechodzimy do punktu o najwiekszej jasnosci
+- jesli nastepne punkty maja wieksza lub mniejsza jasnosc od obecnego punktu to bierzemy punkt o mniejszej jasnosci ale nie wiekszego od obecnego punktu zeby nie sluchac melodii 
 
 
 =============== KONIEC ===========================
