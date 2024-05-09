@@ -38,20 +38,18 @@ class Plot:
             print()
             straznik = self.znajdz_straznika(plaszczaki)
             if straznik:
-                print(f"Plaszczak z maks energia: Plaszczak:{straznik.numer}")
+                print(f"Plaszczak z maks energia: Plaszczak:{straznik.numer}, energia: {straznik.energia}")
                 print()
                 self.wyznacz_trase(straznik, mozliwe_punkty)
                 print()
                 plaszczaki.remove(straznik)
             else:
-                print("Brak plaszczakow do patrolowania")
+                print("Brak płaszczaków do patrolowania")
                 break
             
             # usuwanie punktu z poczatku i dodawanie go na koniec kolejki
             self.trasa.pop(0)
             self.trasa.append(self.trasa[0])
-
-
 
     def znajdz_straznika(self, plaszczaki):
         max_energia = 0
@@ -78,27 +76,30 @@ class Plot:
                 if self.trasa[i] not in trasa_straznika:
                     dostepne_punkty.append(self.trasa[i])
 
+            # Sprawdzenie, czy punkt startowy jest dostępny
             if punkt_startowy in dostepne_punkty and punkt_startowy not in trasa_straznika:
                 trasa_straznika.append(punkt_startowy)
                 break
 
+            # Wybieranie punktu z dostępnych punktów
             wybrany_punkt = None
             for punkt in dostepne_punkty:
                 if punkt not in trasa_straznika:
-                    if punkt[1] < trasa_straznika[-1][1]:
-                        if wybrany_punkt is None or punkt[0] > wybrany_punkt[0]:
+                    if punkt[1] < trasa_straznika[-1][1]:  # Jasnosc punktu mniejsza od obecnego punktu na trasie
+                        if wybrany_punkt is None or punkt[0] > wybrany_punkt[0]:  # Największy indeks punktu
                             wybrany_punkt = punkt
-                    elif punkt[1] > trasa_straznika[-1][1]:
-                        if wybrany_punkt is None or punkt[0] > wybrany_punkt[0]:
+                    elif punkt[1] > trasa_straznika[-1][1]:  # Jasnosc punktu większa od obecnego punktu na trasie
+                        if wybrany_punkt is None or punkt[0] > wybrany_punkt[0]:  # Największy indeks punktu
                             wybrany_punkt = punkt
 
             if wybrany_punkt and wybrany_punkt not in trasa_straznika:
-                if wybrany_punkt[1] > trasa_straznika[-1][1]:
-                    trasa_straznika.append("melodia")
+                if wybrany_punkt[1] > trasa_straznika[-1][1]:  # Jeśli jasność wybranego punktu jest większa
+                    trasa_straznika.append("melodia")  # Dodaj "melodia" do trasy
                 trasa_straznika.append(wybrany_punkt)
                 obecny_indeks = self.trasa.index(wybrany_punkt)
             else:
-                break
+                break  # Jeśli nie ma odpowiedniego punktu przerwamy pętlę
+
             print("Dostępne punkty:", dostepne_punkty)
             print("Trasa strażnika:", trasa_straznika)
         
@@ -106,10 +107,6 @@ class Plot:
         print("Trasa strażnika:", trasa_straznika)
 
         return trasa_straznika
-
-
-
-
 
 # Testy
 
@@ -127,9 +124,9 @@ jasnosci_punktow1 = [10, 9, 8, 9, 5]
 plot1 = Plot()
 plot1.wygeneruj_plot(5, jasnosci_punktow1)
 
-plot1.patrol(plaszczaki1, 7, 2)
+plot1.patrol(plaszczaki1, 7, 3)
 
-#print("\n\n====== TEST 2 ======\n")
+print("\n\n====== TEST 2 ======\n")
 
 plaszczaki2 = [
     Plaszczak(1, 5),
@@ -140,13 +137,13 @@ plaszczaki2 = [
     Plaszczak(6, 3),
     Plaszczak(7, 2),
     Plaszczak(8, 2),
-    Plaszczak(9, 2)
+    Plaszczak(9, 5)
 ]
 
-#jasnosci_punktow2 = [8, 9, 8, 7]
-#plot2 = Plot()
-#plot2.wygeneruj_plot(4, jasnosci_punktow2)
+jasnosci_punktow2 = [8, 9, 8, 7, 5, 10, 11, 5, 7, 1]
+plot2 = Plot()
+plot2.wygeneruj_plot(10, jasnosci_punktow2)
 
-#plot2.patrol(plaszczaki2, 7, 2)
+plot2.patrol(plaszczaki2, 7, 2)
 
 #plot1.wyswietl_plot()
