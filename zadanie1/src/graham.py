@@ -4,7 +4,7 @@ from functools import cmp_to_key
 
 
 class Graham:
-    def __init__(self, punkty) -> None:
+    def __init__(self, punkty = []) -> None:
         self.calculated = False
         self.punkty = punkty
         self.convexHull = []
@@ -76,9 +76,6 @@ class Graham:
         pos = {node: node for node in G.nodes()}
 
         nx.draw(G, pos, with_labels=True, node_size=700, node_color="lightblue", font_size=10, font_weight="bold")
-
-        plt.axhline(y=0, color='k', linestyle='-', linewidth=1)
-        plt.axvline(x=0, color='k', linestyle='-', linewidth=1)
 
         plt.grid(True)
         plt.show()
