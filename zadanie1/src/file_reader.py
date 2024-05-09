@@ -23,33 +23,7 @@
 """
 #wszystkie punkty powinny byc klasa oddzielna poniewaz gdy zmienie x i y to zmieni sie wszedzie
 
-from Klub import Klub
-
 class File_reader:
-    def readKluby(self, filename):
-        if not filename:
-            return {}
-        
-        kluby = {}
-        with open(filename, 'r') as file_in:
-            for line in file_in:
-                line = line.rstrip()
-                id, nazwa = line.split()
-                kluby[int(id)] = Klub(nazwa)
-        return kluby
-
-    def readKlubyRelacje(self, filename, kluby):
-        if not filename:
-            return {}
-        
-        with open(filename, 'r') as file_in:
-            for line in file_in:
-                line = line.rstrip()
-                id1, id2 = line.split()
-                kluby[int(id1)].dodajDobraRelacje(int(id2))
-        
-        return kluby
-     
     def readPoints(self, filename):
         if not filename:
             return {}
