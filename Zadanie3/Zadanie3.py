@@ -1,9 +1,11 @@
 import heapq
+import random
 
 class Plaszczak:
     def __init__(self, numer, energia):
         self.numer = numer
         self.energia = energia
+
 
     def info_plaszczak(self):
         print(f"Plaszczak: {self.numer}, Energia: {self.energia}")
@@ -31,7 +33,8 @@ class Plot:
         for punkt, jasnosc in self.trasa:
             print(f"Punkt{punkt}, jasnosc {jasnosc}")
 
-    def patrol(self, plaszczaki, dni, mozliwe_punkty):
+    def patrol(self, plaszczaki, mozliwe_punkty):
+        dni = 7
         for dzien in range(dni):
             print(f"Dzien: {dzien + 1}")
             self.wyswietl_plot()
@@ -109,7 +112,7 @@ class Plot:
         return trasa_straznika
 
 # Testy
-
+"""
 plaszczaki1 = [
     Plaszczak(1, 5),
     Plaszczak(2, 8),
@@ -119,15 +122,16 @@ plaszczaki1 = [
     Plaszczak(6, 3),
     Plaszczak(7, 2)
 ]
-
+"""
+zasieg_straznika1 = 3
+plaszczaki1 = [Plaszczak(i, random.randint(1, 10)) for i in range(1, 8)]
 jasnosci_punktow1 = [10, 9, 8, 9, 5]
 plot1 = Plot()
-plot1.wygeneruj_plot(5, jasnosci_punktow1)
-
-plot1.patrol(plaszczaki1, 7, 3)
+plot1.wygeneruj_plot(len(jasnosci_punktow1), jasnosci_punktow1)
+plot1.patrol(plaszczaki1, zasieg_straznika1)
 
 print("\n\n====== TEST 2 ======\n")
-
+"""
 plaszczaki2 = [
     Plaszczak(1, 5),
     Plaszczak(2, 8),
@@ -139,11 +143,10 @@ plaszczaki2 = [
     Plaszczak(8, 2),
     Plaszczak(9, 5)
 ]
-
+"""
+zasieg_straznika2 = 2
+plaszczaki2 = [Plaszczak(i, random.randint(1, 10)) for i in range(1, 8)]
 jasnosci_punktow2 = [8, 9, 8, 7, 5, 10, 11, 5, 7, 1]
 plot2 = Plot()
-plot2.wygeneruj_plot(10, jasnosci_punktow2)
-
-plot2.patrol(plaszczaki2, 7, 2)
-
-#plot1.wyswietl_plot()
+plot2.wygeneruj_plot(len(jasnosci_punktow2), jasnosci_punktow2)
+plot2.patrol(plaszczaki2, zasieg_straznika2)
