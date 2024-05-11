@@ -26,4 +26,23 @@ class TestGraham:
         g = Graham()
         assert g.findMin(points) == expected
 
+    @pytest.mark.parametrize("p1, p2, expected", [
+        ((1, 2), (1, 2), 0),       # te same punkty
+        ((0, 0), (3, 4), 25),      # przypadek 1
+        ((-1, -1), (-4, -5), 25),  # przypadek 1 tylko ze ujemne liczby
+        ((1, 1), (-1, -1), 8),     # punkty na przekatnej
+    ])
+    def test_distSq(self, p1, p2, expected):
+        g = Graham()
+        assert g.distSq(p1, p2) == expected
     
+    @pytest.mark.parametrize("p1, p2, mini, expected", [
+        ((2, 3), (4, 5), (1,1), 1),       # przyklad 1
+        ((2, 3), (1, 2), (1,1), -1),       # przyklad 2
+        ((3, 6), (5, 10), (1,2), -1) ,    # Points in different quadrants
+        ((5, 10), (3, 6), (1,2), 1)     # Points in different quadrants
+    ])
+    def test_compare(self, p1, p2, mini, expected):
+        g = Graham()
+        g.min = mini
+        assert g.compare(p1, p2) == expected
