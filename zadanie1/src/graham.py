@@ -46,9 +46,14 @@ class Graham:
     def algorytm(self):
         punkty = self.punkty
 
+        if len(punkty) < 3:
+            self.convexHull = []
+            return
+
         self.min = self.findMin(punkty)
         
         punkty = sorted(punkty, key=cmp_to_key(self.compare))
+
 
         stack = []
         stack.append(punkty[0])
@@ -60,7 +65,6 @@ class Graham:
             while self.det(stack[-2], stack[-1], punkty[i]) < 0:
                 stack.pop()
             stack.append(punkty[i])
-        stack.append(punkty[0])
         
         self.convexHull = stack
     

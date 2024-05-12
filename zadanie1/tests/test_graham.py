@@ -46,3 +46,16 @@ class TestGraham:
         g = Graham()
         g.min = mini
         assert g.compare(p1, p2) == expected
+
+    @pytest.mark.parametrize("punkty, expected_hull", [
+        ([(0, 0), (1, 1), (2, 0), (1, -1)], [(1,-1),(2, 0), (1, 1), (0,0)]),
+        ([(0, 0), (1, 0), (2, 0)], [(2, 0), (1, 0), (0, 0)]),
+        ([(0, 0), (2, 2), (3, 1), (1, 3), (-1, 2)], [(0, 0), (3, 1), (2, 2), (1, 3), (-1, 2)]),
+        ([(1, 1)], []),
+        ([], [])
+    ])
+    def test_algorytm(self, punkty, expected_hull):
+        g = Graham(punkty)
+        g.algorytm()
+        g.draw()
+        assert g.convexHull == expected_hull
