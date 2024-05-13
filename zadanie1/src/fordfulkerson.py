@@ -2,11 +2,11 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 class Edge:
-    def __init__(self, fr, to, capacity):
+    def __init__(self, fr, to, capacity, flow=0):
         self.fr = fr
         self.to = to
         self.capacity = capacity #constant
-        self.flow = 0
+        self.flow = flow
     
     def isResidual(self):
         return self.capacity == 0
@@ -14,11 +14,9 @@ class Edge:
     def remainingCapacity(self):
         return self.capacity - self.flow
 
-    def augment(self, flow):
-        self.flow += flow
-        self.reverse.flow -= flow
-
-    
+    def augment(self, newFlow):
+        self.flow += newFlow
+        self.reverse.flow -= newFlow
 
 class FordFulkerson:
     def __init__(self, n, s, t, punkty):

@@ -15,7 +15,6 @@ class TestGraham:
     def test_det(self, points, expected):
         g = Graham()
         assert g.det(points[0], points[1], points[2]) == expected
-    
 
     @pytest.mark.parametrize("points, expected", [
         ([[0,3], [3,1], [2,2]], [3,1]), #klasyczny przypadek, punkt 3,1 ma najmniejsza wartosc y 
