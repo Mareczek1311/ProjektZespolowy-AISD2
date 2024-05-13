@@ -1,0 +1,203 @@
+\doxysection{graham.\+Graham Class Reference}
+\hypertarget{classgraham_1_1_graham}{}\label{classgraham_1_1_graham}\index{graham.Graham@{graham.Graham}}
+
+
+Klasa ktora pozowli na wyznaczenie otoczki wypuklej.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classgraham_1_1_graham_a9b8ce1ddf399c79e15faf3f7b1d690a8}{punkty}}=\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Konstruktor dla klasy Graham. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_a3a39c99f8698566c26f6e5797ca5be2e}{find\+Min}} (self, \mbox{\hyperlink{classgraham_1_1_graham_a9b8ce1ddf399c79e15faf3f7b1d690a8}{punkty}})
+\begin{DoxyCompactList}\small\item\em find\+Min Metoda ktora znajduje punkt o najmniejszej wspolrzednej y \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_a1b981bbeb697255b115ffa8458f57809}{det}} (self, p1, p2, p3)
+\begin{DoxyCompactList}\small\item\em det Metoda ktora oblicza wyznacznik macierzy 2x2 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_a84a607a740154a82425c39561ff18758}{dist\+Sq}} (self, p1, p2)
+\begin{DoxyCompactList}\small\item\em dist\+Sq Metoda ktora oblicza kwadrat odleglosci miedzy dwoma punktami \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_a9487566a680152291db87eef503c6897}{compare}} (self, p1, p2)
+\begin{DoxyCompactList}\small\item\em compare Metoda ktora porownuje dwa punkty wzgledem punktu o najmniejszej wspolrzednej y \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_ad8b90e47dbe01cd000f26f7f5752e814}{algorytm}} (self)
+\begin{DoxyCompactList}\small\item\em algorytm Metoda ktora wyznacza otoczke wypukla dla punktow z listy punkty \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_aab6fb33774a7c01a876b09ae3fef94e9}{draw}} (self)
+\begin{DoxyCompactList}\small\item\em Metoda ktora rysuje otoczke wypukla. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_afde91cccfddba7107a1bf39c7e4b7191}{get\+Otoczka}} (self)
+\begin{DoxyCompactList}\small\item\em Metoda ktora zwraca otoczke wypukla. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgraham_1_1_graham_abad3117417ee12bc039fd968a87d79e0}{calculated}}
+\item 
+\mbox{\hyperlink{classgraham_1_1_graham_a9b8ce1ddf399c79e15faf3f7b1d690a8}{punkty}}
+\item 
+\mbox{\hyperlink{classgraham_1_1_graham_accee812d5ef1fdfa5524c9f96675f7d4}{convex\+Hull}}
+\item 
+\mbox{\hyperlink{classgraham_1_1_graham_abfa35d9e6b52398005525f7817bbc7de}{min}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa ktora pozowli na wyznaczenie otoczki wypuklej. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e}\label{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e} 
+\index{graham.Graham@{graham.Graham}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None graham.\+Graham.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{punkty = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor dla klasy Graham. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em punkty} & -\/ lista punktow (x, y) dla ktorych chcemy wyznaczyc otoczke wypukla \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgraham_1_1_graham_ad8b90e47dbe01cd000f26f7f5752e814}\label{classgraham_1_1_graham_ad8b90e47dbe01cd000f26f7f5752e814} 
+\index{graham.Graham@{graham.Graham}!algorytm@{algorytm}}
+\index{algorytm@{algorytm}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{algorytm()}{algorytm()}}
+{\footnotesize\ttfamily graham.\+Graham.\+algorytm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+algorytm Metoda ktora wyznacza otoczke wypukla dla punktow z listy punkty 
+
+\Hypertarget{classgraham_1_1_graham_a9487566a680152291db87eef503c6897}\label{classgraham_1_1_graham_a9487566a680152291db87eef503c6897} 
+\index{graham.Graham@{graham.Graham}!compare@{compare}}
+\index{compare@{compare}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily graham.\+Graham.\+compare (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{p1,  }\item[{}]{p2 }\end{DoxyParamCaption})}
+
+
+
+compare Metoda ktora porownuje dwa punkty wzgledem punktu o najmniejszej wspolrzednej y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & -\/ pierwszy punkt (x, y) \\
+\hline
+{\em p2} & -\/ drugi punkt (x, y) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 jezeli p1 jest mniejszy od p2, 1 jezeli p1 jest wiekszy od p2, 0 jezeli sa rowne 
+\end{DoxyReturn}
+\Hypertarget{classgraham_1_1_graham_a1b981bbeb697255b115ffa8458f57809}\label{classgraham_1_1_graham_a1b981bbeb697255b115ffa8458f57809} 
+\index{graham.Graham@{graham.Graham}!det@{det}}
+\index{det@{det}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily graham.\+Graham.\+det (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{p1,  }\item[{}]{p2,  }\item[{}]{p3 }\end{DoxyParamCaption})}
+
+
+
+det Metoda ktora oblicza wyznacznik macierzy 2x2 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & -\/ pierwszy punkt (x, y) \\
+\hline
+{\em p2} & -\/ drugi punkt (x, y) \\
+\hline
+{\em p3} & -\/ trzeci punkt (x, y) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wyznacznik macierzy 3x3 
+\end{DoxyReturn}
+\Hypertarget{classgraham_1_1_graham_a84a607a740154a82425c39561ff18758}\label{classgraham_1_1_graham_a84a607a740154a82425c39561ff18758} 
+\index{graham.Graham@{graham.Graham}!distSq@{distSq}}
+\index{distSq@{distSq}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{distSq()}{distSq()}}
+{\footnotesize\ttfamily graham.\+Graham.\+dist\+Sq (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{p1,  }\item[{}]{p2 }\end{DoxyParamCaption})}
+
+
+
+dist\+Sq Metoda ktora oblicza kwadrat odleglosci miedzy dwoma punktami 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & -\/ pierwszy punkt (x, y) \\
+\hline
+{\em p2} & -\/ drugi punkt (x, y) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+kwadrat odleglosci miedzy dwoma punktami 
+\end{DoxyReturn}
+\Hypertarget{classgraham_1_1_graham_aab6fb33774a7c01a876b09ae3fef94e9}\label{classgraham_1_1_graham_aab6fb33774a7c01a876b09ae3fef94e9} 
+\index{graham.Graham@{graham.Graham}!draw@{draw}}
+\index{draw@{draw}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily graham.\+Graham.\+draw (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Metoda ktora rysuje otoczke wypukla. 
+
+\Hypertarget{classgraham_1_1_graham_a3a39c99f8698566c26f6e5797ca5be2e}\label{classgraham_1_1_graham_a3a39c99f8698566c26f6e5797ca5be2e} 
+\index{graham.Graham@{graham.Graham}!findMin@{findMin}}
+\index{findMin@{findMin}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{findMin()}{findMin()}}
+{\footnotesize\ttfamily graham.\+Graham.\+find\+Min (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{punkty }\end{DoxyParamCaption})}
+
+
+
+find\+Min Metoda ktora znajduje punkt o najmniejszej wspolrzednej y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em punkty} & -\/ lista punktow (x, y) dla ktorych chcemy znalezc punkt o najmniejszej wspolrzednej y, kiedy sa takie same to wybieramy ten o wiekszej wspolrzednej x\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+punkt (x, y) o najmniejszej wspolrzednej y a jezeli jest takich kilka to o wiekszej wspolrzednej x 
+\end{DoxyReturn}
+\Hypertarget{classgraham_1_1_graham_afde91cccfddba7107a1bf39c7e4b7191}\label{classgraham_1_1_graham_afde91cccfddba7107a1bf39c7e4b7191} 
+\index{graham.Graham@{graham.Graham}!getOtoczka@{getOtoczka}}
+\index{getOtoczka@{getOtoczka}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{getOtoczka()}{getOtoczka()}}
+{\footnotesize\ttfamily graham.\+Graham.\+get\+Otoczka (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Metoda ktora zwraca otoczke wypukla. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classgraham_1_1_graham_abad3117417ee12bc039fd968a87d79e0}\label{classgraham_1_1_graham_abad3117417ee12bc039fd968a87d79e0} 
+\index{graham.Graham@{graham.Graham}!calculated@{calculated}}
+\index{calculated@{calculated}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{calculated}{calculated}}
+{\footnotesize\ttfamily graham.\+Graham.\+calculated}
+
+\Hypertarget{classgraham_1_1_graham_accee812d5ef1fdfa5524c9f96675f7d4}\label{classgraham_1_1_graham_accee812d5ef1fdfa5524c9f96675f7d4} 
+\index{graham.Graham@{graham.Graham}!convexHull@{convexHull}}
+\index{convexHull@{convexHull}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{convexHull}{convexHull}}
+{\footnotesize\ttfamily graham.\+Graham.\+convex\+Hull}
+
+\Hypertarget{classgraham_1_1_graham_abfa35d9e6b52398005525f7817bbc7de}\label{classgraham_1_1_graham_abfa35d9e6b52398005525f7817bbc7de} 
+\index{graham.Graham@{graham.Graham}!min@{min}}
+\index{min@{min}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily graham.\+Graham.\+min}
+
+\Hypertarget{classgraham_1_1_graham_a9b8ce1ddf399c79e15faf3f7b1d690a8}\label{classgraham_1_1_graham_a9b8ce1ddf399c79e15faf3f7b1d690a8} 
+\index{graham.Graham@{graham.Graham}!punkty@{punkty}}
+\index{punkty@{punkty}!graham.Graham@{graham.Graham}}
+\doxysubsubsection{\texorpdfstring{punkty}{punkty}}
+{\footnotesize\ttfamily graham.\+Graham.\+punkty}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/mareczek131/code/projects/projekt\+Studia/zadanie1/src/\mbox{\hyperlink{graham_8py}{graham.\+py}}\end{DoxyCompactItemize}

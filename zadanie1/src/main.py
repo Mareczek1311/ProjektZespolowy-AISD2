@@ -27,6 +27,15 @@ class Main:
         print(graham.getOtoczka())
         graham.draw()
 
+        #tragarze
+        tragarze = self.fr.readTragarzy("../data/kluby_przyklad1.txt")
+        solver = FordFulkerson(len(tragarze), tragarze["start"], tragarze["end"], tragarze["punkty"])
+        solver.config(tragarze["start"], tragarze["end"], tragarze["adjList"])
+        print(solver.getMaxFlow())
+        print("Graph:")
+        solver.getGraph()
+        solver.draw()
+
         #FordFulkerson
         n = len(self.punkty)
         solver = FordFulkerson(n, self.data["start"], self.data["end"], self.punkty)

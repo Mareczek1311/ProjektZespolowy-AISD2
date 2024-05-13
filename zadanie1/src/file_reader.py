@@ -23,7 +23,53 @@
 """
 #wszystkie punkty powinny byc klasa oddzielna poniewaz gdy zmienie x i y to zmieni sie wszedzie
 
+from tragarz import Tragarz
+
 class File_reader:
+    
+    def readTragarzy(self, filename):
+        if not filename:
+            return {}
+        
+        tragarze = []
+        index_z_przodu = 0
+        index_z_tylu = 0
+        with open(filename, 'r') as file_in:
+            for line in file_in:
+                line = line.rstrip()
+                rece, klub = line.split()
+                if rece == 'przod':
+                    t = Tragarz(1, index_z_przodu, klub)
+                    tragarze.append(t)
+                    index_z_przodu += 1
+                else:
+                    tragarze.append(Tragarz(5, index_z_tylu, klub))
+                    index_z_tylu += 1
+
+        for tragarz in tragarze:
+            if tragarz.punkt[0] == 1:
+                for tragarz2 in tragarze:
+                    if tragarz != tragarz2 and tragarz.klub == tragarz2.klub and tragarz2.punkt[0] == 5:
+                        tragarz.dodaj_relacje((tragarz2.punkt, 1))
+
+        res = {(0,0):[], (6,0):[]}
+
+        for tragarz in tragarze:
+            if tragarz.punkt[0] == 1:
+                res[(0,0)].append((tragarz.punkt, 1))
+            res[tragarz.punkt] = tragarz.lista_sasiedztwa
+
+            if tragarz.punkt[0] == 5:
+                res[tragarz.punkt].append(((6,0),1))
+
+        punkty = []
+        for key in res:
+            punkty.append(key)
+
+        full_res = {"adjList": res, "start": (0,0), "end": (6,0), "punkty": punkty}
+
+        return full_res
+        
     def readPoints(self, filename):
         if not filename:
             return {}

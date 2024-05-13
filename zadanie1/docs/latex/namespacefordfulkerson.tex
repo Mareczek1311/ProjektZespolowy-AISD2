@@ -1,0 +1,89 @@
+\doxysection{fordfulkerson Namespace Reference}
+\hypertarget{namespacefordfulkerson}{}\label{namespacefordfulkerson}\index{fordfulkerson@{fordfulkerson}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfordfulkerson_1_1_edge}{Edge}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentujaca krawedz w grafie. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson}{Ford\+Fulkerson}}
+\begin{DoxyCompactList}\small\item\em Klasa reprezentujaca algorytm Forda-\/\+Fulkersona. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b}{punkty}}
+\item 
+dict \mbox{\hyperlink{namespacefordfulkerson_ae64dcae64d19115e24f9d980517a6b28}{adj\+List}}
+\item 
+\mbox{\hyperlink{namespacefordfulkerson_ab99b8ad4c82c245fcdb516895e243292}{n}} = len(\mbox{\hyperlink{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b}{punkty}})
+\item 
+tuple \mbox{\hyperlink{namespacefordfulkerson_a4c01d54242106915d35888caa14c8399}{start}} = (0, 0)
+\item 
+tuple \mbox{\hyperlink{namespacefordfulkerson_a5f1d0b737dcedcafaeb4e9bcd9c7f800}{end}} = (4, 0)
+\item 
+\mbox{\hyperlink{namespacefordfulkerson_a43695d794c35ff046bfab9e70846bb3e}{solver}} = \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson}{Ford\+Fulkerson}}(\mbox{\hyperlink{namespacefordfulkerson_ab99b8ad4c82c245fcdb516895e243292}{n}}, \mbox{\hyperlink{namespacefordfulkerson_a4c01d54242106915d35888caa14c8399}{start}}, \mbox{\hyperlink{namespacefordfulkerson_a5f1d0b737dcedcafaeb4e9bcd9c7f800}{end}}, \mbox{\hyperlink{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b}{punkty}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacefordfulkerson_ae64dcae64d19115e24f9d980517a6b28}\label{namespacefordfulkerson_ae64dcae64d19115e24f9d980517a6b28} 
+\index{fordfulkerson@{fordfulkerson}!adjList@{adjList}}
+\index{adjList@{adjList}!fordfulkerson@{fordfulkerson}}
+\doxysubsubsection{\texorpdfstring{adjList}{adjList}}
+{\footnotesize\ttfamily dict fordfulkerson.\+adj\+List}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{(0,\ 0):\ [((1,1),\ 7),\ ((1,0),\ 2),\ ((1,-\/1),\ 1)],\ }
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1,1):[((2,1),\ 2),\ ((2,0),\ 4)],\ \ (1,0):[((2,0),5),\ ((2,-\/1),6)],\ (1,-\/1):[((2,1),4),\ ((3,0),8)],}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (2,1):[((3,1),7),\ ((3,0),\ 1)],\ (2,0):[((3,1),3),\ ((2,-\/1),8),\ ((3,-\/1),3)],\ (2,-\/1):[((3,-\/1),3)],}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (3,1):[((4,0),1)],\ (3,0):[((4,0),3)],\ (3,-\/1):[((4,0),4)],}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (4,0):[]\}}
+
+\end{DoxyCode}
+\Hypertarget{namespacefordfulkerson_a5f1d0b737dcedcafaeb4e9bcd9c7f800}\label{namespacefordfulkerson_a5f1d0b737dcedcafaeb4e9bcd9c7f800} 
+\index{fordfulkerson@{fordfulkerson}!end@{end}}
+\index{end@{end}!fordfulkerson@{fordfulkerson}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily tuple fordfulkerson.\+end = (4, 0)}
+
+\Hypertarget{namespacefordfulkerson_ab99b8ad4c82c245fcdb516895e243292}\label{namespacefordfulkerson_ab99b8ad4c82c245fcdb516895e243292} 
+\index{fordfulkerson@{fordfulkerson}!n@{n}}
+\index{n@{n}!fordfulkerson@{fordfulkerson}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily fordfulkerson.\+n = len(\mbox{\hyperlink{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b}{punkty}})}
+
+\Hypertarget{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b}\label{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b} 
+\index{fordfulkerson@{fordfulkerson}!punkty@{punkty}}
+\index{punkty@{punkty}!fordfulkerson@{fordfulkerson}}
+\doxysubsubsection{\texorpdfstring{punkty}{punkty}}
+{\footnotesize\ttfamily list fordfulkerson.\+punkty}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ (0,\ 0),}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ (1,\ 1),}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ (1,\ 0),}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ (1,\ -\/1),}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ (2,\ 1),}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ (2,\ 0),}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ (2,\ -\/1),}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ (3,\ 1),}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ (3,\ 0),}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ (3,\ -\/1),}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ (4,\ 0)}
+\DoxyCodeLine{00013\ \ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacefordfulkerson_a43695d794c35ff046bfab9e70846bb3e}\label{namespacefordfulkerson_a43695d794c35ff046bfab9e70846bb3e} 
+\index{fordfulkerson@{fordfulkerson}!solver@{solver}}
+\index{solver@{solver}!fordfulkerson@{fordfulkerson}}
+\doxysubsubsection{\texorpdfstring{solver}{solver}}
+{\footnotesize\ttfamily fordfulkerson.\+solver = \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson}{Ford\+Fulkerson}}(\mbox{\hyperlink{namespacefordfulkerson_ab99b8ad4c82c245fcdb516895e243292}{n}}, \mbox{\hyperlink{namespacefordfulkerson_a4c01d54242106915d35888caa14c8399}{start}}, \mbox{\hyperlink{namespacefordfulkerson_a5f1d0b737dcedcafaeb4e9bcd9c7f800}{end}}, \mbox{\hyperlink{namespacefordfulkerson_a54f48070b6a8206b4dbe25044e60160b}{punkty}})}
+
+\Hypertarget{namespacefordfulkerson_a4c01d54242106915d35888caa14c8399}\label{namespacefordfulkerson_a4c01d54242106915d35888caa14c8399} 
+\index{fordfulkerson@{fordfulkerson}!start@{start}}
+\index{start@{start}!fordfulkerson@{fordfulkerson}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily tuple fordfulkerson.\+start = (0, 0)}
+

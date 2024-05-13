@@ -2,15 +2,30 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from functools import cmp_to_key
 
+## Klasa ktora pozowli na wyznaczenie otoczki wypuklej
+class Graham: 
 
-class Graham:
-    def __init__(self, punkty = []) -> None:
-        self.calculated = False
-        self.punkty = punkty
-        self.convexHull = []
-        self.min = None
+    def __init__(self, punkty = []) -> None: 
+        """!
+        Konstruktor dla klasy Graham
+        @param punkty - lista punktow (x, y) dla ktorych chcemy wyznaczyc otoczke wypukla
+
+        """
+
+        self.calculated = False 
+        self.punkty = punkty 
+        self.convexHull = [] 
+        self.min = None 
 
     def findMin(self, punkty):
+        """!
+        findMin Metoda ktora znajduje punkt o najmniejszej wspolrzednej y
+
+        @param punkty - lista punktow (x, y) dla ktorych chcemy znalezc punkt o najmniejszej wspolrzednej y, kiedy sa takie same to wybieramy ten o wiekszej wspolrzednej x
+
+
+        @return punkt (x, y) o najmniejszej wspolrzednej y a jezeli jest takich kilka to o wiekszej wspolrzednej x
+        """
         min = punkty[0]
 
         for i in range(1, len(punkty)):
@@ -19,17 +34,39 @@ class Graham:
             elif punkty[i][1] == min[1]:
                 if punkty[i][0] > min[0]:
                     min = punkty[i]
+        
         return min
 
-    #wyznacznik
     def det(self, p1, p2, p3):
+        """!
+        det Metoda ktora oblicza wyznacznik macierzy 2x2
+        @param p1 - pierwszy punkt (x, y)
+        @param p2 - drugi punkt (x, y)
+        @param p3 - trzeci punkt (x, y)
+        @return wyznacznik macierzy 3x3
+        """
         return p1[0]*p2[1] + p2[0]*p3[1] + p3[0]*p1[1] - p3[0]*p2[1] - p2[0]*p1[1] - p1[0]*p3[1]
 
     def distSq(self, p1, p2):
+        """!
+        distSq Metoda ktora oblicza kwadrat odleglosci miedzy dwoma punktami
+        @param p1 - pierwszy punkt (x, y)
+        @param p2 - drugi punkt (x, y)
+        @return kwadrat odleglosci miedzy dwoma punktami
+        """
+
+
         return ((p1[0] - p2[0]) * (p1[0] - p2[0]) +
                 (p1[1] - p2[1]) * (p1[1] - p2[1]))
 
     def compare(self, p1, p2):
+        """!
+        compare Metoda ktora porownuje dwa punkty wzgledem punktu o najmniejszej wspolrzednej y
+        @param p1 - pierwszy punkt (x, y)
+        @param p2 - drugi punkt (x, y)
+        @return -1 jezeli p1 jest mniejszy od p2, 1 jezeli p1 jest wiekszy od p2, 0 jezeli sa rowne
+        """
+
         wyz = self.det(self.min, p1, p2)
         
         if wyz == 0:
@@ -44,11 +81,21 @@ class Graham:
                 return 1
 
     def algorytm(self):
+        """!
+        algorytm Metoda ktora wyznacza otoczke wypukla dla punktow z listy punkty
+        
+        """
+
         punkty = self.punkty
+
+        if len(punkty) < 3:
+            self.convexHull = []
+            return
 
         self.min = self.findMin(punkty)
         
         punkty = sorted(punkty, key=cmp_to_key(self.compare))
+
 
         stack = []
         stack.append(punkty[0])
@@ -60,10 +107,11 @@ class Graham:
             while self.det(stack[-2], stack[-1], punkty[i]) < 0:
                 stack.pop()
             stack.append(punkty[i])
-        stack.append(punkty[0])
         
         self.convexHull = stack
     
+
+    ## Metoda ktora rysuje otoczke wypukla
     def draw(self):
         if not self.calculated:
             self.algorytm()
@@ -80,45 +128,11 @@ class Graham:
         plt.grid(True)
         plt.show()
     
+
+    ## Metoda ktora zwraca otoczke wypukla
     def getOtoczka(self):
         if not self.calculated:
             self.algorytm()
             self.calculated = True
         
         return self.convexHull
-
-
-
-#Przykladowe urzycie
-if __name__ == '__main__':
-    dane = [
-        (1, 2),
-        (3, 4),
-        (4, 3),
-        (5, 4),
-        (4, 5),
-        (2, 6),
-        (1, 4),
-        (2, 4),
-        (3, 3),
-        (5, 5),
-        (6, 6),
-    ]
-    """
-    dane = [
-        (-4, -5),
-        (-3, -2),
-        (5,3),
-        (7,5),
-        (4,-1),
-        (2,-3),
-        (6,5),
-        (-5,-4),
-        (5,1)
-    ]
-    """
-
-
-    g = Graham(dane)
-    print(g.getOtoczka())
-    g.draw()
