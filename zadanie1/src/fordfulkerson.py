@@ -1,25 +1,57 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
+## Klasa reprezentujaca krawedz w grafie
 class Edge:
+
     def __init__(self, fr, to, capacity, flow=0):
+        """!
+        Konstruktor klasy Edge
+
+        @param fr - wierzcholek poczatkowy
+        @param to - wierzcholek koncowy
+        @param capacity - pojemnosc krawedzi
+        @param flow - przeplyw przez krawedz
+        """
         self.fr = fr
         self.to = to
         self.capacity = capacity #constant
         self.flow = flow
     
     def isResidual(self):
+        """!
+        Metoda ktora sprawdza czy krawedz jest krawedzia rezydualna
+        @return True jezeli krawedz jest krawedzia rezydualna, False w przeciwnym wypadku
+        """
         return self.capacity == 0
     
     def remainingCapacity(self):
+        """!
+        Metoda ktora zwraca pozostala pojemnosc krawedzi
+        @return pozostala pojemnosc krawedzi
+        """
         return self.capacity - self.flow
 
     def augment(self, newFlow):
+        """!
+        Metoda ktora zwieksza przeplyw przez krawedz
+        @param newFlow - nowy przeplyw przez krawedz
+        """
         self.flow += newFlow
         self.reverse.flow -= newFlow
 
+
+## Klasa reprezentujaca algorytm Forda-Fulkersona
 class FordFulkerson:
     def __init__(self, n, s, t, punkty):
+        """!
+        Konstruktor klasy FordFulkerson
+
+        @param n - liczba wierzcholkow w grafie
+        @param s - wierzcholek startowy
+        @param t - wierzcholek koncowy
+        @param punkty - lista punktow (x, y) reprezentujacych wierzcholki w grafie
+        """
         self.inf = float("inf")
         self.n = n
         self.s = s
@@ -32,6 +64,14 @@ class FordFulkerson:
         self.punkty = punkty
 
     def addEdge(self, fr, to, capacity):
+        """!
+        Metoda ktora dodaje krawedz do grafu
+
+        @param fr - wierzcholek poczatkowy
+        @param to - wierzcholek koncowy
+        @param capacity - pojemnosc krawedzi
+        """
+
         if capacity <= 0:
             raise ValueError("Forward edge capacity <= 0")
 
@@ -49,6 +89,10 @@ class FordFulkerson:
         self.graph[to].append(reverse)        
 
     def getGraph(self):
+        """!
+        Metoda ktora rysuje oraz zwraca graf
+        @return graf
+        """
         self.execute()
         for node in self.graph:
             print(node)
@@ -58,17 +102,26 @@ class FordFulkerson:
         return self.graph    
 
     def getMaxFlow(self):
+        """!
+        Metoda ktora zwraca maksymalny przeplyw w grafie
+        @return maksymalny przeplyw w grafie
+        """
         self.execute()
-        return "Max flow: " +  str(self.maxFlow)
+        return self.maxFlow
     
     def execute(self):
+        """!
+        Metoda ktora wywoluje algorytm Forda-Fulkersona jesli nie zostal jeszcze wywolany
+        """ 
         if self.solved:
             return
         self.solved = True
         self.solve()
     
     def solve(self):
-        #f is 1 becouse we need to enter the loop
+        """!
+        Metoda ktora rozwiazuje problem maksymalnego przeplywu w grafie
+        """
         f = 1
         
         while(f != 0):
@@ -77,6 +130,13 @@ class FordFulkerson:
             self.maxFlow += f
 
     def dfs(self, node, flow):
+        """!
+        Metoda ktora przeszukuje graf w glab
+
+        @param node - wierzcholek
+        @param flow - przeplyw
+        @return przeplyw
+        """
         if(node == self.t):
             return flow
 
@@ -95,6 +155,13 @@ class FordFulkerson:
         return 0
 
     def config(self, s, t, adjList):
+        """!
+        Metoda ktora konfiguruje graf
+
+        @param s - wierzcholek startowy
+        @param t - wierzcholek koncowy
+        @param adjList - lista sasiedztwa
+        """
         self.s = s
         self.t = t
 
@@ -103,6 +170,10 @@ class FordFulkerson:
                 self.addEdge(node, edge[0], edge[1])
 
     def draw(self):
+        """!
+        Metoda ktora rysuje graf
+        """
+        
         G = nx.DiGraph()
 
         G.add_nodes_from([node for node in self.punkty])

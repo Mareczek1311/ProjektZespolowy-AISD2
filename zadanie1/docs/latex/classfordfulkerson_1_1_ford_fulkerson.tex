@@ -1,26 +1,31 @@
 \doxysection{fordfulkerson.\+Ford\+Fulkerson Class Reference}
 \hypertarget{classfordfulkerson_1_1_ford_fulkerson}{}\label{classfordfulkerson_1_1_ford_fulkerson}\index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
+
+
+Klasa reprezentujaca algorytm Forda-\/\+Fulkersona.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_aaf1c36d4464aeff2260abe394ee47a8d}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_acbb94887c5c8d953dd4d4e888d853e1c}{n}}, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a8e7d4ecfc557995197f592be5bccebfe}{s}}, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_ade343bc6e52c1265696eaaa3e3ad7dd4}{t}}, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_acfae79e9362d08e0fda07b62fc32cf5f}{punkty}})
-\item 
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy Ford\+Fulkerson. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a37d832a187a0828367ac3e5551ecf3b1}{add\+Edge}} (self, fr, to, capacity)
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora dodaje krawedz do grafu. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_acd275b160f4ec8b753359e016b0a3734}{get\+Graph}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora rysuje oraz zwraca graf. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_ad7208eab4f00eff0847a048af74bf9ef}{get\+Max\+Flow}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora zwraca maksymalny przeplyw w grafie. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_aa76049ce6ccc7701d8198129b818d9f7}{execute}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora wywoluje algorytm Forda-\/\+Fulkersona jesli nie zostal jeszcze wywolany. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a1e759faf9fc592c44b2e8c918c7b039d}{solve}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora rozwiazuje problem maksymalnego przeplywu w grafie. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_acbe74289e0505b2424d517510437a433}{dfs}} (self, node, flow)
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora przeszukuje graf w glab. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a233eb8258824edb2bdf69998df40ca02}{config}} (self, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a8e7d4ecfc557995197f592be5bccebfe}{s}}, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_ade343bc6e52c1265696eaaa3e3ad7dd4}{t}}, \mbox{\hyperlink{namespacefordfulkerson_ae64dcae64d19115e24f9d980517a6b28}{adj\+List}})
-\item 
+\begin{DoxyCompactList}\small\item\em Metoda ktora konfiguruje graf. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a13eef0813253b88c960792e06b44158f}{draw}} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metoda ktora rysuje graf. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,6 +51,9 @@
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Klasa reprezentujaca algorytm Forda-\/\+Fulkersona. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_aaf1c36d4464aeff2260abe394ee47a8d}\label{classfordfulkerson_1_1_ford_fulkerson_aaf1c36d4464aeff2260abe394ee47a8d} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!\_\_init\_\_@{\_\_init\_\_}}
@@ -55,6 +63,21 @@
 
 
 
+Konstruktor klasy Ford\+Fulkerson. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & -\/ liczba wierzcholkow w grafie \\
+\hline
+{\em s} & -\/ wierzcholek startowy \\
+\hline
+{\em t} & -\/ wierzcholek koncowy \\
+\hline
+{\em punkty} & -\/ lista punktow (x, y) reprezentujacych wierzcholki w grafie \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_a37d832a187a0828367ac3e5551ecf3b1}\label{classfordfulkerson_1_1_ford_fulkerson_a37d832a187a0828367ac3e5551ecf3b1} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!addEdge@{addEdge}}
@@ -62,23 +85,67 @@
 \doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+add\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fr,  }\item[{}]{to,  }\item[{}]{capacity }\end{DoxyParamCaption})}
 
+
+
+Metoda ktora dodaje krawedz do grafu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fr} & -\/ wierzcholek poczatkowy \\
+\hline
+{\em to} & -\/ wierzcholek koncowy \\
+\hline
+{\em capacity} & -\/ pojemnosc krawedzi \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_a233eb8258824edb2bdf69998df40ca02}\label{classfordfulkerson_1_1_ford_fulkerson_a233eb8258824edb2bdf69998df40ca02} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!config@{config}}
 \index{config@{config}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 \doxysubsubsection{\texorpdfstring{config()}{config()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+config (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s,  }\item[{}]{t,  }\item[{}]{adj\+List }\end{DoxyParamCaption})}
 
+
+
+Metoda ktora konfiguruje graf. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ wierzcholek startowy \\
+\hline
+{\em t} & -\/ wierzcholek koncowy \\
+\hline
+{\em adj\+List} & -\/ lista sasiedztwa \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_acbe74289e0505b2424d517510437a433}\label{classfordfulkerson_1_1_ford_fulkerson_acbe74289e0505b2424d517510437a433} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!dfs@{dfs}}
 \index{dfs@{dfs}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 \doxysubsubsection{\texorpdfstring{dfs()}{dfs()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+dfs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node,  }\item[{}]{flow }\end{DoxyParamCaption})}
 
+
+
+Metoda ktora przeszukuje graf w glab. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & -\/ wierzcholek \\
+\hline
+{\em flow} & -\/ przeplyw \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+przeplyw 
+\end{DoxyReturn}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_a13eef0813253b88c960792e06b44158f}\label{classfordfulkerson_1_1_ford_fulkerson_a13eef0813253b88c960792e06b44158f} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!draw@{draw}}
 \index{draw@{draw}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+draw (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Metoda ktora rysuje graf. 
 
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_aa76049ce6ccc7701d8198129b818d9f7}\label{classfordfulkerson_1_1_ford_fulkerson_aa76049ce6ccc7701d8198129b818d9f7} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!execute@{execute}}
@@ -86,23 +153,45 @@
 \doxysubsubsection{\texorpdfstring{execute()}{execute()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+execute (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Metoda ktora wywoluje algorytm Forda-\/\+Fulkersona jesli nie zostal jeszcze wywolany. 
+
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_acd275b160f4ec8b753359e016b0a3734}\label{classfordfulkerson_1_1_ford_fulkerson_acd275b160f4ec8b753359e016b0a3734} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!getGraph@{getGraph}}
 \index{getGraph@{getGraph}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 \doxysubsubsection{\texorpdfstring{getGraph()}{getGraph()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+get\+Graph (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Metoda ktora rysuje oraz zwraca graf. 
+
+\begin{DoxyReturn}{Returns}
+graf 
+\end{DoxyReturn}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_ad7208eab4f00eff0847a048af74bf9ef}\label{classfordfulkerson_1_1_ford_fulkerson_ad7208eab4f00eff0847a048af74bf9ef} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!getMaxFlow@{getMaxFlow}}
 \index{getMaxFlow@{getMaxFlow}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 \doxysubsubsection{\texorpdfstring{getMaxFlow()}{getMaxFlow()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+get\+Max\+Flow (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Metoda ktora zwraca maksymalny przeplyw w grafie. 
+
+\begin{DoxyReturn}{Returns}
+maksymalny przeplyw w grafie 
+\end{DoxyReturn}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_a1e759faf9fc592c44b2e8c918c7b039d}\label{classfordfulkerson_1_1_ford_fulkerson_a1e759faf9fc592c44b2e8c918c7b039d} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!solve@{solve}}
 \index{solve@{solve}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 \doxysubsubsection{\texorpdfstring{solve()}{solve()}}
 {\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+solve (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Metoda ktora rozwiazuje problem maksymalnego przeplywu w grafie. 
 
 
 

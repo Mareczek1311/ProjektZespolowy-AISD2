@@ -41,3 +41,37 @@ class Test_FordFulkerson_and_Edge:
         edge.reverse = Edge(to, fr, 0)
         edge.augment(newFlow)
         assert edge.flow == expected
+
+    def test_ford_fulkerson_one(self):
+        punkty = [
+        (0, 0),
+        (1, 1),
+        (1, 0),
+        (1, -1),
+        (2, 1),
+        (2, 0),
+        (2, -1),
+        (3, 1),
+        (3, 0),
+        (3, -1),
+        (4, 0)
+        ]
+
+        adjList = {(0, 0): [((1,1), 7), ((1,0), 2), ((1,-1), 1)], 
+                (1,1):[((2,1), 2), ((2,0), 4)],  (1,0):[((2,0),5), ((2,-1),6)], (1,-1):[((2,1),4), ((3,0),8)],
+                (2,1):[((3,1),7), ((3,0), 1)], (2,0):[((3,1),3), ((2,-1),8), ((3,-1),3)], (2,-1):[((3,-1),3)],
+                (3,1):[((4,0),1)], (3,0):[((4,0),3)], (3,-1):[((4,0),4)],
+                (4,0):[]}
+
+        start = (0, 0)
+        end = (4, 0)
+
+        n = len(punkty)
+
+        solver = FordFulkerson(n, start, end, punkty)
+        solver.config(start, end, adjList)
+
+        assert solver.getMaxFlow() == 7
+
+
+
