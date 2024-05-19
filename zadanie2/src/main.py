@@ -24,10 +24,11 @@ class Main:
         print(self.fr.text)
 
         self.hm = Huffman(self.fr.text)
-        self.hm.huffman()
+        
+        
 
         print("Skompresowany tekst: \n")
-        print(self.hm.encoded_text)
+        print(self.hm.huffman())
 
     def repair(self, idx, word):
         m = len(word)
@@ -42,6 +43,7 @@ class Main:
 
 #przyklad uzycia
 
-m = Main('tests/test3.txt')
+m = Main('tests/example3.txt')
 m.run()
+
 

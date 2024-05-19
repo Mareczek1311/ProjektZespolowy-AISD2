@@ -8,7 +8,7 @@ class File_reader:
 
     def readText(self):
         with open(self.filename, 'r') as file:
-            data = file.readline().strip()
+            data = file.readline().rstrip('\n')
             n, m = data.split()
             self.lines = int(n)
             self.words = int(m) 
@@ -18,7 +18,7 @@ class File_reader:
                 self.text += line
 
             for i in range(self.words):
-                data = file.readline().strip()
+                data = file.readline().rstrip('\n')
                 wrongWord, correctWord = data.split()
                 self.wordsToReplace[wrongWord] = correctWord
 
