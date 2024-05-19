@@ -1,0 +1,80 @@
+Klasa 'Plaszczak'
+    Klasa ta jest odpowiedzialna za reprezentacje pojedynczego plaszczaka
+    
+    Atrybuty:
+        * 'numer' określa numer identyfikacyjny płaszczaka
+        * 'energia' - określa poziom energii płaszczaka 
+
+    Metody:
+        * __init__(self, numer, energia): Inicjalizuje atrybuty numer i energia podczas tworzenia instancji.
+        * info_plaszczak(self): Wyświetla informacje o płaszczaku w tym jego numer i energię.
+
+
+Klasa 'Plot'
+    Klasa ta reprezentuje obszar który ma być patrolowany przez płaszczaki
+    
+    Atrybuty:
+        * 'trasa' jest to lista krotek reprezentujących punkty na trasie patrolowania gdzie każda krotka zawiera numer punktu i jego jasność
+    
+    Metody:
+        * '__init__(self)' - Inicjalizuje atrybut 'trasa' jako pustą listę
+
+        
+        * metoda 'wygeneruj_plot'- Tworzy trasę patrolowania na podstawie liczby punktówn i ich jasności.
+            
+            Poprawność:
+                Sprawdza czy liczba wartości jasności odpowiada liczbie punktów. Jeśli nie to wyświetla komunikat o błędzie i zwraca None
+            
+            Działanie:
+                Dodaje krotki (punkt, jasność) do listy 'trasa'. Na koniec dodaje pierwszy punkt jako ostatnu aby zamknąć pętle trasy
+
+
+        * metoda 'wyswietl_plot' - wyświetla trasę, jeśli istnieje
+            
+            Poprawność:
+                Sprawdza czy 'trasa' nie jest pusta. Jeśli jest pusta to wyświetla odpowiedni komunikat.
+            
+            Działanie:
+                Wypisuje trasę w formie krotek (punkt, jasność)
+
+        
+        * metoda 'patrol' - symuluje działanie strażnika przez 7 dni.
+
+            Poprawność:
+                Sprawdza czy zasięg strażnika jest większy od 0. Jeśli nie to wyświetla komunikat i zwraca 'None'
+
+            Działanie:
+                Dla każdego dnia:
+                    - Wyświetla aktualną trasę patrolowania
+                    - Znajduje strażnika z największą energią
+                    - Wyznacza dla niego trasę patrolowania
+                    - Usuwa strażnika z listy dostępnych strażników
+                    - Przesuwa trasę (usuwa pierwszy punkt i dodaje go na koniec) aby symulować przemieszczanie się strażnika
+                
+                Jeśli nie ma płaszczaków do patrolowania lub zasięg strażnika wynosi 0, patrolowanie zostaje przerwane
+
+        * metoda 'znajdz_straznika' - znajduje strażnika z największą energią spośród dostępnych płaszczaków
+            
+            Działanie:
+                Iteruje przez listę płaszczaków, porównując ich energie. Zwraca płaszczaka z największą energią.
+
+        
+        * metoda wyznacz_trase - tworzy trasę dla strażnika na podstawie jego zasięgu patrolu oraz jasności punktów na trasie
+            
+            Działanie:
+                - Inicjalizuje pustą trasę strażnika
+                - Zaczyna od pierwszego punktu na trasie
+                - Dodaje punkty do trasy strażnika w ramach jego zasięgum wybierając odpowiednie punkty na podstawie ich jasności i pozycji
+                - Jeśli punkt startowy jest dostępny w zasięgu, dodaje go na koniec trasy i kończy tworzenie trasy
+                - Jeśli nie ma odpowiedniego punktu to przerywa pętle
+                - Zwraca trasę strażnika
+
+            Opis działania Metody:
+                - Sprawdza czy zasięg strażnika jest większy niż 0
+                - Dla każdego dnia patrolowania:
+                    * Wyświetla aktualną trasę patrolowania
+                    * Znajduje strażnika z największą energią
+                    * Wyznacza dla niego trasę patrolowania
+                    * Usuwa strażnika z lity dostępnych płaszczaków
+                    * Przesuwa trasę patrolowania (usuwa pierwszy punkt i dodaje go na koniec), aby symulować przemieszczanie się strażnika
+                - Jeśli nie ma płaszczaków do patrolowania lub zasięg strażnika wynosi 0 patrolowanie zostaje przerwane
