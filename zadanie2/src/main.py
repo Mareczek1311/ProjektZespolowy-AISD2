@@ -1,5 +1,5 @@
 from huffman import Huffman 
-from rabin_karp import Rabin_Karp
+from rabinkarp import Rabin_Karp
 from file_reader import File_reader
 
 class Main:

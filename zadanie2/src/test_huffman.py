@@ -8,7 +8,7 @@ class TestHuffman:
         ("Jakub","000110011001"),
         ("Mareczek","1000001100100110101111"),
         ("Krol lew","1000001100100101101111"),
-        ("Dolo","001011"),
+        ("Dolo","001011")
     ])
 
     def test_huffman(self, texts, expected):

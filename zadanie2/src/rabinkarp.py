@@ -6,6 +6,8 @@ class Rabin_Karp:
     def find_pattern(self, pattern):
         n = len(self.text)
         m = len(pattern)
+        if m == 0:
+            return
         bns = 256   # bns == base of number system
         pm = 101    # pm == prime number
 
