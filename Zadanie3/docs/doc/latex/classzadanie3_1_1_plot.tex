@@ -1,0 +1,163 @@
+\doxysection{zadanie3.\+Plot Class Reference}
+\hypertarget{classzadanie3_1_1_plot}{}\label{classzadanie3_1_1_plot}\index{zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_aeb2fad1e4d63ac1b973596ad546a8232}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00}{wygeneruj\+\_\+plot}} (self, liczba\+\_\+punktow, jasnosci)
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8}{wyswietl\+\_\+plot}} (self)
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_adfd6993870749015692d3d78a354e1ff}{patrol}} (self, plaszczaki, zasieg)
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9}{znajdz\+\_\+straznika}} (self, plaszczaki)
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa}{wyznacz\+\_\+trase}} (self, straznik, zasieg\+\_\+straznika)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824}{trasa}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{classzadanie3_1_1_plot_autotoc_md0}{}\doxysubsection{\texorpdfstring{Konstruktor {\bfseries{init}}\+:}{Konstruktor {\bfseries{init}}\+:}}\label{classzadanie3_1_1_plot_autotoc_md0}
+
+\begin{DoxyItemize}
+\item Inicjalizuje pustą trasę patrolu.
+\item Będzie tutaj przechowywana trasa strażnika. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classzadanie3_1_1_plot_aeb2fad1e4d63ac1b973596ad546a8232}\label{classzadanie3_1_1_plot_aeb2fad1e4d63ac1b973596ad546a8232} 
+\index{zadanie3.Plot@{zadanie3.Plot}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classzadanie3_1_1_plot_adfd6993870749015692d3d78a354e1ff}\label{classzadanie3_1_1_plot_adfd6993870749015692d3d78a354e1ff} 
+\index{zadanie3.Plot@{zadanie3.Plot}!patrol@{patrol}}
+\index{patrol@{patrol}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{patrol()}{patrol()}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+patrol (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plaszczaki,  }\item[{}]{zasieg }\end{DoxyParamCaption})}
+
+\hypertarget{classzadanie3_1_1_plot_autotoc_md5}{}\doxysubsection{\texorpdfstring{Metoda patrol}{Metoda patrol}}\label{classzadanie3_1_1_plot_autotoc_md5}
+
+\begin{DoxyParams}{Parameters}
+{\em plaszczaki} & -\/ lista płaszczaków, którzy uczestniczą w patrolu \\
+\hline
+{\em zasieg} & -\/ zasięg patrolu płaszczaka, czyli maksymalną odległość, jaką może przebyć pomiędzy punktami.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Dla każdego dnia patrolu, metoda wyświetla informacje o tym dniu oraz aktualną trasę patrolu.
+\item Za pomocą metody znajdz\+\_\+straznika znajduje płaszczaka z największą energią spośród dostępnych płaszczaków na liście plaszczaki.
+\item Wywołuje metodę wyznacz\+\_\+trase która wyznacza trasę dla znalezionego strażnika
+\begin{DoxyItemize}
+\item Jeśli znaleziono strażnika, metoda przeprowadza jego patrolowanie.
+\item Wyznaczana jest trasa patrolu dla strażnika, uwzględniając jego zasięg i dostępne punkty na trasie.
+\item W trakcie patrolowania strażnik przemieszcza się po trasie, usuwając odwiedzone punkty i dodając je na koniec trasy, aby kontynuować cykl patrolowania. 
+\end{DoxyItemize}
+\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00}\label{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00} 
+\index{zadanie3.Plot@{zadanie3.Plot}!wygeneruj\_plot@{wygeneruj\_plot}}
+\index{wygeneruj\_plot@{wygeneruj\_plot}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{wygeneruj\_plot()}{wygeneruj\_plot()}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+wygeneruj\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{liczba\+\_\+punktow,  }\item[{}]{jasnosci }\end{DoxyParamCaption})}
+
+\hypertarget{classzadanie3_1_1_plot_autotoc_md3}{}\doxysubsection{\texorpdfstring{Metoda wygeneruj\+\_\+plot\+:}{Metoda wygeneruj\+\_\+plot\+:}}\label{classzadanie3_1_1_plot_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Generuje trasę patrolu na podstawie\+:~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em liczba\+\_\+punktow} & -\/ liczba punktów w płocie w których strażnik musi się zatrzymać \\
+\hline
+{\em jasnosci} & -\/ jasność punktu~\newline
+\\
+\hline
+\end{DoxyParams}
+
+\item Tworzy trasę patrolu na podstawie podanej liczby punktów i ich jasności. 
+\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8}\label{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8} 
+\index{zadanie3.Plot@{zadanie3.Plot}!wyswietl\_plot@{wyswietl\_plot}}
+\index{wyswietl\_plot@{wyswietl\_plot}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{wyswietl\_plot()}{wyswietl\_plot()}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+wyswietl\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\hypertarget{classzadanie3_1_1_plot_autotoc_md4}{}\doxysubsection{\texorpdfstring{Metoda wyswietl\+\_\+plot\+:}{Metoda wyswietl\+\_\+plot\+:}}\label{classzadanie3_1_1_plot_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Wyswietla trasę patrolu
+\item Sprawdza, czy trasa nie jest pusta, a następnie wyświetla punkty trasy w czytelny sposób 
+\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa}\label{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa} 
+\index{zadanie3.Plot@{zadanie3.Plot}!wyznacz\_trase@{wyznacz\_trase}}
+\index{wyznacz\_trase@{wyznacz\_trase}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{wyznacz\_trase()}{wyznacz\_trase()}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+wyznacz\+\_\+trase (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{straznik,  }\item[{}]{zasieg\+\_\+straznika }\end{DoxyParamCaption})}
+
+\hypertarget{classzadanie3_1_1_plot_autotoc_md7}{}\doxysubsection{\texorpdfstring{Metoda wyznacz\+\_\+trase}{Metoda wyznacz\+\_\+trase}}\label{classzadanie3_1_1_plot_autotoc_md7}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & straznik -\/ obiekt klasy Plaszczak, który przeprowadza patrol \\
+\hline
+{\em -\/} & zasieg\+\_\+straznika -\/ maksymalna odległość, jaką strażnik może przebyć pomiędzy punktami\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Jeśli znaleziono strażnika (czyli obiekt klasy Plaszczak), metoda patrol przeprowadza jego patrolowanie.
+\item Wyznaczana jest trasa patrolu dla strażnika za pomocą metody wyznacz\+\_\+trase. Proces ten obejmuje\+:
+\begin{DoxyItemize}
+\item Inicjalizację pustej listy trasa\+\_\+straznika, która będzie przechowywać kolejne punkty na trasie patrolu strażnika.
+\item Ustalenie początkowego punktu startowego na trasie.
+\item W pętli while, dopóki nie zostaną odwiedzone wszystkie punkty na trasie lub zasięg strażnika nie zostanie wyczerpany\+:
+\begin{DoxyItemize}
+\item Wybierane są dostępne punkty na trasie, które znajdują się w zasięgu strażnika.
+\item Jeśli punkt startowy jest dostępny, zostaje dodany na trasę patrolu.
+\item Wybierany jest kolejny punkt na trasie, który spełnia warunki\+:
+\begin{DoxyItemize}
+\item Jego jasność jest większa niż poprzedniego punktu na trasie (jeśli tak, punkt zostaje dodany na trasę jako "{}melodia"{}).
+\item Jest to punkt o największym indeksie spośród dostępnych.
+\end{DoxyItemize}
+\item Jeśli taki punkt zostaje znaleziony, dodaje się go na trasę patrolu i aktualizuje się indeks obecnego punktu.
+\item Proces ten kontynuuje się, dopóki możliwe są dalsze ruchy strażnika.
+\end{DoxyItemize}
+\item Po zakończeniu pętli, dodaje się punkt startowy na koniec trasy, aby strażnik mógł wrócić do punktu wyjściowego.
+\end{DoxyItemize}
+\item Po wyznaczeniu trasy, strażnik przeprowadza patrolowanie, przemieszczając się po trasie i kontrolując dostępne punkty.
+\item Po zakończeniu patrolowania, strażnik zostaje usunięty z listy płaszczaków, aby uniknąć ponownego wyboru w następnych dniach patrolu. 
+\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9}\label{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9} 
+\index{zadanie3.Plot@{zadanie3.Plot}!znajdz\_straznika@{znajdz\_straznika}}
+\index{znajdz\_straznika@{znajdz\_straznika}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{znajdz\_straznika()}{znajdz\_straznika()}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+znajdz\+\_\+straznika (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plaszczaki }\end{DoxyParamCaption})}
+
+\hypertarget{classzadanie3_1_1_plot_autotoc_md6}{}\doxysubsection{\texorpdfstring{Metoda znajdz\+\_\+straznika}{Metoda znajdz\+\_\+straznika}}\label{classzadanie3_1_1_plot_autotoc_md6}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & plaszczaki -\/ lista płaszczaków z której będziemy wybierać płaszczaka z największą energią\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Iteruje po liście płaszczaków i porównuje ich energię.
+\item Zmienna max\+\_\+energia przechowuje dotychczasową maksymalną energię
+\item Zmienna plaszczak\+\_\+z\+\_\+max\+\_\+energia przechowuje referencję do płaszczaka z największą energią
+\item Jeśli energia aktualnie przetwarzanego płaszczaka jest większa niż dotychczasowa maksymalna energia, wartość max\+\_\+energia jest aktualizowana, a plaszczak\+\_\+z\+\_\+max\+\_\+energia ustawiany jest na obecnie przetwarzanego płaszczaka.
+\item Po przejrzeniu całej listy płaszczaków, zwracana jest referencja do płaszczaka z największą energią.
+\item Jeśli lista jest pusta zwracana jest wartość None co oznacza brak płaszczaków 
+\end{DoxyItemize}
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824}\label{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824} 
+\index{zadanie3.Plot@{zadanie3.Plot}!trasa@{trasa}}
+\index{trasa@{trasa}!zadanie3.Plot@{zadanie3.Plot}}
+\doxysubsubsection{\texorpdfstring{trasa}{trasa}}
+{\footnotesize\ttfamily zadanie3.\+Plot.\+trasa}
+
