@@ -1,0 +1,146 @@
+\doxysection{huffman.\+Huffman Class Reference}
+\hypertarget{classhuffman_1_1_huffman}{}\label{classhuffman_1_1_huffman}\index{huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a40d017482566a4c6410cc13715d76603}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classhuffman_1_1_huffman_a488206160ff7e76e3c8006b55c0d067b}{text}})
+\begin{DoxyCompactList}\small\item\em Konstruktor dla klasy Huffman. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a8d135651e74271b9fbf3442943108bf8}{build\+\_\+huffman\+\_\+tree}} (self, \mbox{\hyperlink{classhuffman_1_1_huffman_a488206160ff7e76e3c8006b55c0d067b}{text}})
+\begin{DoxyCompactList}\small\item\em build\+\_\+huffman\+\_\+tree Metoda która tworzy drzewo Huffmana \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a4495cd0a89e561d136da3f74008f7c37}{huffman\+\_\+coding}} (self, tree, prefix="{}"{}, codes=\{\})
+\begin{DoxyCompactList}\small\item\em huffman\+\_\+coding Metoda rekurencyjna która tworzy słownik w którym każdej literze z podanego w konstruktorze klasy tekstu jest przypisywany kod \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_ab2c958ee266cfabae086f2247882b666}{huffman}} (self)
+\begin{DoxyCompactList}\small\item\em huffman Metoda która najpierw wywołuje metodę build\+\_\+huffman\+\_\+tree, następnie za pomocą zwroconego korzenia do drzewa Huffmana wywołuje rekurencyjną metodę huffman\+\_\+coding, która zaś zwraca nam słownik. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_adf702c33c7f270e26af4ef84a881f3a5}{dehuffman}} (self, \mbox{\hyperlink{classhuffman_1_1_huffman_a02e3c3bcd37df67c76c16512f931c178}{encoded\+\_\+text}})
+\begin{DoxyCompactList}\small\item\em dehuffman Metoda która dekoduje skompresowany tekst na tekst oryginalny \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a488206160ff7e76e3c8006b55c0d067b}{text}}
+\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a82c0bf397df291826b006ee294319710}{codes\+Arr}}
+\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a02e3c3bcd37df67c76c16512f931c178}{encoded\+\_\+text}}
+\item 
+\mbox{\hyperlink{classhuffman_1_1_huffman_a992394ce74781b724f56aae3a412e8d2}{root}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhuffman_1_1_huffman_a40d017482566a4c6410cc13715d76603}\label{classhuffman_1_1_huffman_a40d017482566a4c6410cc13715d76603} 
+\index{huffman.Huffman@{huffman.Huffman}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text }\end{DoxyParamCaption})}
+
+
+
+Konstruktor dla klasy Huffman. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ tekst który chcemy skompresować \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhuffman_1_1_huffman_a8d135651e74271b9fbf3442943108bf8}\label{classhuffman_1_1_huffman_a8d135651e74271b9fbf3442943108bf8} 
+\index{huffman.Huffman@{huffman.Huffman}!build\_huffman\_tree@{build\_huffman\_tree}}
+\index{build\_huffman\_tree@{build\_huffman\_tree}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{build\_huffman\_tree()}{build\_huffman\_tree()}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+build\+\_\+huffman\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text }\end{DoxyParamCaption})}
+
+
+
+build\+\_\+huffman\+\_\+tree Metoda która tworzy drzewo Huffmana 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ tekst na podstawie którego tworzymy drzewo Huffmana \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+root -\/ korzeń do naszego drzewa Huffmana 
+\end{DoxyReturn}
+\Hypertarget{classhuffman_1_1_huffman_adf702c33c7f270e26af4ef84a881f3a5}\label{classhuffman_1_1_huffman_adf702c33c7f270e26af4ef84a881f3a5} 
+\index{huffman.Huffman@{huffman.Huffman}!dehuffman@{dehuffman}}
+\index{dehuffman@{dehuffman}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{dehuffman()}{dehuffman()}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+dehuffman (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{encoded\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+dehuffman Metoda która dekoduje skompresowany tekst na tekst oryginalny 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoded\+\_\+text} & -\/ skompresowany tekst który chcemy odkodować \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+odkodowany tekst 
+\end{DoxyReturn}
+\Hypertarget{classhuffman_1_1_huffman_ab2c958ee266cfabae086f2247882b666}\label{classhuffman_1_1_huffman_ab2c958ee266cfabae086f2247882b666} 
+\index{huffman.Huffman@{huffman.Huffman}!huffman@{huffman}}
+\index{huffman@{huffman}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{huffman()}{huffman()}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+huffman (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+huffman Metoda która najpierw wywołuje metodę build\+\_\+huffman\+\_\+tree, następnie za pomocą zwroconego korzenia do drzewa Huffmana wywołuje rekurencyjną metodę huffman\+\_\+coding, która zaś zwraca nam słownik. 
+
+Za pomocą słownika kompresujemy tekst podany w konstruktorze klasy \begin{DoxyReturn}{Returns}
+skompresowany tekst podany jako parametr konstruktora klasy Huffman 
+\end{DoxyReturn}
+\Hypertarget{classhuffman_1_1_huffman_a4495cd0a89e561d136da3f74008f7c37}\label{classhuffman_1_1_huffman_a4495cd0a89e561d136da3f74008f7c37} 
+\index{huffman.Huffman@{huffman.Huffman}!huffman\_coding@{huffman\_coding}}
+\index{huffman\_coding@{huffman\_coding}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{huffman\_coding()}{huffman\_coding()}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+huffman\+\_\+coding (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tree,  }\item[{}]{prefix = {\ttfamily "{}"{}},  }\item[{}]{codes = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+huffman\+\_\+coding Metoda rekurencyjna która tworzy słownik w którym każdej literze z podanego w konstruktorze klasy tekstu jest przypisywany kod 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & -\/ Node w którym się aktualnie znajdujemy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+słownik codes w którym każda litera ma przypisany kod 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhuffman_1_1_huffman_a82c0bf397df291826b006ee294319710}\label{classhuffman_1_1_huffman_a82c0bf397df291826b006ee294319710} 
+\index{huffman.Huffman@{huffman.Huffman}!codesArr@{codesArr}}
+\index{codesArr@{codesArr}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{codesArr}{codesArr}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+codes\+Arr}
+
+\Hypertarget{classhuffman_1_1_huffman_a02e3c3bcd37df67c76c16512f931c178}\label{classhuffman_1_1_huffman_a02e3c3bcd37df67c76c16512f931c178} 
+\index{huffman.Huffman@{huffman.Huffman}!encoded\_text@{encoded\_text}}
+\index{encoded\_text@{encoded\_text}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{encoded\_text}{encoded\_text}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+encoded\+\_\+text}
+
+\Hypertarget{classhuffman_1_1_huffman_a992394ce74781b724f56aae3a412e8d2}\label{classhuffman_1_1_huffman_a992394ce74781b724f56aae3a412e8d2} 
+\index{huffman.Huffman@{huffman.Huffman}!root@{root}}
+\index{root@{root}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+root}
+
+\Hypertarget{classhuffman_1_1_huffman_a488206160ff7e76e3c8006b55c0d067b}\label{classhuffman_1_1_huffman_a488206160ff7e76e3c8006b55c0d067b} 
+\index{huffman.Huffman@{huffman.Huffman}!text@{text}}
+\index{text@{text}!huffman.Huffman@{huffman.Huffman}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily huffman.\+Huffman.\+text}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{huffman_8py}{huffman.\+py}}\end{DoxyCompactItemize}

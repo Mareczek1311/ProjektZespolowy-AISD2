@@ -2,6 +2,9 @@ import heapq as heap
 
 class Node:
     def __init__(self, character = None, frequency = 0):
+        """!
+        Konstruktor dla klasy Node
+        """
         self.character = character
         self.frequency = frequency
         self.left = None
@@ -13,6 +16,10 @@ class Node:
 
 class Huffman:
     def __init__(self, text):
+        """!
+        Konstruktor dla klasy Huffman
+        @param text - tekst który chcemy skompresować 
+        """
         self.text = text.rstrip("\n")
         self.codesArr = {}
         self.encoded_text = ""
@@ -20,6 +27,11 @@ class Huffman:
 
         
     def build_huffman_tree(self, text):
+        """!
+        build_huffman_tree Metoda która tworzy drzewo Huffmana
+        @param text - tekst na podstawie którego tworzymy drzewo Huffmana
+        @return root - korzeń do naszego drzewa Huffmana
+        """
         frequency = {}
         for c in text:                     # c == character
             if c in frequency:
@@ -50,7 +62,12 @@ class Huffman:
         return root
 
     def huffman_coding(self, tree, prefix = "", codes = {}):
-
+        """!
+        huffman_coding Metoda rekurencyjna która tworzy słownik w którym każdej literze
+        z podanego w konstruktorze klasy tekstu jest przypisywany kod
+        @param tree - Node w którym się aktualnie znajdujemy
+        @return słownik codes w którym każda litera ma przypisany kod
+        """
 
         if tree is not None:
             if tree.character is not None:
@@ -61,6 +78,13 @@ class Huffman:
         return codes
 
     def huffman(self):
+        """!
+        huffman Metoda która najpierw wywołuje metodę build_huffman_tree,
+        następnie za pomocą zwroconego korzenia do drzewa Huffmana wywołuje
+        rekurencyjną metodę huffman_coding, która zaś zwraca nam słownik.
+        Za pomocą słownika kompresujemy tekst podany w konstruktorze klasy
+        @return skompresowany tekst podany jako parametr konstruktora klasy Huffman 
+        """
         self.root = self.build_huffman_tree(self.text)
         self.codesArr = self.huffman_coding(self.root)
         encoded_text = ""
@@ -71,6 +95,11 @@ class Huffman:
         return encoded_text
 
     def dehuffman(self, encoded_text):
+        """!
+        dehuffman Metoda która dekoduje skompresowany tekst na tekst oryginalny
+        @param encoded_text - skompresowany tekst który chcemy odkodować
+        @returns odkodowany tekst
+        """
         original_text = ""
         current_code = ""
         rev_codes = {}
