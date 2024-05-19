@@ -1,7 +1,7 @@
 import heapq as heap
 
 class Node:
-    def __init__(self, character = None, frequency = None):
+    def __init__(self, character = None, frequency = 0):
         self.character = character
         self.frequency = frequency
         self.left = None
@@ -13,10 +13,10 @@ class Node:
 
 class Huffman:
     def __init__(self, text):
-        self.text = text
+        self.text = text.rstrip("\n")
         self.codesArr = {}
         self.encoded_text = ""
-        self.root = Node
+        self.root = None
 
         
     def build_huffman_tree(self, text):
@@ -64,12 +64,13 @@ class Huffman:
         self.root = self.build_huffman_tree(self.text)
         self.codesArr = self.huffman_coding(self.root)
         encoded_text = ""
+        
         for c in self.text:
             encoded_text += self.codesArr[c]
         
-        self.encoded_text = encoded_text
+        return encoded_text
 
-    def dehuffman(self):
+    def dehuffman(self, encoded_text):
         original_text = ""
         current_code = ""
         rev_codes = {}
@@ -77,12 +78,14 @@ class Huffman:
         for c, code in self.codesArr.items():
             rev_codes[code] = c
 
-        for bit in self.encoded_text:
+        for bit in encoded_text:
             current_code += bit
             
             if current_code in rev_codes:
                 original_text += rev_codes[current_code]
                 current_code = ""
+        
+        self.codesArr.clear()
 
         return original_text
 
