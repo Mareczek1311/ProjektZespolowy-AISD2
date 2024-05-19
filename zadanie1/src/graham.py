@@ -112,21 +112,21 @@ class Graham:
     
 
     ## Metoda ktora rysuje otoczke wypukla
-    def draw(self):
-        if not self.calculated:
-            self.algorytm()
-            self.calculated = True
-
+    def draw(self, punkty = [], otoczka = []):
         G = nx.DiGraph()
 
-        G.add_nodes_from([point for point in self.punkty])
-        G.add_edges_from([(self.convexHull[i], self.convexHull[i+1]) for i in range(len(self.convexHull)-1)])
-        pos = {node: node for node in G.nodes()}
+        otoczka.append(otoczka[0])
 
-        nx.draw(G, pos, with_labels=True, node_size=700, node_color="lightblue", font_size=10, font_weight="bold")
+        G.add_nodes_from([point for point in punkty])
+        G.add_edges_from([(otoczka[i], self.convexHull[i+1]) for i in range(len(otoczka)-1)])
+        pos = {node: node for node in G.nodes()}
+        
+
+        nx.draw(G, pos, with_labels=True, node_size=1, node_color="lightblue", font_size=1, font_weight="bold")
 
         plt.grid(True)
         plt.show()
+        
     
 
     ## Metoda ktora zwraca otoczke wypukla
