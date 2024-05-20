@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['huffman_0',['Huffman',['../classhuffman_1_1_huffman.html',1,'huffman']]],
-  ['huffman_1',['huffman',['../classhuffman_1_1_huffman.html#ab2c958ee266cfabae086f2247882b666',1,'huffman::Huffman']]],
-  ['huffman_5fcoding_2',['huffman_coding',['../classhuffman_1_1_huffman.html#a4495cd0a89e561d136da3f74008f7c37',1,'huffman::Huffman']]]
+  ['encoded_5ftext_0',['encoded_text',['../classhuffman_1_1_huffman.html#a02e3c3bcd37df67c76c16512f931c178',1,'huffman::Huffman']]]
 ];
