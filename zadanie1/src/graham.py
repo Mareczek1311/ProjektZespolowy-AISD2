@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from functools import cmp_to_key
 
-## Klasa ktora pozowli na wyznaczenie otoczki wypuklej
+## Klasa odpowiadająca za wyznaczanie otoczki wypukłej
 class Graham: 
 
     def __init__(self, punkty = []) -> None: 
@@ -82,8 +82,21 @@ class Graham:
 
     def algorytm(self):
         """!
-        algorytm Metoda ktora wyznacza otoczke wypukla dla punktow z listy punkty
-        
+            algorytm Metoda, która wyznacza otoczkę wypukłą dla punktów z listy punkty.
+            
+            Metoda implementuje algorytm Grahama, który sortuje punkty według kąta względem 
+            punktu początkowego, a następnie buduje otoczkę wypukłą, iterując przez posortowane punkty 
+            i usuwając punkty wewnętrzne za pomocą stosu.
+
+            Złożoność czasowa:
+            - Sortowanie punktów: O(n log n)
+            - Iteracja przez punkty i budowanie otoczki: O(n)
+            - Całkowita złożoność czasowa: O(n log n)
+
+            Złożoność pamięciowa:
+            - Przechowywanie punktów i stosu: O(n)
+            
+            @return Brak zwracanej wartości. Wynikowa otoczka wypukła jest przechowywana w atrybucie self.convexHull.
         """
 
         punkty = self.punkty
@@ -121,8 +134,8 @@ class Graham:
         G.add_edges_from([(otoczka[i], self.convexHull[i+1]) for i in range(len(otoczka)-1)])
         pos = {node: node for node in G.nodes()}
         
-
-        nx.draw(G, pos, with_labels=True, node_size=1, node_color="lightblue", font_size=1, font_weight="bold")
+        # wczesniej bylo 1 1
+        nx.draw(G, pos, with_labels=True, node_size=4, node_color="lightblue", font_size=8, font_weight="bold")
 
         plt.grid(True)
         plt.show()

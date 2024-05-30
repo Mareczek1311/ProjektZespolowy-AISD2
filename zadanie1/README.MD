@@ -25,6 +25,6 @@ Ostatnim zadaniem jest opracowanie planu dostarczania desek do odpowiednich punk
 ## Struktura Projektu
 
 - `data/`: Folder zawierający dane wejściowe w plikach `.txt`.
-- `src/`: Folder zawierający implementacje algorytmów.
+- `src/`: Folder zawierający implementacje algorytmów. `.py`.
 - `tests/`: Folder zawierający testy jednostkowe napisane w `pytest`.
 - `docs/`: Folder zawierający dokumentację wygenerowaną za pomocą `Doxygen`.

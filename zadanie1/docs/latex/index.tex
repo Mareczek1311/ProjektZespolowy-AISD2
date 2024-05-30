@@ -1,0 +1,22 @@
+\chapter{Projekt\+: Optymalizacja Dostarczania Desek (ZADANIE 1)}
+\hypertarget{index}{}\label{index}\index{Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1)@{Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1)}}
+\hypertarget{index_autotoc_md0}{}\doxysubsection{\texorpdfstring{Opis Projektu}{Opis Projektu}}\label{index_autotoc_md0}
+Projekt ma na celu rozwiązanie problemu dostarczania desek do określonych punktów na mapie. Składa się z trzech głównych zadań\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Znalezienie Otoczki Wypukłej}}
+\item {\bfseries{Dobór Tragarzy}}
+\item {\bfseries{Plan Dostarczania Desek}}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md1}{}\doxysubsection{\texorpdfstring{Zadania}{Zadania}}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{1. Znalezienie Otoczki Wypukłej}{1. Znalezienie Otoczki Wypukłej}}\label{index_autotoc_md2}
+Pierwszym zadaniem jest znalezienie otoczki wypukłej dla zestawu punktów. Otoczka wypukła to najmniejszy wielokąt, który zawiera wszystkie punkty. W naszym projekcie do tego celu został użyty {\bfseries{algorytm Grahama}}.\hypertarget{index_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{2. Dobór Tragarzy}{2. Dobór Tragarzy}}\label{index_autotoc_md3}
+Drugim zadaniem jest dobranie odpowiedniej liczby tragarzy do przenoszenia desek. Używamy {\bfseries{algorytmu Forda-\/\+Fulkersona}} do rozwiązania problemu maksymalnego przepływu, co pozwala na optymalne przypisanie tragarzy do punktów dostarczenia desek.\hypertarget{index_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{3. Plan Dostarczania Desek}{3. Plan Dostarczania Desek}}\label{index_autotoc_md4}
+Ostatnim zadaniem jest opracowanie planu dostarczania desek do odpowiednich punktów. Ponownie używamy {\bfseries{algorytmu Forda-\/\+Fulkersona}}, aby zaplanować trasy dostaw, zapewniając efektywność i minimalizując czas dostarczenia.\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Struktura Projektu}{Struktura Projektu}}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\ttfamily data/}\+: Folder zawierający dane wejściowe w plikach {\ttfamily .txt}.
+\item {\ttfamily src/}\+: Folder zawierający implementacje algorytmów.
+\item {\ttfamily tests/}\+: Folder zawierający testy jednostkowe napisane w {\ttfamily pytest}.
+\item {\ttfamily docs/}\+: Folder zawierający dokumentację wygenerowaną za pomocą {\ttfamily Doxygen}. 
+\end{DoxyItemize}

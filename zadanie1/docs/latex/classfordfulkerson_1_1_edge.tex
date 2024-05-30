@@ -11,11 +11,11 @@ Klasa reprezentujaca krawedz w grafie.
 \mbox{\hyperlink{classfordfulkerson_1_1_edge_a752096d592bc52f5f2a907fd26774a19}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classfordfulkerson_1_1_edge_a680ddbbf58f6354d097a9ac66ce00a50}{fr}}, \mbox{\hyperlink{classfordfulkerson_1_1_edge_a335681518c7164e4346717eedc6eb58a}{to}}, \mbox{\hyperlink{classfordfulkerson_1_1_edge_a80bcd9b8feed03794e75cffce8fa6557}{capacity}}, \mbox{\hyperlink{classfordfulkerson_1_1_edge_ae8e0d16d26403e18f480053e8ce4f005}{flow}}=0)
 \begin{DoxyCompactList}\small\item\em Konstruktor klasy Edge. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_edge_acf141f6ed0b1f6aa8bf102265f520853}{is\+Residual}} (self)
-\begin{DoxyCompactList}\small\item\em Metoda ktora sprawdza czy krawedz jest krawedzia rezydualna. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Metoda, która sprawdza, czy krawędź jest krawędzią rezydualną. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_edge_af6a384cd1f28e3ab244e85f301f47905}{remaining\+Capacity}} (self)
-\begin{DoxyCompactList}\small\item\em Metoda ktora zwraca pozostala pojemnosc krawedzi. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Metoda, która zwraca pozostałą pojemność krawędzi. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_edge_adefeb0c09df6b90d654ffe5e028a1203}{augment}} (self, new\+Flow)
-\begin{DoxyCompactList}\small\item\em Metoda ktora zwieksza przeplyw przez krawedz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metoda, która zwiększa przepływ przez krawędź w grafie przepływowym. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,15 +43,17 @@ Klasa reprezentujaca krawedz w grafie.
 
 Konstruktor klasy Edge. 
 
+Inicjalizuje nową krawędź w grafie przepływowym, ustawiając wierzchołek początkowy, wierzchołek końcowy, pojemność krawędzi i przepływ przez krawędź.
+
 
 \begin{DoxyParams}{Parameters}
-{\em fr} & -\/ wierzcholek poczatkowy \\
+{\em fr} & Wierzchołek początkowy. \\
 \hline
-{\em to} & -\/ wierzcholek koncowy \\
+{\em to} & Wierzchołek końcowy. \\
 \hline
-{\em capacity} & -\/ pojemnosc krawedzi \\
+{\em capacity} & Pojemność krawędzi. \\
 \hline
-{\em flow} & -\/ przeplyw przez krawedz \\
+{\em flow} & Przepływ przez krawędź (domyślnie 0). \\
 \hline
 \end{DoxyParams}
 
@@ -65,13 +67,18 @@ Konstruktor klasy Edge.
 
 
 
-Metoda ktora zwieksza przeplyw przez krawedz. 
+Metoda, która zwiększa przepływ przez krawędź w grafie przepływowym. 
+
+Metoda aktualizuje przepływ przez krawędź, dodając nowy przepływ {\ttfamily new\+Flow} do bieżącego przepływu ({\ttfamily self.\+flow}), a jednocześnie odejmuje ten nowy przepływ od przepływu w krawędzi odwrotnej ({\ttfamily self.\+reverse.\+flow}).
 
 
 \begin{DoxyParams}{Parameters}
-{\em new\+Flow} & -\/ nowy przeplyw przez krawedz \\
+{\em new\+Flow} & Ilość nowego przepływu, który ma zostać dodany do krawędzi. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Brak zwracanej wartości. Metoda aktualizuje wewnętrzny stan krawędzi. 
+\end{DoxyReturn}
 \Hypertarget{classfordfulkerson_1_1_edge_acf141f6ed0b1f6aa8bf102265f520853}\label{classfordfulkerson_1_1_edge_acf141f6ed0b1f6aa8bf102265f520853} 
 \index{fordfulkerson.Edge@{fordfulkerson.Edge}!isResidual@{isResidual}}
 \index{isResidual@{isResidual}!fordfulkerson.Edge@{fordfulkerson.Edge}}
@@ -80,10 +87,12 @@ Metoda ktora zwieksza przeplyw przez krawedz.
 
 
 
-Metoda ktora sprawdza czy krawedz jest krawedzia rezydualna. 
+Metoda, która sprawdza, czy krawędź jest krawędzią rezydualną. 
+
+Krawędź rezydualna to taka, która ma zerową pojemność ({\ttfamily self.\+capacity}).
 
 \begin{DoxyReturn}{Returns}
-True jezeli krawedz jest krawedzia rezydualna, False w przeciwnym wypadku 
+True, jeżeli krawędź jest krawędzią rezydualną, False w przeciwnym wypadku. 
 \end{DoxyReturn}
 \Hypertarget{classfordfulkerson_1_1_edge_af6a384cd1f28e3ab244e85f301f47905}\label{classfordfulkerson_1_1_edge_af6a384cd1f28e3ab244e85f301f47905} 
 \index{fordfulkerson.Edge@{fordfulkerson.Edge}!remainingCapacity@{remainingCapacity}}
@@ -93,10 +102,12 @@ True jezeli krawedz jest krawedzia rezydualna, False w przeciwnym wypadku
 
 
 
-Metoda ktora zwraca pozostala pojemnosc krawedzi. 
+Metoda, która zwraca pozostałą pojemność krawędzi. 
+
+Pozostała pojemność krawędzi jest różnicą między jej całkowitą pojemnością ({\ttfamily self.\+capacity}) a aktualnym przepływem ({\ttfamily self.\+flow}).
 
 \begin{DoxyReturn}{Returns}
-pozostala pojemnosc krawedzi 
+Pozostała pojemność krawędzi. 
 \end{DoxyReturn}
 
 

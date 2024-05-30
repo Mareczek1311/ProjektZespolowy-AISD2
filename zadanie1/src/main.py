@@ -3,6 +3,7 @@ import random
 from file_reader import File_reader
 from graham import Graham
 from fordfulkerson import FordFulkerson
+from random_tragarze import random_tragarze
 
 def oblicz_odleglosc(p1, p2):
     #odleglosc dwoch punktow x1  y1 x2  y2
@@ -11,18 +12,17 @@ def oblicz_odleglosc(p1, p2):
 
 
 class Main:
-    def __init__(self, filePunkty):
+    def __init__(self):
         self.fr = File_reader()
         self.data = {}
         self.punkty = []
-        self.filePunkty = filePunkty
 
     def getPunkty(self):
         return [key for key in self.data["adjList"]]
 
     def run(self):
 
-        self.data = self.fr.readPoints(self.filePunkty)
+        self.data = self.fr.readPoints('../data/graf1.txt')
         #Gragam
         self.punkty = self.getPunkty()
         print(self.punkty)
@@ -51,13 +51,14 @@ class Main:
         
 
         #tragarze
-        tragarze = self.fr.readTragarzy("../data/kluby_przyklad1.txt")
+        #tragarze = self.fr.readTragarzy("../data/tragarze5.txt")
+        tragarze = random_tragarze(10, '50/50')
         solver = FordFulkerson(len(tragarze), tragarze["start"], tragarze["end"], tragarze["punkty"])
         solver.config(tragarze["start"], tragarze["end"], tragarze["adjList"])
         print(solver.getMaxFlow())
         print("Graph:")
         solver.getGraph()
-        solver.draw()
+        solver.drawTragarze()
 
         #FordFulkerson
         n = len(self.punkty)
@@ -69,5 +70,5 @@ class Main:
         solver.draw_plan_budowy()
 
 if __name__ == '__main__':
-    m = Main('../data/przyklad2.txt')
+    m = Main()
     m.run()

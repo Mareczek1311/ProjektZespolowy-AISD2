@@ -4,8 +4,8 @@ def randomPoints(num):
     points = set()
 
     for i in range(num):
-        x = random.randint(-100000, 100000)
-        y = random.randint(-100000, 100000)
+        x = random.randint(-num - 100, num + 100)
+        y = random.randint(-num - 100, num + 100)
         points.add((x, y))
     
     points = list(points)

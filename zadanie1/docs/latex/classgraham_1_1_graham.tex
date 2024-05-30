@@ -2,7 +2,7 @@
 \hypertarget{classgraham_1_1_graham}{}\label{classgraham_1_1_graham}\index{graham.Graham@{graham.Graham}}
 
 
-Klasa ktora pozowli na wyznaczenie otoczki wypuklej.  
+Klasa odpowiadająca za wyznaczanie otoczki wypukłej.  
 
 
 \doxysubsubsection*{Public Member Functions}
@@ -19,8 +19,8 @@ None \mbox{\hyperlink{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e}{
 \mbox{\hyperlink{classgraham_1_1_graham_a9487566a680152291db87eef503c6897}{compare}} (self, p1, p2)
 \begin{DoxyCompactList}\small\item\em compare Metoda ktora porownuje dwa punkty wzgledem punktu o najmniejszej wspolrzednej y \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classgraham_1_1_graham_ad8b90e47dbe01cd000f26f7f5752e814}{algorytm}} (self)
-\begin{DoxyCompactList}\small\item\em algorytm Metoda ktora wyznacza otoczke wypukla dla punktow z listy punkty \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classgraham_1_1_graham_aab6fb33774a7c01a876b09ae3fef94e9}{draw}} (self)
+\begin{DoxyCompactList}\small\item\em algorytm Metoda, która wyznacza otoczkę wypukłą dla punktów z listy punkty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraham_1_1_graham_a333a78c0ac134efc04541241a3162963}{draw}} (self, \mbox{\hyperlink{classgraham_1_1_graham_a9b8ce1ddf399c79e15faf3f7b1d690a8}{punkty}}=\mbox{[}$\,$\mbox{]}, otoczka=\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Metoda ktora rysuje otoczke wypukla. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classgraham_1_1_graham_afde91cccfddba7107a1bf39c7e4b7191}{get\+Otoczka}} (self)
 \begin{DoxyCompactList}\small\item\em Metoda ktora zwraca otoczke wypukla. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -38,7 +38,7 @@ None \mbox{\hyperlink{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e}{
 
 
 \doxysubsection{Detailed Description}
-Klasa ktora pozowli na wyznaczenie otoczki wypuklej. 
+Klasa odpowiadająca za wyznaczanie otoczki wypukłej. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e}\label{classgraham_1_1_graham_ae7b6e9e6afa061f6ec32a0a145cde76e} 
@@ -67,8 +67,25 @@ Konstruktor dla klasy Graham.
 
 
 
-algorytm Metoda ktora wyznacza otoczke wypukla dla punktow z listy punkty 
+algorytm Metoda, która wyznacza otoczkę wypukłą dla punktów z listy punkty. 
 
+Metoda implementuje algorytm Grahama, który sortuje punkty według kąta względem punktu początkowego, a następnie buduje otoczkę wypukłą, iterując przez posortowane punkty i usuwając punkty wewnętrzne za pomocą stosu.
+
+Złożoność czasowa\+:
+\begin{DoxyItemize}
+\item Sortowanie punktów\+: O(n log n)
+\item Iteracja przez punkty i budowanie otoczki\+: O(n)
+\item Całkowita złożoność czasowa\+: O(n log n)
+\end{DoxyItemize}
+
+Złożoność pamięciowa\+:
+\begin{DoxyItemize}
+\item Przechowywanie punktów i stosu\+: O(n)
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Brak zwracanej wartości. Wynikowa otoczka wypukła jest przechowywana w atrybucie self.\+convex\+Hull. 
+\end{DoxyReturn}
 \Hypertarget{classgraham_1_1_graham_a9487566a680152291db87eef503c6897}\label{classgraham_1_1_graham_a9487566a680152291db87eef503c6897} 
 \index{graham.Graham@{graham.Graham}!compare@{compare}}
 \index{compare@{compare}!graham.Graham@{graham.Graham}}
@@ -131,11 +148,11 @@ dist\+Sq Metoda ktora oblicza kwadrat odleglosci miedzy dwoma punktami
 \begin{DoxyReturn}{Returns}
 kwadrat odleglosci miedzy dwoma punktami 
 \end{DoxyReturn}
-\Hypertarget{classgraham_1_1_graham_aab6fb33774a7c01a876b09ae3fef94e9}\label{classgraham_1_1_graham_aab6fb33774a7c01a876b09ae3fef94e9} 
+\Hypertarget{classgraham_1_1_graham_a333a78c0ac134efc04541241a3162963}\label{classgraham_1_1_graham_a333a78c0ac134efc04541241a3162963} 
 \index{graham.Graham@{graham.Graham}!draw@{draw}}
 \index{draw@{draw}!graham.Graham@{graham.Graham}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily graham.\+Graham.\+draw (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily graham.\+Graham.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{punkty = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{otoczka = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
 
 
 

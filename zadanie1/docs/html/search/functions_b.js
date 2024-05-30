@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['testkluby_0',['testKluby',['../namespacefile__reader.html#acf22e2786b09e89b38a0874390552dbf',1,'file_reader']]]
+  ['solve_0',['solve',['../classfordfulkerson_1_1_ford_fulkerson.html#a1e759faf9fc592c44b2e8c918c7b039d',1,'fordfulkerson::FordFulkerson']]]
 ];

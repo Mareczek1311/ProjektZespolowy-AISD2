@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Zadanie 1: Main Page</title>
+<title>PROJEKT ZADANIE 1 DOKUMENTACJA: Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Zadanie 1
+   <div id="projectname">PROJEKT ZADANIE 1 DOKUMENTACJA
    </div>
   </td>
  </tr>
@@ -70,10 +70,38 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Zadanie 1 Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1) </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h2><a class="anchor" id="autotoc_md0"></a>
+Opis Projektu</h2>
+<p>Projekt ma na celu rozwiązanie problemu dostarczania desek do określonych punktów na mapie. Składa się z trzech głównych zadań:</p>
+<ol type="1">
+<li><b>Znalezienie Otoczki Wypukłej</b></li>
+<li><b>Dobór Tragarzy</b></li>
+<li><b>Plan Dostarczania Desek</b></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Zadania</h2>
+<h3><a class="anchor" id="autotoc_md2"></a>
+1. Znalezienie Otoczki Wypukłej</h3>
+<p>Pierwszym zadaniem jest znalezienie otoczki wypukłej dla zestawu punktów. Otoczka wypukła to najmniejszy wielokąt, który zawiera wszystkie punkty. W naszym projekcie do tego celu został użyty <b>algorytm Grahama</b>.</p>
+<h3><a class="anchor" id="autotoc_md3"></a>
+2. Dobór Tragarzy</h3>
+<p>Drugim zadaniem jest dobranie odpowiedniej liczby tragarzy do przenoszenia desek. Używamy <b>algorytmu Forda-Fulkersona</b> do rozwiązania problemu maksymalnego przepływu, co pozwala na optymalne przypisanie tragarzy do punktów dostarczenia desek.</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+3. Plan Dostarczania Desek</h3>
+<p>Ostatnim zadaniem jest opracowanie planu dostarczania desek do odpowiednich punktów. Ponownie używamy <b>algorytmu Forda-Fulkersona</b>, aby zaplanować trasy dostaw, zapewniając efektywność i minimalizując czas dostarczenia.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Struktura Projektu</h2>
+<ul>
+<li><code>data/</code>: Folder zawierający dane wejściowe w plikach <code>.txt</code>.</li>
+<li><code>src/</code>: Folder zawierający implementacje algorytmów.</li>
+<li><code>tests/</code>: Folder zawierający testy jednostkowe napisane w <code>pytest</code>.</li>
+<li><code>docs/</code>: Folder zawierający dokumentację wygenerowaną za pomocą <code>Doxygen</code>. </li>
+</ul>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 <!-- start footer part -->
