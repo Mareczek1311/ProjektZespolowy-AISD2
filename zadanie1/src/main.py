@@ -61,6 +61,8 @@ class Main:
         solver.drawTragarze()
 
         #FordFulkerson
+        print(self.data["adjList"])
+        
         n = len(self.punkty)
         solver = FordFulkerson(n, self.data["start"], self.data["end"], self.punkty)
         solver.config(self.data["start"], self.data["end"], self.data["adjList"])

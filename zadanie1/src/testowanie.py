@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 def testowanie_graham():
     ilosc = 100
     statystyki = []
-    for i in range(1, 40):
+    for i in range(1, 10):
         print("TEST NR: ", i, " DLA ILOSCI: ", ilosc)
         start_time = time.time()
 
@@ -18,7 +18,7 @@ def testowanie_graham():
         g = Graham(punkty)
         statystyki.append([ilosc, time.time() - start_time])
 
-        ilosc += 100
+        ilosc += 10000
         print("-- DLA ILOSCI: ", ilosc, " CZAS WYKONANIA: ", time.time() - start_time)
 
     draw_statystyki_graham(statystyki)
@@ -68,5 +68,5 @@ def draw_statystyki_fordfulkerson(statystyki):
 
 if __name__ == "__main__":
     testowanie_graham()
-    testowanie_fordfulkerson_tragarze()
-    testowanie_fordfulkerson_tragarze(option='50/50')
+    #testowanie_fordfulkerson_tragarze()
+    #testowanie_fordfulkerson_tragarze(option='50/50')
