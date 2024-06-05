@@ -73,5 +73,19 @@ class Test_FordFulkerson_and_Edge:
 
         assert solver.getMaxFlow() == 7
 
+    
+    def test_ford_fulkerson_two(self):
+        punkty = [(0, 0), (1, 1), (2, 1), (1, -1), (2, -1), (3, 0)]
+
+        adjList = {(0, 0): [((1, 1), 10), ((1, -1), 10)], (1, 1): [((2, 1), 4), ((1, -1), 2), ((2, -1), 8)], (2, 1): [((3, 0), 10)], (1, -1): [((2, -1), 9)], (2, -1): [((2, 1), 6), ((3, 0), 10)], (3, 0): []}
+        start = (0, 0)
+        end = (3, 0)
+
+        n = len(punkty)
+
+        solver = FordFulkerson(n, start, end, punkty)
+        solver.config(start, end, adjList)
+
+        assert solver.getMaxFlow() == 19
 
 

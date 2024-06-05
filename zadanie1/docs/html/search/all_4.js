@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['edge_0',['Edge',['../classfordfulkerson_1_1_edge.html',1,'fordfulkerson']]],
-  ['end_1',['end',['../namespacefordfulkerson.html#a5f1d0b737dcedcafaeb4e9bcd9c7f800',1,'fordfulkerson']]],
-  ['execute_2',['execute',['../classfordfulkerson_1_1_ford_fulkerson.html#aa76049ce6ccc7701d8198129b818d9f7',1,'fordfulkerson::FordFulkerson']]]
+  ['addedge_0',['addEdge',['../classfordfulkerson_1_1_ford_fulkerson.html#a37d832a187a0828367ac3e5551ecf3b1',1,'fordfulkerson::FordFulkerson']]],
+  ['adjlist_1',['adjList',['../namespacefordfulkerson.html#ae64dcae64d19115e24f9d980517a6b28',1,'fordfulkerson']]],
+  ['algorytm_2',['algorytm',['../classgraham_1_1_graham.html#ad8b90e47dbe01cd000f26f7f5752e814',1,'graham::Graham']]],
+  ['augment_3',['augment',['../classfordfulkerson_1_1_edge.html#adefeb0c09df6b90d654ffe5e028a1203',1,'fordfulkerson::Edge']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['left_0',['left',['../classhuffman_1_1_node.html#a5a528bc33931b4af400bdbe7a1f5c3f0',1,'huffman::Node']]],
-  ['lines_1',['lines',['../classfile__reader_1_1_file__reader.html#ae550cb755a4887dc8748b316e728a8e6',1,'file_reader::File_reader']]]
+  ['m_0',['m',['../namespacemain.html#a860ea3021871d5efa8973e439a74cdd0',1,'main']]],
+  ['main_1',['Main',['../classmain_1_1_main.html',1,'main']]],
+  ['main_2',['main',['../namespacemain.html',1,'']]],
+  ['main_2epy_3',['main.py',['../main_8py.html',1,'']]]
 ];

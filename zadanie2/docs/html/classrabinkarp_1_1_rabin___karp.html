@@ -86,16 +86,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9c4e695d223764273def968a76c6571" id="r_ac9c4e695d223764273def968a76c6571"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9c4e695d223764273def968a76c6571">__init__</a> (self, <a class="el" href="#ac59e2c720ee9941fcba9b0da5e280d87">text</a>)</td></tr>
+<tr class="memdesc:ac9c4e695d223764273def968a76c6571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor dla klasy Rabin_Karp @Param text - tekst w którym będziemy szukali wzorców.  <br /></td></tr>
 <tr class="separator:ac9c4e695d223764273def968a76c6571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a783113e42fc63071c3eefe99d78e7b" id="r_a8a783113e42fc63071c3eefe99d78e7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a783113e42fc63071c3eefe99d78e7b">find_pattern</a> (self, pattern)</td></tr>
+<tr class="memdesc:a8a783113e42fc63071c3eefe99d78e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">find_pattern Metoda która wyszukuje wzorzec w tekście podanym jako argument konstruktora  <br /></td></tr>
 <tr class="separator:a8a783113e42fc63071c3eefe99d78e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ac59e2c720ee9941fcba9b0da5e280d87" id="r_ac59e2c720ee9941fcba9b0da5e280d87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac59e2c720ee9941fcba9b0da5e280d87">text</a></td></tr>
 <tr class="separator:ac59e2c720ee9941fcba9b0da5e280d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2836dac80e37efd77694321f22db86fd" id="r_a2836dac80e37efd77694321f22db86fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2836dac80e37efd77694321f22db86fd">indexes</a></td></tr>
-<tr class="separator:a2836dac80e37efd77694321f22db86fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac9c4e695d223764273def968a76c6571" name="ac9c4e695d223764273def968a76c6571"></a>
@@ -116,6 +116,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Konstruktor dla klasy Rabin_Karp @Param text - tekst w którym będziemy szukali wzorców. </p>
 
 </div>
 </div>
@@ -139,23 +141,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>find_pattern Metoda która wyszukuje wzorzec w tekście podanym jako argument konstruktora </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- wzorzec który chcemy wyszukać </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>słownik {"wzorzec":[i1, i2, ..., in]}, gdzie in są to indeksy wystąpień wzorca w tekście dla n należącego do liczb naturalnych </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2836dac80e37efd77694321f22db86fd" name="a2836dac80e37efd77694321f22db86fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2836dac80e37efd77694321f22db86fd">&#9670;&#160;</a></span>indexes</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">rabinkarp.Rabin_Karp.indexes</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ac59e2c720ee9941fcba9b0da5e280d87" name="ac59e2c720ee9941fcba9b0da5e280d87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac59e2c720ee9941fcba9b0da5e280d87">&#9670;&#160;</a></span>text</h2>
 

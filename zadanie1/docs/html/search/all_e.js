@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['s_0',['s',['../classfordfulkerson_1_1_ford_fulkerson.html#a8e7d4ecfc557995197f592be5bccebfe',1,'fordfulkerson::FordFulkerson']]],
-  ['solve_1',['solve',['../classfordfulkerson_1_1_ford_fulkerson.html#a1e759faf9fc592c44b2e8c918c7b039d',1,'fordfulkerson::FordFulkerson']]],
-  ['solved_2',['solved',['../classfordfulkerson_1_1_ford_fulkerson.html#ac94271f4a94015b28c90db047142e9a8',1,'fordfulkerson::FordFulkerson']]],
-  ['solver_3',['solver',['../namespacefordfulkerson.html#a43695d794c35ff046bfab9e70846bb3e',1,'fordfulkerson']]],
-  ['start_4',['start',['../namespacefordfulkerson.html#a4c01d54242106915d35888caa14c8399',1,'fordfulkerson']]]
+  ['plan_20dostarczania_20desek_0',['3. Plan Dostarczania Desek',['../index.html#autotoc_md4',1,'']]],
+  ['projekt_3a_20optymalizacja_20dostarczania_20desek_20zadanie_201_1',['Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1)',['../index.html',1,'']]],
+  ['projektu_2',['Projektu',['../index.html#autotoc_md0',1,'Opis Projektu'],['../index.html#autotoc_md5',1,'Struktura Projektu']]],
+  ['punkty_3',['punkty',['../classfordfulkerson_1_1_ford_fulkerson.html#acfae79e9362d08e0fda07b62fc32cf5f',1,'fordfulkerson.FordFulkerson.punkty'],['../classgraham_1_1_graham.html#a9b8ce1ddf399c79e15faf3f7b1d690a8',1,'graham.Graham.punkty'],['../classmain_1_1_main.html#a6e9ce9d4dc0f6b6d7e70cc7ccf32d5ee',1,'main.Main.punkty'],['../namespacefordfulkerson.html#a54f48070b6a8206b4dbe25044e60160b',1,'fordfulkerson.punkty']]]
 ];

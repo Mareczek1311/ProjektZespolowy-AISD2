@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['klub_0',['klub',['../classtragarz_1_1_tragarz.html#a148495e363703d63a8ea4e8d46469707',1,'tragarz::Tragarz']]]
+  ['m_0',['m',['../namespacemain.html#a860ea3021871d5efa8973e439a74cdd0',1,'main']]],
+  ['maxflow_1',['maxFlow',['../classfordfulkerson_1_1_ford_fulkerson.html#a324f6a508be1d58cfe51fb5bebbc88d3',1,'fordfulkerson::FordFulkerson']]],
+  ['min_2',['min',['../classgraham_1_1_graham.html#abfa35d9e6b52398005525f7817bbc7de',1,'graham::Graham']]]
 ];

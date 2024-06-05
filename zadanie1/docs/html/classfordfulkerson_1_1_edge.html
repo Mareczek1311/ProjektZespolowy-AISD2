@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Zadanie 1: fordfulkerson.Edge Class Reference</title>
+<title>PROJEKT ZADANIE 1 DOKUMENTACJA: fordfulkerson.Edge Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Zadanie 1
+   <div id="projectname">PROJEKT ZADANIE 1 DOKUMENTACJA
    </div>
   </td>
  </tr>
@@ -92,13 +92,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a752096d592bc52f5f2a907fd26774a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy Edge.  <br /></td></tr>
 <tr class="separator:a752096d592bc52f5f2a907fd26774a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf141f6ed0b1f6aa8bf102265f520853" id="r_acf141f6ed0b1f6aa8bf102265f520853"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf141f6ed0b1f6aa8bf102265f520853">isResidual</a> (self)</td></tr>
-<tr class="memdesc:acf141f6ed0b1f6aa8bf102265f520853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda ktora sprawdza czy krawedz jest krawedzia rezydualna.  <br /></td></tr>
+<tr class="memdesc:acf141f6ed0b1f6aa8bf102265f520853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda, która sprawdza, czy krawędź jest krawędzią rezydualną.  <br /></td></tr>
 <tr class="separator:acf141f6ed0b1f6aa8bf102265f520853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6a384cd1f28e3ab244e85f301f47905" id="r_af6a384cd1f28e3ab244e85f301f47905"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6a384cd1f28e3ab244e85f301f47905">remainingCapacity</a> (self)</td></tr>
-<tr class="memdesc:af6a384cd1f28e3ab244e85f301f47905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda ktora zwraca pozostala pojemnosc krawedzi.  <br /></td></tr>
+<tr class="memdesc:af6a384cd1f28e3ab244e85f301f47905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda, która zwraca pozostałą pojemność krawędzi.  <br /></td></tr>
 <tr class="separator:af6a384cd1f28e3ab244e85f301f47905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adefeb0c09df6b90d654ffe5e028a1203" id="r_adefeb0c09df6b90d654ffe5e028a1203"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adefeb0c09df6b90d654ffe5e028a1203">augment</a> (self, newFlow)</td></tr>
-<tr class="memdesc:adefeb0c09df6b90d654ffe5e028a1203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda ktora zwieksza przeplyw przez krawedz.  <br /></td></tr>
+<tr class="memdesc:adefeb0c09df6b90d654ffe5e028a1203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda, która zwiększa przepływ przez krawędź w grafie przepływowym.  <br /></td></tr>
 <tr class="separator:adefeb0c09df6b90d654ffe5e028a1203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -150,12 +150,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Konstruktor klasy Edge. </p>
+<p>Inicjalizuje nową krawędź w grafie przepływowym, ustawiając wierzchołek początkowy, wierzchołek końcowy, pojemność krawędzi i przepływ przez krawędź.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fr</td><td>- wierzcholek poczatkowy </td></tr>
-    <tr><td class="paramname">to</td><td>- wierzcholek koncowy </td></tr>
-    <tr><td class="paramname">capacity</td><td>- pojemnosc krawedzi </td></tr>
-    <tr><td class="paramname">flow</td><td>- przeplyw przez krawedz </td></tr>
+    <tr><td class="paramname">fr</td><td>Wierzchołek początkowy. </td></tr>
+    <tr><td class="paramname">to</td><td>Wierzchołek końcowy. </td></tr>
+    <tr><td class="paramname">capacity</td><td>Pojemność krawędzi. </td></tr>
+    <tr><td class="paramname">flow</td><td>Przepływ przez krawędź (domyślnie 0). </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,13 +183,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metoda ktora zwieksza przeplyw przez krawedz. </p>
+<p>Metoda, która zwiększa przepływ przez krawędź w grafie przepływowym. </p>
+<p>Metoda aktualizuje przepływ przez krawędź, dodając nowy przepływ <code>newFlow</code> do bieżącego przepływu (<code>self.flow</code>), a jednocześnie odejmuje ten nowy przepływ od przepływu w krawędzi odwrotnej (<code>self.reverse.flow</code>).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newFlow</td><td>- nowy przeplyw przez krawedz </td></tr>
+    <tr><td class="paramname">newFlow</td><td>Ilość nowego przepływu, który ma zostać dodany do krawędzi. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Brak zwracanej wartości. Metoda aktualizuje wewnętrzny stan krawędzi. </dd></dl>
 
 </div>
 </div>
@@ -207,8 +210,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metoda ktora sprawdza czy krawedz jest krawedzia rezydualna. </p>
-<dl class="section return"><dt>Returns</dt><dd>True jezeli krawedz jest krawedzia rezydualna, False w przeciwnym wypadku </dd></dl>
+<p>Metoda, która sprawdza, czy krawędź jest krawędzią rezydualną. </p>
+<p>Krawędź rezydualna to taka, która ma zerową pojemność (<code>self.capacity</code>).</p>
+<dl class="section return"><dt>Returns</dt><dd>True, jeżeli krawędź jest krawędzią rezydualną, False w przeciwnym wypadku. </dd></dl>
 
 </div>
 </div>
@@ -227,8 +231,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metoda ktora zwraca pozostala pojemnosc krawedzi. </p>
-<dl class="section return"><dt>Returns</dt><dd>pozostala pojemnosc krawedzi </dd></dl>
+<p>Metoda, która zwraca pozostałą pojemność krawędzi. </p>
+<p>Pozostała pojemność krawędzi jest różnicą między jej całkowitą pojemnością (<code>self.capacity</code>) a aktualnym przepływem (<code>self.flow</code>).</p>
+<dl class="section return"><dt>Returns</dt><dd>Pozostała pojemność krawędzi. </dd></dl>
 
 </div>
 </div>

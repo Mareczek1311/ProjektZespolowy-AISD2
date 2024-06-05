@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['right_0',['right',['../classhuffman_1_1_node.html#a925337df95e80e1ca99038c7c0eecfee',1,'huffman::Node']]],
-  ['rk_1',['rk',['../classmain_1_1_main.html#aebd84f442913c73cd7620436d58c168c',1,'main::Main']]],
-  ['root_2',['root',['../classhuffman_1_1_huffman.html#a992394ce74781b724f56aae3a412e8d2',1,'huffman::Huffman']]]
+  ['text_0',['text',['../classfile__reader_1_1_file__reader.html#aa7cbd87166e38d330cc5c04c38110b1b',1,'file_reader.File_reader.text'],['../classhuffman_1_1_huffman.html#a488206160ff7e76e3c8006b55c0d067b',1,'huffman.Huffman.text'],['../classrabinkarp_1_1_rabin___karp.html#ac59e2c720ee9941fcba9b0da5e280d87',1,'rabinkarp.Rabin_Karp.text']]]
 ];

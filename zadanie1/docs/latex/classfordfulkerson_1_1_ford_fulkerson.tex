@@ -2,7 +2,7 @@
 \hypertarget{classfordfulkerson_1_1_ford_fulkerson}{}\label{classfordfulkerson_1_1_ford_fulkerson}\index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
 
 
-Klasa reprezentujaca algorytm Forda-\/\+Fulkersona.  
+Klasa implementująca algorytm Forda-\/\+Fulkersona.  
 
 
 \doxysubsubsection*{Public Member Functions}
@@ -19,12 +19,16 @@ Klasa reprezentujaca algorytm Forda-\/\+Fulkersona.
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_aa76049ce6ccc7701d8198129b818d9f7}{execute}} (self)
 \begin{DoxyCompactList}\small\item\em Metoda ktora wywoluje algorytm Forda-\/\+Fulkersona jesli nie zostal jeszcze wywolany. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a1e759faf9fc592c44b2e8c918c7b039d}{solve}} (self)
-\begin{DoxyCompactList}\small\item\em Metoda ktora rozwiazuje problem maksymalnego przeplywu w grafie. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Metoda, która rozwiązuje problem maksymalnego przepływu w grafie. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_acbe74289e0505b2424d517510437a433}{dfs}} (self, node, flow)
 \begin{DoxyCompactList}\small\item\em Metoda ktora przeszukuje graf w glab. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a233eb8258824edb2bdf69998df40ca02}{config}} (self, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a8e7d4ecfc557995197f592be5bccebfe}{s}}, \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_ade343bc6e52c1265696eaaa3e3ad7dd4}{t}}, \mbox{\hyperlink{namespacefordfulkerson_ae64dcae64d19115e24f9d980517a6b28}{adj\+List}})
 \begin{DoxyCompactList}\small\item\em Metoda ktora konfiguruje graf. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a3eab0aa2fa873ded05cb679884a47e52}{draw\+\_\+plan\+\_\+budowy}} (self)
+\begin{DoxyCompactList}\small\item\em Metoda ktora rysuje graf 2. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a13eef0813253b88c960792e06b44158f}{draw}} (self)
+\begin{DoxyCompactList}\small\item\em Metoda ktora rysuje graf. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfordfulkerson_1_1_ford_fulkerson_a783233af2515a37a379a879bcdf1e8f6}{draw\+Tragarze}} (self)
 \begin{DoxyCompactList}\small\item\em Metoda ktora rysuje graf. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -52,7 +56,7 @@ Klasa reprezentujaca algorytm Forda-\/\+Fulkersona.
 
 
 \doxysubsection{Detailed Description}
-Klasa reprezentujaca algorytm Forda-\/\+Fulkersona. 
+Klasa implementująca algorytm Forda-\/\+Fulkersona. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_aaf1c36d4464aeff2260abe394ee47a8d}\label{classfordfulkerson_1_1_ford_fulkerson_aaf1c36d4464aeff2260abe394ee47a8d} 
@@ -65,15 +69,17 @@ Klasa reprezentujaca algorytm Forda-\/\+Fulkersona.
 
 Konstruktor klasy Ford\+Fulkerson. 
 
+Inicjalizuje nowy obiekt algorytmu Forda-\/\+Fulkersona z daną liczbą wierzchołków, wierzchołkiem startowym, wierzchołkiem końcowym oraz listą punktów reprezentujących wierzchołki w grafie.
+
 
 \begin{DoxyParams}{Parameters}
-{\em n} & -\/ liczba wierzcholkow w grafie \\
+{\em n} & Liczba wierzchołków w grafie. \\
 \hline
-{\em s} & -\/ wierzcholek startowy \\
+{\em s} & Wierzchołek startowy. \\
 \hline
-{\em t} & -\/ wierzcholek koncowy \\
+{\em t} & Wierzchołek końcowy. \\
 \hline
-{\em punkty} & -\/ lista punktow (x, y) reprezentujacych wierzcholki w grafie \\
+{\em punkty} & Lista punktów (x, y) reprezentujących wierzchołki w grafie. \\
 \hline
 \end{DoxyParams}
 
@@ -147,6 +153,26 @@ przeplyw
 
 Metoda ktora rysuje graf. 
 
+\Hypertarget{classfordfulkerson_1_1_ford_fulkerson_a3eab0aa2fa873ded05cb679884a47e52}\label{classfordfulkerson_1_1_ford_fulkerson_a3eab0aa2fa873ded05cb679884a47e52} 
+\index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!draw\_plan\_budowy@{draw\_plan\_budowy}}
+\index{draw\_plan\_budowy@{draw\_plan\_budowy}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
+\doxysubsubsection{\texorpdfstring{draw\_plan\_budowy()}{draw\_plan\_budowy()}}
+{\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+draw\+\_\+plan\+\_\+budowy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Metoda ktora rysuje graf 2. 
+
+\Hypertarget{classfordfulkerson_1_1_ford_fulkerson_a783233af2515a37a379a879bcdf1e8f6}\label{classfordfulkerson_1_1_ford_fulkerson_a783233af2515a37a379a879bcdf1e8f6} 
+\index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!drawTragarze@{drawTragarze}}
+\index{drawTragarze@{drawTragarze}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
+\doxysubsubsection{\texorpdfstring{drawTragarze()}{drawTragarze()}}
+{\footnotesize\ttfamily fordfulkerson.\+Ford\+Fulkerson.\+draw\+Tragarze (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Metoda ktora rysuje graf. 
+
 \Hypertarget{classfordfulkerson_1_1_ford_fulkerson_aa76049ce6ccc7701d8198129b818d9f7}\label{classfordfulkerson_1_1_ford_fulkerson_aa76049ce6ccc7701d8198129b818d9f7} 
 \index{fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}!execute@{execute}}
 \index{execute@{execute}!fordfulkerson.FordFulkerson@{fordfulkerson.FordFulkerson}}
@@ -191,8 +217,23 @@ maksymalny przeplyw w grafie
 
 
 
-Metoda ktora rozwiazuje problem maksymalnego przeplywu w grafie. 
+Metoda, która rozwiązuje problem maksymalnego przepływu w grafie. 
 
+Metoda implementuje algorytm Forda-\/\+Fulkersona, wykorzystując wyszukiwanie w głąb (DFS) do znalezienia ścieżek powiększających. Algorytm działa w pętli, dopóki możliwe jest znalezienie ścieżki powiększającej, zwiększając całkowity przepływ o przepustowość tej ścieżki.
+
+Złożoność czasowa\+:
+\begin{DoxyItemize}
+\item W najgorszym przypadku\+: O(\+E \texorpdfstring{$\ast$}{*} f), gdzie E to liczba krawędzi, a f to maksymalny przepływ w sieci.
+\end{DoxyItemize}
+
+Złożoność pamięciowa\+:
+\begin{DoxyItemize}
+\item Przechowywanie grafu i struktur pomocniczych\+: O(V + E), gdzie V to liczba wierzchołków, a E to liczba krawędzi.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Brak zwracanej wartości. Wynikowy maksymalny przepływ jest przechowywany w atrybucie self.\+max\+Flow. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}

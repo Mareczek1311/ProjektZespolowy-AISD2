@@ -1,0 +1,30 @@
+# Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1)
+
+## Opis Projektu
+
+Projekt ma na celu rozwiązanie problemu dostarczania desek do określonych punktów na mapie. Składa się z trzech głównych zadań:
+
+1. **Znalezienie Otoczki Wypukłej**
+2. **Dobór Tragarzy**
+3. **Plan Dostarczania Desek**
+
+## Zadania
+
+### 1. Znalezienie Otoczki Wypukłej
+
+Pierwszym zadaniem jest znalezienie otoczki wypukłej dla zestawu punktów. Otoczka wypukła to najmniejszy wielokąt, który zawiera wszystkie punkty. W naszym projekcie do tego celu został użyty **algorytm Grahama**.
+
+### 2. Dobór Tragarzy
+
+Drugim zadaniem jest dobranie odpowiedniej liczby tragarzy do przenoszenia desek. Używamy **algorytmu Forda-Fulkersona** do rozwiązania problemu maksymalnego przepływu, co pozwala na optymalne przypisanie tragarzy do punktów dostarczenia desek.
+
+### 3. Plan Dostarczania Desek
+
+Ostatnim zadaniem jest opracowanie planu dostarczania desek do odpowiednich punktów. Ponownie używamy **algorytmu Forda-Fulkersona**, aby zaplanować trasy dostaw, zapewniając efektywność i minimalizując czas dostarczenia.
+
+## Struktura Projektu
+
+- `data/`: Folder zawierający dane wejściowe w plikach `.txt`.
+- `src/`: Folder zawierający implementacje algorytmów. `.py`.
+- `tests/`: Folder zawierający testy jednostkowe napisane w `pytest`.
+- `docs/`: Folder zawierający dokumentację wygenerowaną za pomocą `Doxygen`.
