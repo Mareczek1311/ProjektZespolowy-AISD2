@@ -14,6 +14,7 @@ przykladowy graf wejsciowy:
 
 import random
 import get_graph
+import random_graph
 
 #version 0.1
 
@@ -97,3 +98,15 @@ if __name__ == "__main__":
     kamery = znajdz_kamery(graf)
     print(kamery)
     draw(graf, kamery)
+
+
+    graf = random_graph.random_graph(10, '50/50')
+
+    for key in graf:
+        print(key, " -> ", graf[key])
+
+    kamery = znajdz_kamery(graf)
+    print(kamery)
+    draw(graf, kamery)
+
+    
