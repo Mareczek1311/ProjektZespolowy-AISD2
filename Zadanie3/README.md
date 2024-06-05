@@ -21,27 +21,25 @@
 
 ## Przykładowe dane wyjściowe dla pierwszego i drugiego dnia
 -Dzien: 1
-Płot:
-(1,10), (2,9), (3,8), (4,9), (5,5), (1,10)
+ - Płot: (1,10), (2,9), (3,8), (4,9), (5,5), (1,10)
 
-Plaszczak z maks energia: Plaszczak:4, energia: 8
+ - Plaszczak z maks energia: Plaszczak:4, energia: 8
 
-Dostępne punkty: [(2, 9), (3, 8), (4, 9)]
-Trasa strażnika: [(1, 10), (4, 9)]
-Dostępne punkty: [(5, 5)]
-Trasa strażnika: [(1, 10), (4, 9), (5, 5)]
-Trasa strażnika: [(1, 10), (4, 9), (5, 5), (1, 10)]
+ - Dostępne punkty: [(2, 9), (3, 8), (4, 9)]
+ - Trasa strażnika: [(1, 10), (4, 9)]
+ - Dostępne punkty: [(5, 5)]
+ - Trasa strażnika: [(1, 10), (4, 9), (5, 5)]
+ - Trasa strażnika: [(1, 10), (4, 9), (5, 5), (1, 10)]
 
-- Dzien: 2
-Płot:
-(2,9), (3,8), (4,9), (5,5), (1,10), (2,9)
+-Dzien: 2
+ - Płot: (2,9), (3,8), (4,9), (5,5), (1,10), (2,9)
 
-Plaszczak z maks energia: Plaszczak:6, energia: 8
+ - Plaszczak z maks energia: Plaszczak:6, energia: 8
 
-Dostępne punkty: [(3, 8), (4, 9), (5, 5)]
-Trasa strażnika: [(2, 9), (5, 5)]
-Dostępne punkty: [(1, 10)]
-Trasa strażnika: [(2, 9), (5, 5), 'melodia', (1, 10)]
-Trasa strażnika: [(2, 9), (5, 5), 'melodia', (1, 10), (2, 9)]
+ - Dostępne punkty: [(3, 8), (4, 9), (5, 5)]
+ - Trasa strażnika: [(2, 9), (5, 5)]
+ - Dostępne punkty: [(1, 10)]
+ - Trasa strażnika: [(2, 9), (5, 5), 'melodia', (1, 10)]
+ - Trasa strażnika: [(2, 9), (5, 5), 'melodia', (1, 10), (2, 9)]
   
 
