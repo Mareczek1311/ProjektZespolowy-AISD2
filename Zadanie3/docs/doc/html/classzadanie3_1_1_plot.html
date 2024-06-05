@@ -71,7 +71,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacezadanie3.html">zadanie3</a></li><li class="navelem"><a class="el" href="classzadanie3_1_1_plot.html">Plot</a></li>  </ul>
+<li class="navelem"><b>zadanie3</b></li><li class="navelem"><a class="el" href="classzadanie3_1_1_plot.html">Plot</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -100,17 +100,11 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab3c6448642df33f9e4285492336f8824" id="r_ab3c6448642df33f9e4285492336f8824"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3c6448642df33f9e4285492336f8824">trasa</a></td></tr>
+<tr class="memitem:ab3c6448642df33f9e4285492336f8824" id="r_ab3c6448642df33f9e4285492336f8824"><td class="memItemLeft" align="right" valign="top"><a id="ab3c6448642df33f9e4285492336f8824" name="ab3c6448642df33f9e4285492336f8824"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>trasa</b></td></tr>
 <tr class="separator:ab3c6448642df33f9e4285492336f8824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
-Konstruktor <b>init</b>:</h1>
-<ul>
-<li>Inicjalizuje pustą trasę patrolu.</li>
-<li>Będzie tutaj przechowywana trasa strażnika. </li>
-</ul>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeb2fad1e4d63ac1b973596ad546a8232" name="aeb2fad1e4d63ac1b973596ad546a8232"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb2fad1e4d63ac1b973596ad546a8232">&#9670;&#160;</a></span>__init__()</h2>
 
@@ -125,6 +119,12 @@ Konstruktor <b>init</b>:</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+<h1><a class="anchor" id="autotoc_md2"></a>
+Konstruktor <b>init</b>:</h1>
+<ul>
+<li>Inicjalizuje pustą trasę patrolu.</li>
+<li>Będzie tutaj przechowywana trasa strażnika. </li>
+</ul>
 
 </div>
 </div>
@@ -167,10 +167,16 @@ Metoda patrol</h1>
 <li>Wywołuje metodę wyznacz_trase która wyznacza trasę dla znalezionego strażnika<ul>
 <li>Jeśli znaleziono strażnika, metoda przeprowadza jego patrolowanie.</li>
 <li>Wyznaczana jest trasa patrolu dla strażnika, uwzględniając jego zasięg i dostępne punkty na trasie.</li>
-<li>W trakcie patrolowania strażnik przemieszcza się po trasie, usuwając odwiedzone punkty i dodając je na koniec trasy, aby kontynuować cykl patrolowania. </li>
+<li>W trakcie patrolowania strażnik przemieszcza się po trasie, usuwając odwiedzone punkty i dodając je na koniec trasy, aby kontynuować cykl patrolowania.</li>
+</ul>
+</li>
+<li>Poprawność:<ul>
+<li>Sprawdza czy zasięg strażnika jest większy od 0. Jeśli nie to wyświetla komunikat i zwraca 'None'</li>
 </ul>
 </li>
 </ul>
+<p><b>Złożoność czasowa: O(d * m * z)</b> gdzie d to liczba dni, m to liczba punktów w 'trasa', z to zasięg strażnika<br  />
+<b>Złożoność pamięciowa:</b> O(m) gdzie m to liczba punktów w 'trasa' </p>
 
 </div>
 </div>
@@ -210,8 +216,12 @@ Metoda wygeneruj_plot:</h1>
   </dd>
 </dl>
 </li>
-<li>Tworzy trasę patrolu na podstawie podanej liczby punktów i ich jasności. </li>
+<li>Tworzy trasę patrolu na podstawie podanej liczby punktów i ich jasności.</li>
+<li>Poprawność:</li>
 </ul>
+<p>Sprawdza czy liczba wartości jasności odpowiada liczbie punktów. Jeśli nie to wyświetla komunikat o błędzie i zwraca None</p>
+<p><b>Złożoność czasowa:</b> O(n) gdzie n to 'liczba_punkow'<br  />
+ <b>Złożoność pamięciowa:</b> O(n) gdzie n to 'liczba_punktow' </p>
 
 </div>
 </div>
@@ -232,9 +242,11 @@ Metoda wygeneruj_plot:</h1>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Metoda wyswietl_plot:</h1>
 <ul>
-<li>Wyswietla trasę patrolu</li>
-<li>Sprawdza, czy trasa nie jest pusta, a następnie wyświetla punkty trasy w czytelny sposób </li>
+<li>Wyswietla trasę patrolu w formie krotek (punkt, jasność)</li>
+<li>Sprawdza, czy trasa nie jest pusta, a następnie wyświetla punkty trasy w czytelny sposób</li>
 </ul>
+<p><b>Złożoność czasowa:</b> O(n) gdzie n to liczba punktów w 'trasa'<br  />
+ <b>Złożoność pamięciowa:</b> O(n) gdzie n to liczba punktów w 'trasa' </p>
 
 </div>
 </div>
@@ -291,8 +303,10 @@ Metoda wyznacz_trase</h1>
 </ul>
 </li>
 <li>Po wyznaczeniu trasy, strażnik przeprowadza patrolowanie, przemieszczając się po trasie i kontrolując dostępne punkty.</li>
-<li>Po zakończeniu patrolowania, strażnik zostaje usunięty z listy płaszczaków, aby uniknąć ponownego wyboru w następnych dniach patrolu. </li>
+<li>Po zakończeniu patrolowania, strażnik zostaje usunięty z listy płaszczaków, aby uniknąć ponownego wyboru w następnych dniach patrolu.</li>
 </ul>
+<p><b>Złożoność czasowa:</b> O(m * z) gdzie m to liczba punktów w 'trasa', z to zasięg strażnika<br  />
+<b>Złożoność pamięciowa:</b> O(m) gdzie m to liczba punktów w 'trasa' </p>
 
 </div>
 </div>
@@ -328,26 +342,16 @@ Metoda znajdz_straznika</h1>
 <li>Zmienna plaszczak_z_max_energia przechowuje referencję do płaszczaka z największą energią</li>
 <li>Jeśli energia aktualnie przetwarzanego płaszczaka jest większa niż dotychczasowa maksymalna energia, wartość max_energia jest aktualizowana, a plaszczak_z_max_energia ustawiany jest na obecnie przetwarzanego płaszczaka.</li>
 <li>Po przejrzeniu całej listy płaszczaków, zwracana jest referencja do płaszczaka z największą energią.</li>
-<li>Jeśli lista jest pusta zwracana jest wartość None co oznacza brak płaszczaków </li>
+<li>Jeśli lista jest pusta zwracana jest wartość None co oznacza brak płaszczaków</li>
 </ul>
+<p><b>Złożoność czasowa:</b> O(p) gdzie p to liczba plaszczakow<br  />
+<b>Złożoność pamięciowa:</b> O(1) </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab3c6448642df33f9e4285492336f8824" name="ab3c6448642df33f9e4285492336f8824"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3c6448642df33f9e4285492336f8824">&#9670;&#160;</a></span>trasa</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">zadanie3.Plot.trasa</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><b>zadanie3.py</b></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

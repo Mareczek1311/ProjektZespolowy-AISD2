@@ -16,16 +16,19 @@ class Plaszczak:
         """!
         # Metoda info_plaszczak\n
             Wyświetla informacje o płaszczaku (numer, energia)
+
+            <b>Złożoność czasowa:</b> O(1)\n
+            <b>Złożoność pamięciowa:</b> O(1)
         """
         print(f"\tPlaszczak: {self.numer}, Energia: {self.energia}")
 
 class Plot:
-    """!
-    # Konstruktor __init__:
-        - Inicjalizuje pustą trasę patrolu.
-        - Będzie tutaj przechowywana trasa strażnika.
-    """
     def __init__(self):
+        """!
+        # Konstruktor __init__:
+            - Inicjalizuje pustą trasę patrolu.
+            - Będzie tutaj przechowywana trasa strażnika.
+        """
         self.trasa = []
 
     def wygeneruj_plot(self, liczba_punktow, jasnosci):
@@ -35,6 +38,12 @@ class Plot:
                 @param "liczba_punktow" - liczba punktów w płocie w których strażnik musi się zatrzymać
                 @param "jasnosci" - jasność punktu\n
             - Tworzy trasę patrolu na podstawie podanej liczby punktów i ich jasności.
+            
+            - Poprawność:
+                - Sprawdza czy liczba wartości jasności odpowiada liczbie punktów. Jeśli nie to wyświetla komunikat o błędzie i zwraca None
+
+            <b>Złożoność czasowa:</b> O(n) gdzie n to 'liczba_punkow'\n
+            <b>Złożoność pamięciowa:</b> O(n) gdzie n to 'liczba_punktow'
         """
         if len(jasnosci) != liczba_punktow:
             print("Liczba wartości jasności musi być równa liczbie punktów.")
@@ -50,8 +59,11 @@ class Plot:
     def wyswietl_plot(self):
         """!
         # Metoda wyswietl_plot:
-            - Wyswietla trasę patrolu
+            - Wyswietla trasę patrolu w formie krotek (punkt, jasność)
             - Sprawdza, czy trasa nie jest pusta, a następnie wyświetla punkty trasy w czytelny sposób
+
+            <b>Złożoność czasowa:</b> O(n) gdzie n to liczba punktów w 'trasa'\n
+            <b>Złożoność pamięciowa:</b> O(n) gdzie n to liczba punktów w 'trasa'
         """
         if not self.trasa:
             print("Trasa jest pusta.")
@@ -73,6 +85,12 @@ class Plot:
             - Jeśli znaleziono strażnika, metoda przeprowadza jego patrolowanie.
             - Wyznaczana jest trasa patrolu dla strażnika, uwzględniając jego zasięg i dostępne punkty na trasie.
             - W trakcie patrolowania strażnik przemieszcza się po trasie, usuwając odwiedzone punkty i dodając je na koniec trasy, aby kontynuować cykl patrolowania.
+    
+        - Poprawność:
+            - Sprawdza czy zasięg strażnika jest większy od 0. Jeśli nie to wyświetla komunikat i zwraca 'None'
+            
+        <b>Złożoność czasowa: O(d * m * z)</b> gdzie d to liczba dni, m to liczba punktów w 'trasa', z to zasięg strażnika\n
+        <b>Złożoność pamięciowa:</b> O(m) gdzie m to liczba punktów w 'trasa'
         """
         dni = 7
         if zasieg == 0:
@@ -110,6 +128,9 @@ class Plot:
         - Jeśli energia aktualnie przetwarzanego płaszczaka jest większa niż dotychczasowa maksymalna energia, wartość max_energia jest aktualizowana, a plaszczak_z_max_energia ustawiany jest na obecnie przetwarzanego płaszczaka.
         - Po przejrzeniu całej listy płaszczaków, zwracana jest referencja do płaszczaka z największą energią.
         - Jeśli lista jest pusta zwracana jest wartość None co oznacza brak płaszczaków
+
+        <b>Złożoność czasowa:</b> O(p) gdzie p to liczba plaszczakow\n
+        <b>Złożoność pamięciowa:</b> O(1)
         """
         max_energia = 0
         plaszczak_z_max_energia = None
@@ -143,6 +164,9 @@ class Plot:
             - Po zakończeniu pętli, dodaje się punkt startowy na koniec trasy, aby strażnik mógł wrócić do punktu wyjściowego.
         - Po wyznaczeniu trasy, strażnik przeprowadza patrolowanie, przemieszczając się po trasie i kontrolując dostępne punkty.
         - Po zakończeniu patrolowania, strażnik zostaje usunięty z listy płaszczaków, aby uniknąć ponownego wyboru w następnych dniach patrolu.
+
+        <b>Złożoność czasowa:</b> O(m * z) gdzie m to liczba punktów w 'trasa', z to zasięg strażnika\n
+        <b>Złożoność pamięciowa:</b> O(m) gdzie m to liczba punktów w 'trasa'
         """
         trasa_straznika = []
         obecny_indeks = 0

@@ -18,17 +18,10 @@
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824}{trasa}}
+\Hypertarget{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824}\label{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824} 
+{\bfseries trasa}
 \end{DoxyCompactItemize}
 
-
-\doxysubsection{Detailed Description}
-\hypertarget{classzadanie3_1_1_plot_autotoc_md0}{}\doxysubsection{\texorpdfstring{Konstruktor {\bfseries{init}}\+:}{Konstruktor {\bfseries{init}}\+:}}\label{classzadanie3_1_1_plot_autotoc_md0}
-
-\begin{DoxyItemize}
-\item Inicjalizuje pustą trasę patrolu.
-\item Będzie tutaj przechowywana trasa strażnika. 
-\end{DoxyItemize}
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classzadanie3_1_1_plot_aeb2fad1e4d63ac1b973596ad546a8232}\label{classzadanie3_1_1_plot_aeb2fad1e4d63ac1b973596ad546a8232} 
@@ -37,7 +30,12 @@
 \doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
 {\footnotesize\ttfamily zadanie3.\+Plot.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+\hypertarget{classzadanie3_1_1_plot_autotoc_md2}{}\doxysubsection{\texorpdfstring{Konstruktor {\bfseries{init}}\+:}{Konstruktor {\bfseries{init}}\+:}}\label{classzadanie3_1_1_plot_autotoc_md2}
 
+\begin{DoxyItemize}
+\item Inicjalizuje pustą trasę patrolu.
+\item Będzie tutaj przechowywana trasa strażnika. 
+\end{DoxyItemize}
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classzadanie3_1_1_plot_adfd6993870749015692d3d78a354e1ff}\label{classzadanie3_1_1_plot_adfd6993870749015692d3d78a354e1ff} 
@@ -62,9 +60,16 @@
 \begin{DoxyItemize}
 \item Jeśli znaleziono strażnika, metoda przeprowadza jego patrolowanie.
 \item Wyznaczana jest trasa patrolu dla strażnika, uwzględniając jego zasięg i dostępne punkty na trasie.
-\item W trakcie patrolowania strażnik przemieszcza się po trasie, usuwając odwiedzone punkty i dodając je na koniec trasy, aby kontynuować cykl patrolowania. 
+\item W trakcie patrolowania strażnik przemieszcza się po trasie, usuwając odwiedzone punkty i dodając je na koniec trasy, aby kontynuować cykl patrolowania.
 \end{DoxyItemize}
-\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00}\label{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00} 
+\item Poprawność\+:
+\begin{DoxyItemize}
+\item Sprawdza czy zasięg strażnika jest większy od 0. Jeśli nie to wyświetla komunikat i zwraca \textquotesingle{}None\textquotesingle{}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+{\bfseries{Złożoność czasowa\+: O(d \texorpdfstring{$\ast$}{*} m \texorpdfstring{$\ast$}{*} z)}} gdzie d to liczba dni, m to liczba punktów w \textquotesingle{}trasa\textquotesingle{}, z to zasięg strażnika~\newline
+{\bfseries{Złożoność pamięciowa\+:}} O(m) gdzie m to liczba punktów w \textquotesingle{}trasa\textquotesingle{} \Hypertarget{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00}\label{classzadanie3_1_1_plot_a2ee37d44db9d93733f397c9d2d93af00} 
 \index{zadanie3.Plot@{zadanie3.Plot}!wygeneruj\_plot@{wygeneruj\_plot}}
 \index{wygeneruj\_plot@{wygeneruj\_plot}!zadanie3.Plot@{zadanie3.Plot}}
 \doxysubsubsection{\texorpdfstring{wygeneruj\_plot()}{wygeneruj\_plot()}}
@@ -83,8 +88,14 @@
 \hline
 \end{DoxyParams}
 
-\item Tworzy trasę patrolu na podstawie podanej liczby punktów i ich jasności. 
-\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8}\label{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8} 
+\item Tworzy trasę patrolu na podstawie podanej liczby punktów i ich jasności.
+\item Poprawność\+:
+\end{DoxyItemize}
+
+Sprawdza czy liczba wartości jasności odpowiada liczbie punktów. Jeśli nie to wyświetla komunikat o błędzie i zwraca None
+
+{\bfseries{Złożoność czasowa\+:}} O(n) gdzie n to \textquotesingle{}liczba\+\_\+punkow\textquotesingle{}~\newline
+ {\bfseries{Złożoność pamięciowa\+:}} O(n) gdzie n to \textquotesingle{}liczba\+\_\+punktow\textquotesingle{} \Hypertarget{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8}\label{classzadanie3_1_1_plot_a73d729db35f8f498a27b79baf72307b8} 
 \index{zadanie3.Plot@{zadanie3.Plot}!wyswietl\_plot@{wyswietl\_plot}}
 \index{wyswietl\_plot@{wyswietl\_plot}!zadanie3.Plot@{zadanie3.Plot}}
 \doxysubsubsection{\texorpdfstring{wyswietl\_plot()}{wyswietl\_plot()}}
@@ -93,9 +104,12 @@
 \hypertarget{classzadanie3_1_1_plot_autotoc_md4}{}\doxysubsection{\texorpdfstring{Metoda wyswietl\+\_\+plot\+:}{Metoda wyswietl\+\_\+plot\+:}}\label{classzadanie3_1_1_plot_autotoc_md4}
 
 \begin{DoxyItemize}
-\item Wyswietla trasę patrolu
-\item Sprawdza, czy trasa nie jest pusta, a następnie wyświetla punkty trasy w czytelny sposób 
-\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa}\label{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa} 
+\item Wyswietla trasę patrolu w formie krotek (punkt, jasność)
+\item Sprawdza, czy trasa nie jest pusta, a następnie wyświetla punkty trasy w czytelny sposób
+\end{DoxyItemize}
+
+{\bfseries{Złożoność czasowa\+:}} O(n) gdzie n to liczba punktów w \textquotesingle{}trasa\textquotesingle{}~\newline
+ {\bfseries{Złożoność pamięciowa\+:}} O(n) gdzie n to liczba punktów w \textquotesingle{}trasa\textquotesingle{} \Hypertarget{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa}\label{classzadanie3_1_1_plot_a15356f45197ce01a512a6655125cfcfa} 
 \index{zadanie3.Plot@{zadanie3.Plot}!wyznacz\_trase@{wyznacz\_trase}}
 \index{wyznacz\_trase@{wyznacz\_trase}!zadanie3.Plot@{zadanie3.Plot}}
 \doxysubsubsection{\texorpdfstring{wyznacz\_trase()}{wyznacz\_trase()}}
@@ -131,8 +145,11 @@
 \item Po zakończeniu pętli, dodaje się punkt startowy na koniec trasy, aby strażnik mógł wrócić do punktu wyjściowego.
 \end{DoxyItemize}
 \item Po wyznaczeniu trasy, strażnik przeprowadza patrolowanie, przemieszczając się po trasie i kontrolując dostępne punkty.
-\item Po zakończeniu patrolowania, strażnik zostaje usunięty z listy płaszczaków, aby uniknąć ponownego wyboru w następnych dniach patrolu. 
-\end{DoxyItemize}\Hypertarget{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9}\label{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9} 
+\item Po zakończeniu patrolowania, strażnik zostaje usunięty z listy płaszczaków, aby uniknąć ponownego wyboru w następnych dniach patrolu.
+\end{DoxyItemize}
+
+{\bfseries{Złożoność czasowa\+:}} O(m \texorpdfstring{$\ast$}{*} z) gdzie m to liczba punktów w \textquotesingle{}trasa\textquotesingle{}, z to zasięg strażnika~\newline
+{\bfseries{Złożoność pamięciowa\+:}} O(m) gdzie m to liczba punktów w \textquotesingle{}trasa\textquotesingle{} \Hypertarget{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9}\label{classzadanie3_1_1_plot_a8605d2e3de704daa355809c718b613c9} 
 \index{zadanie3.Plot@{zadanie3.Plot}!znajdz\_straznika@{znajdz\_straznika}}
 \index{znajdz\_straznika@{znajdz\_straznika}!zadanie3.Plot@{zadanie3.Plot}}
 \doxysubsubsection{\texorpdfstring{znajdz\_straznika()}{znajdz\_straznika()}}
@@ -151,13 +168,12 @@
 \item Zmienna plaszczak\+\_\+z\+\_\+max\+\_\+energia przechowuje referencję do płaszczaka z największą energią
 \item Jeśli energia aktualnie przetwarzanego płaszczaka jest większa niż dotychczasowa maksymalna energia, wartość max\+\_\+energia jest aktualizowana, a plaszczak\+\_\+z\+\_\+max\+\_\+energia ustawiany jest na obecnie przetwarzanego płaszczaka.
 \item Po przejrzeniu całej listy płaszczaków, zwracana jest referencja do płaszczaka z największą energią.
-\item Jeśli lista jest pusta zwracana jest wartość None co oznacza brak płaszczaków 
+\item Jeśli lista jest pusta zwracana jest wartość None co oznacza brak płaszczaków
 \end{DoxyItemize}
 
-\doxysubsection{Member Data Documentation}
-\Hypertarget{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824}\label{classzadanie3_1_1_plot_ab3c6448642df33f9e4285492336f8824} 
-\index{zadanie3.Plot@{zadanie3.Plot}!trasa@{trasa}}
-\index{trasa@{trasa}!zadanie3.Plot@{zadanie3.Plot}}
-\doxysubsubsection{\texorpdfstring{trasa}{trasa}}
-{\footnotesize\ttfamily zadanie3.\+Plot.\+trasa}
+{\bfseries{Złożoność czasowa\+:}} O(p) gdzie p to liczba plaszczakow~\newline
+{\bfseries{Złożoność pamięciowa\+:}} O(1) 
 
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+zadanie3.\+py\end{DoxyCompactItemize}
