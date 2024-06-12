@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['n_0',['n',['../classfordfulkerson_1_1_ford_fulkerson.html#acbb94887c5c8d953dd4d4e888d853e1c',1,'fordfulkerson.FordFulkerson.n'],['../namespacefordfulkerson.html#ab99b8ad4c82c245fcdb516895e243292',1,'fordfulkerson.n']]]
+  ['m_0',['m',['../namespacemain.html#a860ea3021871d5efa8973e439a74cdd0',1,'main']]],
+  ['maxflow_1',['maxFlow',['../classfordfulkerson_1_1_ford_fulkerson.html#a324f6a508be1d58cfe51fb5bebbc88d3',1,'fordfulkerson::FordFulkerson']]],
+  ['min_2',['min',['../classgraham_1_1_graham.html#abfa35d9e6b52398005525f7817bbc7de',1,'graham::Graham']]]
 ];

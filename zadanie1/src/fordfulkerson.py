@@ -156,23 +156,6 @@ class FordFulkerson:
             self.visited = []
             self.maxFlow += f
 
-    def bfs(self, node):
-
-        q = []
-        q.append(node)
-        visited = []
-        visited.append(node)
-
-        while len(q) > 0:
-            node = q.pop(0)
-            if node == self.t:
-                break
-            
-            for edge in self.graph[node]:
-                if edge.remainingCapacity() > 0 and edge.to not in visited:
-                    visited.append(edge.to)
-                    q.append(edge.to)
-
     def dfs(self, node, flow):
         """!
         Metoda ktora przeszukuje graf w glab
