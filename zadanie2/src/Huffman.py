@@ -11,6 +11,10 @@ class Node:
         self.right = None
     
     def __lt__(self, other):
+        """!
+        __lt__ Metoda definiująca zachowanie operatora "<" dla obiektów
+        zdefiniowanych w tej klasie
+        """
         return self.frequency < other.frequency
     
 
