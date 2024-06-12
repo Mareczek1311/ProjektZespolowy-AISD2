@@ -1,13 +1,25 @@
 class Rabin_Karp:
     def __init__(self, text):
+        """!
+        Konstruktor dla klasy Rabin_Karp
+        @Param text - tekst w którym będziemy szukali wzorców
+        """
         self.text = text
-        self.indexes = {}
 
     def find_pattern(self, pattern):
+        """!
+        find_pattern Metoda która wyszukuje wzorzec w  tekście podanym jako argument
+        konstruktora
+        @param pattern - wzorzec który chcemy wyszukać
+        @return słownik {"wzorzec":[i1, i2, ..., in]}, gdzie in są to indeksy wystąpień
+         wzorca w tekście dla n należącego do liczb naturalnych
+        """
+        indexes = {}
         n = len(self.text)
         m = len(pattern)
         if m == 0:
-            return
+            return indexes
+        
         bns = 256   # bns == base of number system
         pm = 101    # pm == prime number
 
@@ -29,9 +41,9 @@ class Rabin_Karp:
                     else:
                         break
                 if idx == m:
-                    if pattern not in self.indexes:
-                        self.indexes[pattern] = []
-                    self.indexes[pattern].append(i)
+                    if pattern not in indexes:
+                        indexes[pattern] = []
+                    indexes[pattern].append(i)
                     
             if i < n - m:
                 hash_text = (bns * (hash_text - ord(self.text[i]) * h) + 
@@ -39,6 +51,8 @@ class Rabin_Karp:
                 
                 if hash_text < 0:
                     hash_text += hash_text + pm
+
+        return indexes
 
 #przyklad uzycia
 

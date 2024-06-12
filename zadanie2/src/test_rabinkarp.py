@@ -15,5 +15,5 @@ class TestRabin:
 
     def test_find_pattern(self, texts, patterns, expected):
         r = Rabin_Karp(texts)
-        r.find_pattern(patterns)
-        assert r.indexes == expected
+
+        assert r.find_pattern(patterns) == expected
