@@ -5,6 +5,7 @@ from file_reader import File_reader
 class Main:
     def __init__(self, filename):
         self.fr = File_reader(filename)
+        self.indexes = {}
 
     def run(self):
         self.fr.readText()
@@ -12,23 +13,26 @@ class Main:
         incorrectWords = list(self.fr.wordsToReplace.keys())
 
         for word in incorrectWords:
-            self.rk.find_pattern(word)
+            self.indexes = self.rk.find_pattern(word)
 
-            for indexes in self.rk.indexes.values():
+            for indexes in self.indexes.values():
                 for i in indexes:
                     self.repair(i, self.fr.wordsToReplace[word])
 
-            self.rk.indexes.clear()
+            self.indexes.clear()
 
         print("\nNaprawiony tekst: \n")
         print(self.fr.text)
 
         self.hm = Huffman(self.fr.text)
         
-        
+        encoded_text = self.hm.huffman()
 
         print("Skompresowany tekst: \n")
-        print(self.hm.huffman())
+        print(encoded_text)
+
+        print("Rozkompresowany tekst: \n")
+        print(self.hm.dehuffman(encoded_text))
 
     def repair(self, idx, word):
         m = len(word)
@@ -43,7 +47,7 @@ class Main:
 
 #przyklad uzycia
 
-m = Main('tests/example3.txt')
+m = Main('examples/example1.txt')
 m.run()
 
 
