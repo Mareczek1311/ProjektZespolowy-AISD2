@@ -4,25 +4,32 @@ def random_graph(n, option='default'):
     graf = {}
 
     for i in range(n):
-        randomX = random.randint(0, n+10)
-        randomY = random.randint(0, n+10)
-        graf[(randomX, randomY)] = []
+        while True:
+            randomX = random.randint(0, n+10)
+            randomY = random.randint(0, n+10)
+            if (randomX, randomY) not in graf:
+                graf[(randomX, randomY)] = []
+                break
     
-    for key in graf:
-        if option == 'default':
-            for key2 in graf:
-                if key != key2:
-                    if key2 not in graf[key] and key not in graf[key2]:
-                        graf[key].append(key2)
-                        graf[key2].append(key)
-        elif option == '50/50':
-            for key2 in graf:
-                if key != key2:
-                    if len(graf[key]) < n/2:
-                        if key2 not in graf[key] and key not in graf[key2]:
-                            graf[key].append(key2)
-                            graf[key2].append(key)
+    keys = list(graf.keys())
+    
+    if option == 'default':
+        for i in range(n):
+            for j in range(i + 1, n):
+                graf[keys[i]].append(keys[j])
+                graf[keys[j]].append(keys[i])
+    elif option == '50/50':
+        for i in range(n):
+            for j in range(i + 1, n):
+                if random.randint(0, 1):
+                    graf[keys[i]].append(keys[j])
+                    graf[keys[j]].append(keys[i])
+    elif option == 'half_connections':
+        for i in range(n):
+            while len(graf[keys[i]]) < n // 2:
+                j = random.randint(0, n - 1)
+                if i != j and keys[j] not in graf[keys[i]]:
+                    graf[keys[i]].append(keys[j])
+                    graf[keys[j]].append(keys[i])
     
     return graf
-
-

@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['t_0',['t',['../classfordfulkerson_1_1_ford_fulkerson.html#ade343bc6e52c1265696eaaa3e3ad7dd4',1,'fordfulkerson::FordFulkerson']]],
-  ['testkluby_1',['testKluby',['../namespacefile__reader.html#acf22e2786b09e89b38a0874390552dbf',1,'file_reader']]],
-  ['testowanie_2',['testowanie',['../namespacetestowanie.html',1,'']]],
-  ['testowanie_2epy_3',['testowanie.py',['../testowanie_8py.html',1,'']]],
-  ['testowanie_5ffordfulkerson_5ftragarze_4',['testowanie_fordfulkerson_tragarze',['../namespacetestowanie.html#a0fc16ddf15470f9ade6985ab1a9cc801',1,'testowanie']]],
-  ['testowanie_5fgraham_5',['testowanie_graham',['../namespacetestowanie.html#a19cd1c7a765e95614de0cf469982e73a',1,'testowanie']]],
-  ['to_6',['to',['../classfordfulkerson_1_1_edge.html#a335681518c7164e4346717eedc6eb58a',1,'fordfulkerson::Edge']]],
-  ['tragarzy_7',['2. Dobór Tragarzy',['../index.html#autotoc_md3',1,'']]]
+  ['s_0',['s',['../classfordfulkerson_1_1_ford_fulkerson.html#a8e7d4ecfc557995197f592be5bccebfe',1,'fordfulkerson::FordFulkerson']]],
+  ['solve_1',['solve',['../classfordfulkerson_1_1_ford_fulkerson.html#a1e759faf9fc592c44b2e8c918c7b039d',1,'fordfulkerson::FordFulkerson']]],
+  ['solved_2',['solved',['../classfordfulkerson_1_1_ford_fulkerson.html#ac94271f4a94015b28c90db047142e9a8',1,'fordfulkerson::FordFulkerson']]],
+  ['solver_3',['solver',['../namespacefordfulkerson.html#a43695d794c35ff046bfab9e70846bb3e',1,'fordfulkerson']]],
+  ['start_4',['start',['../namespacefordfulkerson.html#a4c01d54242106915d35888caa14c8399',1,'fordfulkerson']]],
+  ['struktura_20projektu_5',['Struktura Projektu',['../index.html#autotoc_md5',1,'']]]
 ];

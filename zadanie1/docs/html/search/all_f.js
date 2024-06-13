@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['random_5fpoints_0',['random_points',['../namespacerandom__points.html',1,'']]],
-  ['random_5fpoints_2epy_1',['random_points.py',['../random__points_8py.html',1,'']]],
-  ['random_5ftragarze_2',['random_tragarze',['../namespacerandom__tragarze.html',1,'random_tragarze'],['../namespacerandom__tragarze.html#a6a4885dace96cc94bb0396b7206e3205',1,'random_tragarze.random_tragarze()']]],
-  ['random_5ftragarze_2epy_3',['random_tragarze.py',['../random__tragarze_8py.html',1,'']]],
-  ['randompoints_4',['randomPoints',['../namespacerandom__points.html#a7585dc71864ffe2dcef6e9605015904c',1,'random_points']]],
-  ['readpoints_5',['readPoints',['../classfile__reader_1_1_file__reader.html#a4ffc004aadd7242608cdf5c1b413fec2',1,'file_reader::File_reader']]],
-  ['readtragarzy_6',['readTragarzy',['../classfile__reader_1_1_file__reader.html#acfe77b3b06a0ef342b56d60177c839b6',1,'file_reader::File_reader']]],
-  ['remainingcapacity_7',['remainingCapacity',['../classfordfulkerson_1_1_edge.html#af6a384cd1f28e3ab244e85f301f47905',1,'fordfulkerson::Edge']]],
-  ['run_8',['run',['../classmain_1_1_main.html#ace4ba9fb53d5e84dfce9dd25fef9925f',1,'main::Main']]]
+  ['plan_20dostarczania_20desek_0',['3. Plan Dostarczania Desek',['../index.html#autotoc_md4',1,'']]],
+  ['projekt_3a_20optymalizacja_20dostarczania_20desek_20zadanie_201_1',['Projekt: Optymalizacja Dostarczania Desek (ZADANIE 1)',['../index.html',1,'']]],
+  ['projektu_2',['Projektu',['../index.html#autotoc_md0',1,'Opis Projektu'],['../index.html#autotoc_md5',1,'Struktura Projektu']]],
+  ['punkty_3',['punkty',['../classfordfulkerson_1_1_ford_fulkerson.html#acfae79e9362d08e0fda07b62fc32cf5f',1,'fordfulkerson.FordFulkerson.punkty'],['../classgraham_1_1_graham.html#a9b8ce1ddf399c79e15faf3f7b1d690a8',1,'graham.Graham.punkty'],['../classmain_1_1_main.html#a6e9ce9d4dc0f6b6d7e70cc7ccf32d5ee',1,'main.Main.punkty'],['../namespacefordfulkerson.html#a54f48070b6a8206b4dbe25044e60160b',1,'fordfulkerson.punkty']]]
 ];

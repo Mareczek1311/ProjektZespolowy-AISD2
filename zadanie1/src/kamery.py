@@ -1,70 +1,47 @@
-#input - graf (adjacency list)
-#tworze liste W ktora bedzie posiadac wszystkie wierzcholki
-#tworze pusta liste K ktora bedzie przechowywac wierzcholki z kamerami
-#biore losowa krawedz a i b
-#usuwam te wierzcholki z tej listy W
-#usuwam wszystkie krawedzie ktore sa polaczone z a lub z b
-#dodaje punkty a i b do listy K
-
-
-
-"""
-przykladowy graf wejsciowy:
-"""
-
 import random
-import get_graph
-import random_graph
-
-#version 0.1
-
+from get_graph import get_graph
+from random_graph import random_graph
 
 import networkx as nx
 import matplotlib.pyplot as plt
 
-#poki co algorytm naiwny
-#biore losowa krawedz a i b
-
-#w kolejnej wersji bede bral krawedz ktora ma najwiecej krawedzi
-
-def znajdz_kamery(graf):
-    wierzcholki = []
+def znajdz_kamery_v2(graf):
+    """!
+    znajdz_kamery Metoda ktora znajduje kamery dla danego grafu
+    @param graf - graf w postaci slownika gdzie kluczem jest wierzcholek a wartoscia lista sasiadow wierzcholka
+    """
+    wierzcholki = set(graf.keys())
     kamery = []
 
-    for key in graf:
-        wierzcholki.append(key)
+    while wierzcholki:
+        # Znajdź wierzchołek o największym stopniu
+        a = max(wierzcholki, key=lambda node: len(graf[node]))
 
-    while len(wierzcholki) > 0:
-        print("W: ", wierzcholki, "  || K: ", kamery)
-        a = random.choice(wierzcholki)
+        # Szukaj sąsiada wierzchołka a
         b = None
-
         for node in graf[a]:
             if node in wierzcholki:
                 b = node
                 break
-        
-        if b == None:
+
+        # Jeśli nie ma sąsiada wierzchołka a
+        if b is None:
             kamery.append(a)
             wierzcholki.remove(a)
             continue
 
+        # Usuń a, b i ich sąsiadów z wierzcholków
         wierzcholki.remove(a)
         wierzcholki.remove(b)
-
         for key in graf[a]:
-            if key in wierzcholki:
-                wierzcholki.remove(key)
-        
+            wierzcholki.discard(key)
         for key in graf[b]:
-            if key in wierzcholki:
-                wierzcholki.remove(key)
-        
+            wierzcholki.discard(key)
+
+        # Dodaj kamery na a i b
         kamery.append(a)
         kamery.append(b)
 
-        
-            
     return kamery
 
 
@@ -90,23 +67,19 @@ def draw(graf, kamery):
 
 if __name__ == "__main__":
     graf = {(0, 0): [((-2, 2), 5), ((2, 2), 5), ((2, -2), 5), ((-2, -2), 5)], (-3, 3): [((10, 0), 6.0)], (3, 3): [((10, 0), 6.0)], (-2, 2): [((-3, 3), 5)], (2, 2): [((3, 3), 5)], (-2, -2): [((-3, -3), 5), ((-2, 2), 5)], (2, -2): [((3, -3), 5), ((-3, -3), 5), ((-2, -2), 5), ((3, 3), 5)], (-3, -3): [((10, 0), 6.0)], (3, -3): [((10, 0), 6.0)], (10, 0): []}
-    graf = get_graph.get_graph(graf)
+    graf = get_graph(graf)
 
     for key in graf:
         print(key, " -> ", graf[key])    
 
-    kamery = znajdz_kamery(graf)
+    kamery = znajdz_kamery_v2(graf)
     print(kamery)
     draw(graf, kamery)
 
+    graf = random_graph(7, 'default')
+    kamery = znajdz_kamery_v2(graf)
+    draw(graf, kamery)   
 
-    graf = random_graph.random_graph(10, '50/50')
-
-    for key in graf:
-        print(key, " -> ", graf[key])
-
-    kamery = znajdz_kamery(graf)
-    print(kamery)
-    draw(graf, kamery)
-
-    
+    graf = random_graph(7, 'half_connections')
+    kamery = znajdz_kamery_v2(graf)
+    draw(graf, kamery)    

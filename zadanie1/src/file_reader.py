@@ -108,18 +108,6 @@ def main():
     data = fr.read()
     print(data)
 
-def testKluby():
-    fr = File_reader()
-    kluby = fr.readKluby('../data/kluby.txt')
-    fr.readKlubyRelacje('../data/kluby_relacje.txt', kluby)
-
-    for key, value in kluby.items():
-        print(value.nazwaKlubu)
-        print("Dobre relacje:")
-        for rel in value.dobreRelacje:
-            print(kluby[rel].nazwaKlubu, end=' ')
-        print()
-        print("=========")
 if __name__ == '__main__':
     #main()
 

@@ -4,6 +4,9 @@ from file_reader import File_reader
 from graham import Graham
 from fordfulkerson import FordFulkerson
 from random_tragarze import random_tragarze
+from kamery import znajdz_kamery_v2
+from kamery import draw
+from get_graph import get_graph
 
 def oblicz_odleglosc(p1, p2):
     #odleglosc dwoch punktow x1  y1 x2  y2
@@ -51,8 +54,8 @@ class Main:
         
 
         #tragarze
-        #tragarze = self.fr.readTragarzy("../data/tragarze5.txt")
-        tragarze = random_tragarze(10, '50/50')
+        tragarze = self.fr.readTragarzy("../data/tragarze5.txt")
+        #tragarze = random_tragarze(10, '50/50')
         solver = FordFulkerson(len(tragarze), tragarze["start"], tragarze["end"], tragarze["punkty"])
         solver.config(tragarze["start"], tragarze["end"], tragarze["adjList"])
         print(solver.getMaxFlow())
@@ -70,6 +73,12 @@ class Main:
         print("Graph:")
         solver.getGraph()
         solver.draw_plan_budowy()
+
+        #Kamery
+        graf = get_graph(self.data["adjList"])
+        kamery = znajdz_kamery_v2(graf)
+        draw(graf, kamery)
+
 
 if __name__ == '__main__':
     m = Main()
