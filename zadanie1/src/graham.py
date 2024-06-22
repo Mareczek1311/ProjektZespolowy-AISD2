@@ -1,6 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from functools import cmp_to_key
+from random_points import randomPoints
 
 ## Klasa odpowiadająca za wyznaczanie otoczki wypukłej
 class Graham: 
@@ -134,8 +135,7 @@ class Graham:
         G.add_edges_from([(otoczka[i], self.convexHull[i+1]) for i in range(len(otoczka)-1)])
         pos = {node: node for node in G.nodes()}
         
-        # wczesniej bylo 1 1
-        nx.draw(G, pos, with_labels=True, node_size=4, node_color="lightblue", font_size=8, font_weight="bold")
+        nx.draw(G, pos, with_labels=False, node_size=32, node_color="lightblue", font_size=8, font_weight="bold")
 
         plt.grid(True)
         plt.show()
@@ -149,3 +149,12 @@ class Graham:
             self.calculated = True
         
         return self.convexHull
+
+
+if __name__ == "__main__":
+    
+    punkty = randomPoints(35)
+    graham = Graham(punkty)
+    graham.algorytm()
+    print(graham.getOtoczka())
+    graham.draw(punkty, graham.getOtoczka())

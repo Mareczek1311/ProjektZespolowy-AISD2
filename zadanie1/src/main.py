@@ -54,7 +54,7 @@ class Main:
         
 
         #tragarze
-        tragarze = self.fr.readTragarzy("../data/tragarze5.txt")
+        tragarze = self.fr.readTragarzy("../data/tragarze2.txt")
         #tragarze = random_tragarze(10, '50/50')
         solver = FordFulkerson(len(tragarze), tragarze["start"], tragarze["end"], tragarze["punkty"])
         solver.config(tragarze["start"], tragarze["end"], tragarze["adjList"])
@@ -72,7 +72,7 @@ class Main:
         print(solver.getMaxFlow())
         print("Graph:")
         solver.getGraph()
-        solver.draw_plan_budowy()
+        solver.plan_budowy()
 
         #Kamery
         graf = get_graph(self.data["adjList"])

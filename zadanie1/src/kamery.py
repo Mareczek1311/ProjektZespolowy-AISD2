@@ -66,16 +66,6 @@ def draw(graf, kamery):
     
 
 if __name__ == "__main__":
-    graf = {(0, 0): [((-2, 2), 5), ((2, 2), 5), ((2, -2), 5), ((-2, -2), 5)], (-3, 3): [((10, 0), 6.0)], (3, 3): [((10, 0), 6.0)], (-2, 2): [((-3, 3), 5)], (2, 2): [((3, 3), 5)], (-2, -2): [((-3, -3), 5), ((-2, 2), 5)], (2, -2): [((3, -3), 5), ((-3, -3), 5), ((-2, -2), 5), ((3, 3), 5)], (-3, -3): [((10, 0), 6.0)], (3, -3): [((10, 0), 6.0)], (10, 0): []}
-    graf = get_graph(graf)
-
-    for key in graf:
-        print(key, " -> ", graf[key])    
-
-    kamery = znajdz_kamery_v2(graf)
-    print(kamery)
-    draw(graf, kamery)
-
     graf = random_graph(7, 'default')
     kamery = znajdz_kamery_v2(graf)
     draw(graf, kamery)   

@@ -9,7 +9,7 @@ def random_tragarze(ilosc, option='default'):
     tragarze[(0,0)] = []
     tragarze[(6,0)] = []
 
-    for i in range(0, ilosc//2):
+    for i in range(0, ilosc//2+1):
         tragarze[(5, i)] = []
         tragarze[(5, i)].append(((6,0), 1))
 
@@ -20,10 +20,14 @@ def random_tragarze(ilosc, option='default'):
 
         if option == 'default':
             for j in range(0, ilosc//2):
-                tragarze[(1, i)].append(((5, j), 1))
+                y = random.randint(0, ilosc//2)
+                if ((5,y), 1) not in tragarze[(1, i)]:
+                    tragarze[(1, i)].append(((5, y), 1))
         elif option == '50/50':
             for j in range(0, ilosc//4):
-                tragarze[(1, i)].append(((5, random.randint(0, ilosc//2)), 1))
+                y = random.randint(0, ilosc//2)
+                if ((5,y), 1) not in tragarze[(1, i)]:
+                    tragarze[(1, i)].append(((5, y), 1))
 
     punkty = []
     for key in tragarze:

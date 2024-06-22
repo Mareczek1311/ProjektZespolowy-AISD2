@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 def testowanie_graham():
     ilosc = 100
     statystyki = []
-    for i in range(1, 10):
+    for i in range(1, 50):
         print("TEST NR: ", i, " DLA ILOSCI: ", ilosc)
         start_time = time.time()
 
@@ -96,8 +96,8 @@ def draw_statystyki_kamery(statystyki):
     plt.show()
 
 if __name__ == "__main__":
-    #testowanie_graham()
+    testowanie_graham()
     #testowanie_fordfulkerson_tragarze()
     #testowanie_fordfulkerson_tragarze(option='50/50')
-    testowanie_kamery("half_connections")
-    testowanie_kamery("default")
+    #testowanie_kamery("half_connections")
+    #testowanie_kamery("default")

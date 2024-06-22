@@ -196,7 +196,7 @@ class FordFulkerson:
             for edge in adjList[node]:
                 self.addEdge(node, edge[0], edge[1])
 
-    def draw_plan_budowy(self):
+    def plan_budowy(self):
         """!
         Metoda ktora rysuje graf 2
         """
@@ -301,6 +301,9 @@ class FordFulkerson:
         for node in self.graph:
             for edge in self.graph[node]:
                 if edge.isResidual() == False and edge.fr != (0, 0) and edge.to != (6, 0):
+                    print(node)
+                    print(edge.to)
+                    print(edge.flow)
                     G.add_edge(node, edge.to, capacity=edge.capacity, flow=edge.flow)
 
         pos = {node: node for node in G.nodes()}
@@ -308,7 +311,9 @@ class FordFulkerson:
 
         #jezeli przeplyw krawedzi jest > 0 to kolorujemy na czerwono
         for node in G.nodes():
+            print(node)
             for edge in G.edges(node, data=True):
+                print(edge[2])
                 if edge[2]['flow'] > 0:
                     edge_colors.append('red')
                 else:
