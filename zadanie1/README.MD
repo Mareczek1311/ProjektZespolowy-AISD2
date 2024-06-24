@@ -7,6 +7,7 @@ Projekt ma na celu rozwiązanie problemu dostarczania desek do określonych punk
 1. **Znalezienie Otoczki Wypukłej**
 2. **Dobór Tragarzy**
 3. **Plan Dostarczania Desek**
+4. **Montaz kamer nadzorczych**
 
 ## Zadania
 
@@ -20,7 +21,11 @@ Drugim zadaniem jest dobranie odpowiedniej liczby tragarzy do przenoszenia desek
 
 ### 3. Plan Dostarczania Desek
 
-Ostatnim zadaniem jest opracowanie planu dostarczania desek do odpowiednich punktów. Ponownie używamy **algorytmu Forda-Fulkersona**, aby zaplanować trasy dostaw, zapewniając efektywność i minimalizując czas dostarczenia.
+Trzecim zadaniem jest opracowanie planu dostarczania desek do odpowiednich punktów. Ponownie używamy **algorytmu Forda-Fulkersona**, aby zaplanować trasy dostaw, zapewniając efektywność i minimalizując czas dostarczenia.
+
+### 4. Montaz kamer nadzorczych
+
+Ostatnim zadaniem jest montaz kamer nadzorczych. Wykorzystywany jest **zachłanny algorytm minimalnego pokrycia wierzchołkowego**.
 
 ## Struktura Projektu
 
